@@ -1,4 +1,4 @@
-let url = require('./config').url;
+let url = require('./url').url;
 let mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
