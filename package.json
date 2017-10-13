@@ -18,9 +18,13 @@
   },
   "homepage": "https://github.com/thismax/MLsandbox#readme",
   "dependencies": {
+    "bluebird": "^3.5.1",
+    "mongodb": "^2.2.33",
+    "mongoose": "^4.12.1",
     "path": "^0.12.7"
   },
   "devDependencies": {
+    "dotenv": "^4.0.0",
     "nodemon": "^1.12.1"
   }
 }

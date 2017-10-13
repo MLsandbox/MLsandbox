@@ -1,6 +1,6 @@
 let http = require('http');
 let fs = require('fs');
-let path = require('path')
+let path = require('path');
 
 let headers = {
   'access-control-allow-origin': '*',
@@ -22,4 +22,4 @@ http.createServer((req, res) => {
   console.log('====================================');
   console.log('server is listening on port 1337');
   console.log('====================================');
-});
+}); 
