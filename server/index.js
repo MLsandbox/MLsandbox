@@ -1,5 +1,5 @@
 let http = require('http');
-let router = require('./routes/routes.js');
+let router = require('./router/router.js');
 
 let server = http.createServer(router.handleRequest);
 
