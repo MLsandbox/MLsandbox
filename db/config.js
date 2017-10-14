@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+const bcrypt = require('bcrypt');
 const aws = require('./aws');
 //this initializes the database.
 const DB = new Sequelize(aws.name, aws.username, aws.password, {
@@ -39,7 +40,7 @@ const User = DB.define('user', {
     model: 'sandbox',
     key: 'id',
   },
-});
+}, );
 
 const Sandbox = DB.define('sandbox', {
   name: {
@@ -63,6 +64,18 @@ const Model = DB.define('model', {
     type: Sequelize.STRING,
   }
 })
+
+User.beforeCreate((user, options) => {
+
+  return bcrypt.hash(user.password, 10)
+    .then(hash => {
+      user.password = hash;
+    })
+    .catch(err => { 
+      throw new Error(); 
+    });
+    
+});
 
 User.hasMany(Sandbox, { onDelete: 'cascade' });
 Sandbox.belongsTo(User, { onDelete: 'cascade' });
