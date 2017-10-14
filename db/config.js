@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
-const endpoint = require('./url');
+const aws = require('./aws');
 //this initializes the database.
-const DB = new Sequelize('mlsandboxpg', 'thismax', 'masterpassword', {
-  host: endpoint,
-  port: 5432,
+const DB = new Sequelize(aws.name, aws.username, aws.password, {
+  host: aws.host,
+  port: aws.port,
   dialect: 'postgres',
 });
 //This initializes and authenticates the database
