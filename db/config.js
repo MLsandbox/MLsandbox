@@ -1,7 +1,12 @@
 const Sequelize = require('sequelize');
-const url = require('./url')
+const endpoint = require('./url');
 //this initializes the database.
-const DB = new Sequelize(url);
+const DB = new Sequelize('mlsandboxpg', 'thismax', 'masterpassword', {
+  host: endpoint,
+  port: 5432,
+  dialect: 'postgres',
+  dialectOptions: '../amazon-rds-ca-cert.pem',
+});
 //This initializes and authenticates the database
 DB.authenticate()
 .then(() => {
@@ -64,9 +69,9 @@ User.hasMany(Sandbox, { onDelete: 'cascade' });
 Sandbox.belongsTo(User, { onDelete: 'cascade' });
 Model.belongsTo(Sandbox, { onDelete: 'cascade' });
 
-User.sync().then(() => {
-  Sandbox.sync().then(() => {
-    Model.sync();
+User.sync({force: true}).then(() => {
+  Sandbox.sync({force: true}).then(() => {
+    Model.sync({force: true});
   });
 });
 
