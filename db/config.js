@@ -5,7 +5,6 @@ const DB = new Sequelize('mlsandboxpg', 'thismax', 'masterpassword', {
   host: endpoint,
   port: 5432,
   dialect: 'postgres',
-  dialectOptions: '../amazon-rds-ca-cert.pem',
 });
 //This initializes and authenticates the database
 DB.authenticate()
