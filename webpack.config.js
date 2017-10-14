@@ -1,5 +1,6 @@
 const { resolve } = require('path');
 const srcDir = resolve(__dirname, 'src');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: `${srcDir}/index.js`,
@@ -11,6 +12,29 @@ module.exports = {
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'eslint-loader'
-    }]
-  }
+      }, {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        options: { presets: ['es2015', 'react']},
+      }, {
+        test: /\.css$/,
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            localIdentName: '[name]-[local]-[hash:base64:6]',
+            camelCase: true,
+          }
+        }]
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: `${srcDir}/index.html`
+    }),
+  ]
 }
