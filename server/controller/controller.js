@@ -19,6 +19,7 @@ module.exports.signUp = (req, res) => {
       }
       else {
         res.end('that user already exists!'); // needs to redirect to login
+        // utils.redirector(res, '/login');
       }
     })
     .catch((err) => {
