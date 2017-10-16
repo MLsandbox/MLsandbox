@@ -1,12 +1,15 @@
+// dependencies
 const Sequelize = require('sequelize');
-const aws = require('./aws');
-//this initializes the database.
-const DB = new Sequelize(aws.name, aws.username, aws.password, {
-  host: aws.host,
-  port: aws.port,
+const bcrypt = require('bcrypt');
+require('dotenv').config();
+// import db credentials
+// instantiate ORM
+const DB = new Sequelize(process.env.NAME, process.env.USERNAME, process.env.PASSWORD, {
+  host: process.env.HOST,
+  port: process.env.RDS_PORT,
   dialect: 'postgres',
 });
-//This initializes and authenticates the database
+//initialize and authenticate db
 DB.authenticate()
 .then(() => {
   console.log('Connection to database has been established');
@@ -14,7 +17,7 @@ DB.authenticate()
 .catch((err) => {
   console.error('Unable to connect to the database', err);
 });
-
+// define User model
 const User = DB.define('user', {
   username: {
     type: Sequelize.STRING,
@@ -24,59 +27,23 @@ const User = DB.define('user', {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  sandbox1Id: {
-    type: Sequelize.INTEGER,
-    model: 'sandbox',
-    key: 'id',
-  },
-  sandbox2Id: {
-    type: Sequelize.INTEGER,
-    model: 'sandbox',
-    key: 'id',
-  },
-  sandbox3Id: {
-    type: Sequelize.INTEGER,
-    model: 'sandbox',
-    key: 'id',
-  },
-});
-
-const Sandbox = DB.define('sandbox', {
-  name: {
+  uuid: {
     type: Sequelize.STRING,
-  },
-  model: {
-    type: Sequelize.INTEGER,
-    model: 'model',
-    key: 'id',
-  },
-  data: {
-    type: Sequelize.STRING,
+    allowNull: false,
   }
-});
-
-const Model = DB.define('model', {
-  type: {
-    type: Sequelize.STRING,
-  },
-  params: {
-    type: Sequelize.STRING,
-  }
-})
-
-User.hasMany(Sandbox, { onDelete: 'cascade' });
-Sandbox.belongsTo(User, { onDelete: 'cascade' });
-Model.belongsTo(Sandbox, { onDelete: 'cascade' });
-
-User.sync({force: true}).then(() => {
-  Sandbox.sync({force: true}).then(() => {
-    Model.sync({force: true});
+}, );
+// hash password with bcrypt
+User.beforeCreate((user, options) => {
+  return bcrypt.hash(user.password, 10)
+  .then(hash => {
+    user.password = hash;
+  })
+  .catch(err => { 
+    throw new Error(); 
   });
 });
-
+// export db
 module.exports = {
   DB,
-  User,
-  Sandbox,
-  Model,
+  User
 };

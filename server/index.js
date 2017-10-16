@@ -1,25 +1,31 @@
-let http = require('http');
-let fs = require('fs');
-let path = require('path');
-
-let headers = {
-  'access-control-allow-origin': '*',
-  'access-control-allow-methods': 'GET, POST, PUT, DELETE, OPTIONS',
-  'access-control-allow-headers': 'content-type, accept',
-  'access-control-max-age': 10, // Seconds.
-  'Content-Type': 'text/html'
-};
-
-http.createServer((req, res) => {
-  fs.readFile(path.resolve(__dirname, '../client/static/index.html'), 'utf8', (err, data) => {
-    if (err) console.log(err);
-    res.writeHead(200, headers);
-    res.write(data);
-    res.end();
-  });
+// dependencies
+const express = require('express');
+const parser = require('body-parser');
+const path = require('path');
+const cors = require('cors');
+const session = require('express-session');
+// imports
+const router = require('./router/router.js');
+const db = require('../db/config.js');
+// express instantiation
+const app = express();
+const port = process.env.PORT || 8080;
+// middleware
+app.use(session({
+  secret: 'please dear god let me out of here',
+  cookie: {
+    secure: true,
+    maxAge: 60000,
+   },
+}));
+app.use(parser.json());
+app.use(parser.urlencoded());
+app.use(cors());
+//routes
+app.use(express.static(path.resolve(__dirname, '../client/static/')));
+app.use('/api', router);
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../client/static/index.html'));
 })
-.listen(1337, '127.0.0.1', ()=> {
-  console.log('====================================');
-  console.log('server is listening on port 1337');
-  console.log('====================================');
-}); 
+// sync db, start a UNIX socket and listen for connections
+db.User.sync().then(() => app.listen(port, () => console.log("Listening on port " + port)));
