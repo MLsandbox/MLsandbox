@@ -1,50 +1,71 @@
-DB = require('../../db/config.js');
-utils = require('../utils/http-helpers');
-
-module.exports.signUp = (req, res) => {
-  utils.prepareResponse(req, (data) => {    
-    let username = JSON.parse(data).username;
-    let password = JSON.parse(data).password;
-    DB.User.findOne({where: {username}})
-    .then((result) => {
-      if (!result) {
-        DB.User.create({
-          username,
-          password,
-        }).then((newUser) => {
-          res.end('new user created!');
-        }).catch((err) => {
-          utils.send404(res);
-        });
-      }
-      else {
-        res.end('that user already exists!'); // needs to redirect to login
-        // utils.redirector(res, '/login');
-      }
-    })
-    .catch((err) => {
-      console.log('====================================')
-      console.log('nah')
-      console.log('====================================')
-      res.end()
-    })
-    // DB.User.create({
-    //   username,
-    //   password,
-    // }).then((newUser) => {
-    //   res.end('new user created!');
-    // }).catch((err) => {
-    //   utils.send404(res);
-    // });
-  })
+// dependencies
+const Promise = require('bluebird');
+const bcrypt = require('bcrypt');
+const session = require('express-session');
+const uuid = require('uuid/v4');
+// imports
+const DB = require('../../db/config.js');
+// password comparer
+const comparePasswords = (inputPassword, storedPassword) => {
+  return new Promise ((resolve, reject) => {
+    bcrypt.compare(inputPassword, storedPassword, (err, result) => {
+      if (err) reject(err);
+      resolve(result);
+    });
+  });
 };
-
-// fs.readFile(path.resolve(__dirname, '../client/static/index.html'), 'utf8', (err, data) => {
-//   if (err) console.log(err);
-//   res.writeHead(200, headers);
-//   res.write(data);
-//   res.end();
-// });
-
-
+// checks for an existing user and either creates a new user or redirects to root
+module.exports.signUp = (req, res) => {
+  DB.User.findOne({where: {
+    username: req.body.username,
+  }}).then((result) => {
+    if (!result) {
+      DB.User.create({
+        username: req.body.username,
+        password: req.body.password,
+        uuid: uuid(),
+      }).then((newUser) => {
+        res.status(201).send('new user created')
+      }).catch((err) => {
+        res.status(404).send(err);
+      });
+    }
+    else {
+      res.redirect('/');
+    }
+  }).catch((err) => {
+    res.status(404).send(err);
+  });
+};
+// looks for an existing user and, if one exists, adds user's uuid to session
+module.exports.logIn = (req, res) => {
+  DB.User.findOne({
+    where: {
+      username: req.body.username,
+    },
+    raw: true,
+  }).then((user) => {
+    if (user) {
+      comparePasswords(req.body.password, user.password).then((correctPassword) => {
+        if (correctPassword) {
+          req.session.uuid = user.uuid;
+          res.status(201).send('successful login');
+        } else {
+          res.redirect('/');
+        }
+      }).catch((err) => {
+        res.status(404).send(err);
+      })
+    } else {
+      res.redirect('/');
+    }
+  }).catch((err) => {
+    res.status(404).send(err);
+  });
+};
+// logs out by destroying session
+module.exports.logOut = (req, res) => {
+  req.session.destroy();
+  res.redirect('/');
+};
  
