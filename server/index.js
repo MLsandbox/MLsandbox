@@ -14,6 +14,6 @@ app.use(parser.json());
 app.use(parser.urlencoded());
 app.use(cors());
 // app.use('/api', router);
-app.use(express.static(__dirname + '../client/static/index.html'));
+app.use(express.static(path.resolve(__dirname, '../client/static/')));
 // sync db, start a UNIX socket and listen for connections
 db.User.sync({force: true}).then(() => app.listen(port, () => console.log("Listening on port " + port)));
