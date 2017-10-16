@@ -28,4 +28,4 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/static/index.html'));
 })
 // sync db, start a UNIX socket and listen for connections
-db.User.sync({force: true}).then(() => app.listen(port, () => console.log("Listening on port " + port)));
+db.User.sync().then(() => app.listen(port, () => console.log("Listening on port " + port)));

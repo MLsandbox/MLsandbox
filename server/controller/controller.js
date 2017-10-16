@@ -25,7 +25,7 @@ module.exports.signUp = (req, res) => {
         password: req.body.password,
         uuid: uuid(),
       }).then((newUser) => {
-        res.status(201).send(newUser)
+        res.status(201).send('new user created')
       }).catch((err) => {
         res.status(404).send(err);
       });
@@ -35,10 +35,10 @@ module.exports.signUp = (req, res) => {
     }
   }).catch((err) => {
     res.status(404).send(err);
-  })
+  });
 };
-
- module.exports.logIn = (req, res) => {
+// looks for an existing user and, if one exists, adds user's uuid to session
+module.exports.logIn = (req, res) => {
   DB.User.findOne({
     where: {
       username: req.body.username,
@@ -48,10 +48,7 @@ module.exports.signUp = (req, res) => {
     if (user) {
       comparePasswords(req.body.password, user.password).then((correctPassword) => {
         if (correctPassword) {
-          req.session.uuid = user.id;
-          console.log('====================================')
-          console.log(req.session);
-          console.log('====================================')
+          req.session.uuid = user.uuid;
           res.status(201).send('successful login');
         } else {
           res.redirect('/');
@@ -62,12 +59,13 @@ module.exports.signUp = (req, res) => {
     } else {
       res.redirect('/');
     }
-   }).catch((err) => {
+  }).catch((err) => {
     res.status(404).send(err);
-  })
- };
-
- module.exports.logOut = (req, res) => {
-
- };
+  });
+};
+// logs out by destroying session
+module.exports.logOut = (req, res) => {
+  req.session.destroy();
+  res.redirect('/');
+};
  
