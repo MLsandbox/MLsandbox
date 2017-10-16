@@ -3,7 +3,7 @@ const express = require('express');
 const parser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
-// file imports
+// imports
 const router = require('./router/router.js');
 const db = require('../db/config.js');
 // express instantiation

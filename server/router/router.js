@@ -1,25 +1,10 @@
-const path = require('path');
-const url = require('url');
-const utils = require('../utils/http-helpers.js');
-const DB = require('../../db/config.js');
+// dependencies
+const router = require('express').Router();
+// imports
 const controller = require('../controller/controller.js');
-
-const actions = {
-
-  POST: (req, res) => {
-    let endPoint = url.parse(req.url).pathname;
-    if (endPoint === '/api/signUp') {
-      controller.signUp(req, res);
-    }
-  },
-
-  GET: (req, res) => {
-    let parsedUrl = url.parse
-  }
-
-}; 
-
-exports.handleRequest = function(req, res) {
-  var action = actions[req.method];
-  action ? action(req, res) : utils.send404(res);
-};
+// routes
+router.post('/signUp', controller.signUp);
+// router.post('/logIn', controller.logIn);
+// router.post('/logOut', controller.logOut);
+// export router
+module.exports = router;
