@@ -1,12 +1,12 @@
 // dependencies
 const Sequelize = require('sequelize');
 const bcrypt = require('bcrypt');
+require('dotenv').config();
 // import db credentials
-const aws = require('./aws');
 // instantiate ORM
-const DB = new Sequelize(aws.name, aws.username, aws.password, {
-  host: aws.host,
-  port: aws.port,
+const DB = new Sequelize(process.env.NAME, process.env.USERNAME, process.env.PASSWORD, {
+  host: process.env.HOST,
+  port: process.env.RDS_PORT,
   dialect: 'postgres',
 });
 //initialize and authenticate db
