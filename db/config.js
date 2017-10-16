@@ -26,6 +26,10 @@ const User = DB.define('user', {
   password: {
     type: Sequelize.STRING,
     allowNull: false,
+  },
+  uuid: {
+    type: Sequelize.STRING,
+    allowNull: false,
   }
 }, );
 // hash password with bcrypt
