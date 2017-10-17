@@ -19,18 +19,8 @@ module.exports = {
         options: { presets: ['es2015', 'react']},
       }, {
         test: /\.css$/,
-        use: [{
-          loader: 'style-loader'
-        }, {
-          loader: 'css-loader',
-          options: {
-            modules: true,
-            localIdentName: '[name]-[local]-[hash:base64:6]',
-            camelCase: true,
-          }
-        }]
-      }
-    ]
+        loaders: ['style-loader', 'css-loader?url=false']
+      }]
   },
   plugins: [
     new HtmlWebpackPlugin({
