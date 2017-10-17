@@ -11,6 +11,15 @@ const db = require('../db/config.js');
 const app = express();
 const port = process.env.PORT || 8080;
 // middleware
+const restrict = function(req, res, next) {
+  if (req.session.uuid || req.url === '/login') {
+    next();
+  } else {
+    req.session.error = 'Access denied!';
+    res.redirect('/login');
+  }
+};
+
 app.use(session({
   secret: 'please dear god let me out of here',
   cookie: {
@@ -18,6 +27,8 @@ app.use(session({
     maxAge: 60000,
    },
 }));
+
+// app.use(restrict);
 app.use(parser.json());
 app.use(parser.urlencoded());
 app.use(cors());
