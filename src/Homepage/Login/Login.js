@@ -17,10 +17,10 @@ var Loginform = () => {
   );
 }
 
-var Login = () => {
+var Login = (props) => {
   return (
   <div className="modal-container" >
-    <Modal show={true}>
+    <Modal show={props.popupState} onHide={props.closePopup}>
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title">Contained Modal</Modal.Title>
       </Modal.Header>
@@ -28,7 +28,7 @@ var Login = () => {
           <Loginform />
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={close} bsStyle="primary">Close</Button>
+          <Button onClick={props.closePopup} bsStyle="primary">Close</Button>
         </Modal.Footer>
     </Modal>
   </div>
