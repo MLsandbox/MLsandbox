@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <div>
         <Homepagecomp />
-        <h1><Link to ="/menu">Menu</Link></h1>
+        <h1><Link to ="/sandbox">Sandbox</Link></h1>
       </div>
     );
   }

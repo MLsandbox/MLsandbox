@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
-class Menu extends Component {
+import Options from './Options';
+class Sandbox extends Component {
   constructor (props) {
     super(props);
   }
@@ -8,10 +8,11 @@ class Menu extends Component {
   render () {
     return (
       <div>
-        <h1>Menu Component</h1>
+        <h1>Sandbox Component</h1>
+        <Options />
       </div>
     );
   }
 }
 
-export default Menu;
+export default Sandbox;
