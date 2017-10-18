@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Login from './Login/Login';
+import Footer from './Footer/Footer';
 import { setPopupState } from '../Redux/Actions/actionTypes';
 import { connect } from 'react-redux';
 var logoSrc = 'http://cleartheairchicago.com/files/2014/06/logo-placeholder.jpg';
@@ -27,6 +28,7 @@ class Homepage extends Component {
           <img id="logo" src={logoSrc}/>
           <Login closePopup={this.closePopup} popupState={popupState}/>
           <div><a href="#" onClick={this.openPopup} >LOGIN</a></div>
+          <Footer />
       </div>
     );
   }
