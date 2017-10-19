@@ -31,7 +31,7 @@ const User = DB.define('user', {
     type: Sequelize.STRING,
     allowNull: false,
   }
-}, );
+});
 // hash password with bcrypt
 User.beforeCreate((user, options) => {
   return bcrypt.hash(user.password, 10)
