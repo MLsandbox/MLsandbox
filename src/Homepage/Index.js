@@ -46,6 +46,8 @@ class Homepage extends Component {
 var Homepagecomp = connect((store) => {
   return {
     popupState:store.login.loginPopup,
+    authentication:store.auth.authentication,
+    authenticating:store.auth.authenticating,
   }
 })(Homepage)
 

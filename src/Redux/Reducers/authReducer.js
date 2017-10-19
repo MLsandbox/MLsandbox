@@ -23,7 +23,6 @@ function auth (state = initState, action) {
       })
     break;
     default:
-    console.log(state);
     return state;
   }
 }
