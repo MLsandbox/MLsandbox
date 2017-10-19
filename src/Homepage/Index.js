@@ -11,6 +11,7 @@ class Homepage extends Component {
     this.openPopup = this.openPopup.bind(this);
     this.closePopup = this.closePopup.bind(this);
     this.signIn = this.signIn.bind(this);
+    this.signUp = this.signUp.bind(this);
   }
 
   closePopup () {
@@ -22,8 +23,18 @@ class Homepage extends Component {
   }
 
   signIn() {
-    console.log('logging in');
-    this.props.dispatch(reqAuth);
+    var username = document.getElementById("formControlsEmail").value;
+    var password = document.getElementById("formControlsPassword").value
+    var user = {
+      username: username,
+      password: password,
+    }
+    console.log('logging in as', username, password);
+    this.props.dispatch(reqAuth.bind(user));
+  }
+
+  signUp() {
+    console.log('signing up')
   }
 
   render() {
@@ -33,7 +44,9 @@ class Homepage extends Component {
         <h1>Welcome</h1>
           <img id="logo" src={logoSrc}/>
           <Login 
+            authenticating = {this.props.authenticating}
             signIn = {this.signIn} 
+            signUp = {this.signUp}
             closePopup={this.closePopup} 
             popupState={popupState}/>
           <div><a href="#" onClick={this.openPopup} >LOGIN</a></div>

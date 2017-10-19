@@ -1,20 +1,13 @@
 import React from 'react';
 import { FormGroup, ControlLabel, FormControl, Modal, Button } from 'react-bootstrap';
-var Loginform = () => {
-  return (
-    <div>
-      <form>
-        <FormGroup controlId="formControlsEmail">
-          <ControlLabel>Email Address</ControlLabel>
-          <FormControl type="text" placeholder="Enter Email"/>
-        </FormGroup>
-        <FormGroup controlId="formControlsPassword">
-          <ControlLabel>Password</ControlLabel>
-          <FormControl type="text" placeholder="Enter Password"/>
-        </FormGroup>
-      </form>
-    </div>  
-  );
+import Loginform from './Loginform';
+import Loader from './Loader';
+var conditionalRender = (authState, props) => {
+  if (authState) {
+    return <Loader/>
+  } else {
+    return <Loginform signIn={props.signIn} signUp={props.signUp}/>
+  }
 }
 
 var Login = (props) => {
@@ -25,8 +18,7 @@ var Login = (props) => {
         <Modal.Title id="contained-modal-title">Contained Modal</Modal.Title>
       </Modal.Header>
         <Modal.Body>
-          <Loginform />
-          <Button onClick={props.signIn}>Sign In</Button>
+          {conditionalRender(props.authenticating, props)}
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.closePopup} bsStyle="primary">Close</Button>

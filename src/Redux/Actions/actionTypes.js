@@ -8,16 +8,17 @@ export function setPopupState (currentState) {
 }
 
 export function reqAuth (dispatch) {
+  console.log('async auth req', this.username, this.password);
   dispatch({type: "REQ_AUTH"});
-    axios.post("http://ec2-18-220-210-104.us-east-2.compute.amazonaws.com:1338/api/logIn", {
-      username: "kokoro",
-      password: "password",
-    })
-    .then((response) => {
-      console.log(response);
-      dispatch({type: "VALIDATE_AUTH"});
-    })
-    .catch((err) => {
-      dispatch({type: "REQ_AUTH_FAIL"});
-    })
+  axios.post("http://ec2-18-220-210-104.us-east-2.compute.amazonaws.com:1338/api/logIn", {
+    username: this.username,
+    password: this.password,
+  })
+  .then((response) => {
+    console.log(response);
+    dispatch({type: "VALIDATE_AUTH"});
+  })
+  .catch((err) => {
+    dispatch({type: "REQ_AUTH_FAIL"});
+  })
 }
