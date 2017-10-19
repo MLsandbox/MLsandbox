@@ -26,6 +26,7 @@ var Login = (props) => {
       </Modal.Header>
         <Modal.Body>
           <Loginform />
+          <Button onClick={props.signIn}>Sign In</Button>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.closePopup} bsStyle="primary">Close</Button>

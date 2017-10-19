@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Login from './Login/Login';
 import Footer from './Footer/Footer';
-import { setPopupState } from '../Redux/Actions/actionTypes';
+import { setPopupState, reqAuth } from '../Redux/Actions/actionTypes';
 import { connect } from 'react-redux';
 var logoSrc = 'http://cleartheairchicago.com/files/2014/06/logo-placeholder.jpg';
 
@@ -10,6 +10,7 @@ class Homepage extends Component {
     super(props);
     this.openPopup = this.openPopup.bind(this);
     this.closePopup = this.closePopup.bind(this);
+    this.signIn = this.signIn.bind(this);
   }
 
   closePopup () {
@@ -20,13 +21,21 @@ class Homepage extends Component {
     this.props.dispatch(setPopupState());
   }
 
+  signIn() {
+    console.log('logging in');
+    this.props.dispatch(reqAuth);
+  }
+
   render() {
     var popupState = this.props.popupState;
     return (
       <div>
         <h1>Welcome</h1>
           <img id="logo" src={logoSrc}/>
-          <Login closePopup={this.closePopup} popupState={popupState}/>
+          <Login 
+            signIn = {this.signIn} 
+            closePopup={this.closePopup} 
+            popupState={popupState}/>
           <div><a href="#" onClick={this.openPopup} >LOGIN</a></div>
           <Footer />
       </div>
