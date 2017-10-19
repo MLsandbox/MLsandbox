@@ -6,6 +6,7 @@ const webpack = require('webpack');
 module.exports = {
   entry: `${srcDir}/index.js`,
   output: {
+    path: resolve(__dirname, "static"),
     filename: "bundle.js"
   },
   module: {

@@ -7,7 +7,7 @@
     "test": "jest",
     "start": "nodemon ./server/index.js",
     "bundle": "webpack",
-    "dev-start": "webpack-dev-server"
+    "dev-start": "webpack-dev-server --content-base static/"
   },
   "repository": {
     "type": "git",
