@@ -60,4 +60,5 @@ typings/
 
 *~
 bundle.js
+bundle
 server/test.js
