@@ -16,7 +16,7 @@ const restrict = function(req, res, next) {
     next();
   } else {
     req.session.error = 'Access denied!';
-    res.redirect('/login');
+    res.redirect('/');
   }
 };
 
@@ -36,7 +36,7 @@ app.use(cors());
 app.use(express.static(path.resolve(__dirname, '../client/static/')));
 app.use('/api', router);
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/static/index.html'));
+  res.sendFile(path.resolve(__dirname, '../static/index.html'));
 })
 // sync db, start a UNIX socket and listen for connections
 db.User.sync().then(() => app.listen(port, () => console.log("Listening on port " + port)));
