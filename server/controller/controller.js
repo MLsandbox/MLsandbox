@@ -63,6 +63,79 @@ module.exports.logIn = (req, res) => {
     res.status(404).send(err);
   });
 };
+
+module.exports.deleteAccount = (req, res) => {
+  DB.User.findOne({
+    where: {
+      username: req.body.username,
+    },
+    raw: true,
+  }).then((user) => {
+    if (user) {
+      comparePasswords(req.body.password, user.password).then((correctPassword) => {
+        if (correctPassword) {
+          DB.User.destroy({
+            where: {
+              username: req.body.username,
+            },
+            raw: true,
+          }).then((results) => {
+            res.redirect('/');
+          }).catch((err) => {
+            res.status(404).send(err);
+          })
+        } else {
+          res.status(404).send(err);
+        }
+      }).catch((err) => {
+        res.status(404).send(err);
+      })
+    } else {
+      res.status(404).send(err);
+    }
+  }).catch((err) => {
+    res.status(404).send(err);
+  });
+};
+
+module.exports.changePassword = (req, res) => {
+  DB.User.findOne({
+    where: {
+      username: req.body.username,
+    },
+    raw: true,
+  }).then((user) => {
+    if (user) {
+      comparePasswords(req.body.password, user.password)
+        .then((correctPassword) => {
+          if (correctPassword) {
+            bcrypt.hash(req.body.newPassword, 10).then((password) => {
+              DB.User.update({password},
+                {where: {
+                  username: req.body.username,
+                },
+                raw: true,}).then((results) => {
+                res.redirect('/');
+              }).catch((err) => {
+                res.status(404).send(err);
+              });
+            }).catch((err) => {
+              res.status(404).send(err);
+            });
+          } else {
+            res.status(404).send(err);
+          }})
+        .catch((err) => {
+        res.status(404).send(err);
+      });
+    } else {
+      res.status(404).send(err);
+    }
+  }).catch((err) => {
+    res.status(404).send(err);
+  });
+};
+
 // logs out by destroying session
 module.exports.logOut = (req, res) => {
   req.session.destroy();
