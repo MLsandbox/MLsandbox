@@ -10,7 +10,7 @@ export function setPopupState (currentState) {
 export function reqAuth (dispatch) {
   console.log('async auth req', this.username, this.password);
   dispatch({type: "REQ_AUTH"});
-  axios.post("http://ec2-18-220-210-104.us-east-2.compute.amazonaws.com:1338/api/logIn", {
+  axios.post("/api/logIn", {
     username: this.username,
     password: this.password,
   })
