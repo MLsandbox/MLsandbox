@@ -4,6 +4,7 @@ const parser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
 const session = require('express-session');
+const cookieParser = require('cookie-parser');
 // imports
 const router = require('./router/router.js');
 const db = require('../db/config.js');
@@ -11,6 +12,20 @@ const db = require('../db/config.js');
 const app = express();
 const port = process.env.PORT || 8080;
 // middleware
+app.use(parser.json());
+app.use(parser.urlencoded({ extended: false }));
+app.use(cors());
+app.use(cookieParser());
+app.use(session({
+  secret: 'please dear god let me out of here',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    secure: true,
+    maxAge: 60000,
+   },
+}));
+
 const restrict = function(req, res, next) {
   if (req.session.uuid || req.url === '/login') {
     next();
@@ -19,21 +34,9 @@ const restrict = function(req, res, next) {
     res.redirect('/');
   }
 };
-
-app.use(session({
-  secret: 'please dear god let me out of here',
-  cookie: {
-    secure: true,
-    maxAge: 60000,
-   },
-}));
-
-// app.use(restrict);
-app.use(parser.json());
-app.use(parser.urlencoded());
-app.use(cors());
 //routes
 app.use(express.static(path.resolve(__dirname, '../static')));
+
 app.use('/api', router);
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../static/index.html'));
