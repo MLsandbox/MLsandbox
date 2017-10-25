@@ -8,26 +8,18 @@ class Sandbox extends Component {
   }
 
   render () {
-    if (this.props.authentication) {
-      return (
-        <div>
-          <h1>Sandbox Component</h1>
-          <Options />
-        </div>
-      );
-    } else {
-      return (
+    return(
       <div>
-        <h1>PLEASE LOGIN FIRST</h1>
+        <h1>Sandbox Component</h1>
+          <Options />
       </div>
-      )
-    }
+    )
   }
 }
 
 var Sandboxcomp = connect((state) => {
   return { 
-    authentication: state.auth.authentication,
+    authentication: state.auth.authentication.authorization,
   }
 })(Sandbox);
 

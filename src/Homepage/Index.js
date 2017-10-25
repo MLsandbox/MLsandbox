@@ -3,6 +3,7 @@ import Login from './Login/Login';
 import Footer from './Footer/Footer';
 import { setPopupState, reqAuth } from '../Redux/Actions/actionTypes';
 import { connect } from 'react-redux';
+import Logout from '../Logout/index';
 var logoSrc = 'http://cleartheairchicago.com/files/2014/06/logo-placeholder.jpg';
 
 class Homepage extends Component {
@@ -44,11 +45,12 @@ class Homepage extends Component {
         <h1>Welcome</h1>
           <img id="logo" src={logoSrc}/>
           <Login 
-            authenticating = {this.props.authenticating}
+            processing = {this.props.processing}
             signIn = {this.signIn} 
             signUp = {this.signUp}
             closePopup={this.closePopup} 
             popupState={popupState}/>
+            <Logout dispatch={this.props.dispatch}/>
           <div><a href="#" onClick={this.openPopup} >LOGIN</a></div>
           <Footer />
       </div>
@@ -59,8 +61,7 @@ class Homepage extends Component {
 var Homepagecomp = connect((store) => {
   return {
     popupState:store.login.loginPopup,
-    authentication:store.auth.authentication,
-    authenticating:store.auth.authenticating,
+    processing:store.auth.authentication.processing,
   }
 })(Homepage)
 

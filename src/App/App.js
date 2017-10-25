@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, browserHistory } from 'react-router-dom';
 import Homepagecomp from '../Homepage/Index';
 import Bootstrap from 'bootstrap';
 import store from '../Redux/store';

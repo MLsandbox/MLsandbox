@@ -7,19 +7,49 @@ function auth (state = initState, action) {
       return Object.assign({}, state, {authenticating: true});
     break;
     case 'VALIDATE_AUTH':
-      console.log('access aquired');
+      console.log('access aquired', action.user);
       return Object.assign({}, state, 
         { 
-          authenticating: false,
-          authentication: true,
+          authentication: { 
+            authorization: true,
+            authenticating: false,
+            error: false,
+            user: action.user,
+          }
         })
     break;
+    case 'INVALID_AUTH':
+      console.log('invalid credentials');
+      return Object.assign({}, state, 
+        { 
+          authentication: { 
+            authorization: false,
+            authenticating: false,
+            error: false
+          }
+        })
+    break;
+    case 'LOGOUT':
+      console.log('you have successfully logged out');
+      return Object.assign({}, state,
+        {
+          authentication: { 
+            authorization: false,
+            authenticating: false,
+            user: {},
+            error: false
+          }
+        }
+      )
     case 'REQ_AUTH_FAIL':
       console.log('opps something went wrong');
     return Object.assign({}, state, 
       { 
-        authenticating: false,
-        authentication: 'error',
+        authentication: { 
+          authorization: false,
+          authenticating: false,
+          error: false,
+        }
       })
     break;
     default:

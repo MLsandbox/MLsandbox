@@ -1,4 +1,5 @@
 import axios from 'axios';
+import jwt from 'jsonwebtoken';
 
 export function setPopupState (currentState) {
   return {
@@ -15,8 +16,13 @@ export function reqAuth (dispatch) {
     password: this.password,
   })
   .then((response) => {
-    console.log(response);
-    dispatch({type: "VALIDATE_AUTH"});
+    if(response.data === 'invalid') {
+      dispatch({type: 'INVALID_AUTH'});
+    } else {
+      const token = response.data.token;
+      localStorage.setItem('jwtToken', response.data.token);
+      dispatch({type:"VALIDATE_AUTH", user:jwt.decode(token)});
+    }
   })
   .catch((err) => {
     dispatch({type: "REQ_AUTH_FAIL"});

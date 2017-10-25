@@ -3,6 +3,7 @@ const Promise = require('bluebird');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
 const uuid = require('uuid/v4');
+const jwt = require('jsonwebtoken');
 // imports
 const DB = require('../../db/config.js');
 // password comparer
@@ -49,15 +50,19 @@ module.exports.logIn = (req, res) => {
       comparePasswords(req.body.password, user.password).then((correctPassword) => {
         if (correctPassword) {
           req.session.uuid = user.uuid;
-          res.status(201).send('successful login');
+          const token = jwt.sign({
+            id: user.id,
+            username: user.username,
+          }, process.env.JWTSECRET)
+          res.status(201).send({ token });
         } else {
-          res.redirect('/');
+          res.status(201).send('invalid');
         }
       }).catch((err) => {
         res.status(404).send(err);
       })
     } else {
-      res.redirect('/');
+      res.status(201).send('invalid');
     }
   }).catch((err) => {
     res.status(404).send(err);
