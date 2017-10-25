@@ -7,13 +7,11 @@ import store from './Redux/store';
 import App from './App/App';
 import Login from './Loginpage/index';
 import Authroute from './ClientHelpers/AuthRouting/checkAuth';
-import Housing from './Sandbox/MLmodels/Housing';
+import Housing from './Sandbox/MLmodels/Housing/Housing';
 import Mushrooms from './Sandbox/MLmodels/Mushrooms';
 import Mnist from './Sandbox/MLmodels/Mnist';
 import Voicerec from './Sandbox/MLmodels/Voicerec';
-import Chat from './Sandbox/MLmodels/Chat';
-
-console.log('jwttoken',localStorage.jwtToken);
+import Chat from './Sandbox/MLmodels/Chatbot/Chatbot';
 
 render(
 <Provider store={store}>
