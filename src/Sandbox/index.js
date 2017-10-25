@@ -11,6 +11,7 @@ class Sandbox extends Component {
     return(
       <div>
         <h1>Sandbox Component</h1>
+        <h1>LEARN/INFORMATION</h1>
           <Options />
       </div>
     )

@@ -8,16 +8,22 @@ class Loginpage extends Component {
 
   render () {
     return (
-      <div>   
+      <div className="login-body">   
         <div className="container">
-          <div className="row">
-            <div id="signin-form" className="col-sm-6">
-              SIGN IN
-            </div>
-            <div id="signup-form" className="col-sm-6">
-              SIGN UP
-            </div>
-          </div>
+          <form class="login-page">
+            <fieldset>
+              <legend class="legend">Login</legend>
+              <div class="loginpage-input">
+                <input type="email" placeholder="Email" required />
+                <span><i class="fa fa-envelope-o"></i></span>
+              </div>
+              <div class="loginpage-input">
+                <input type="password" placeholder="Password" required />
+                <span><i class="fa fa-lock"></i></span>
+              </div>
+              <button type="submit" class="submit"><i class="fa fa-long-arrow-right"></i></button>
+            </fieldset>
+          </form>
         </div>
       </div>
     )
