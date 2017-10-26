@@ -3,7 +3,7 @@ import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import options from './options';
+import options from './Options.js';
 
 
 class Mushrooms extends Component {
@@ -21,14 +21,12 @@ class Mushrooms extends Component {
     const name = event.target.name;
     this.setState({
       [name]: value
-    }, () => console.log(this.state));
-  }
+    })}
 
   handleSelect (name, val) {
     this.setState({
       [name]: val.value,
-    }, () => console.log(this.state));
-  }
+    })}
 
   handleSubmit () {
     

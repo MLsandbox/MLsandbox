@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Message from './message';
+import Message from './Message.js';
 
 
 const Messages = ({messages}) => {

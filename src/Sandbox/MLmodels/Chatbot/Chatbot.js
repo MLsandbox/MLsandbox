@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Messages from './messages';
+import Messages from './Messages.js';
 import axios from 'axios';
 
 class Chatbot extends Component {
