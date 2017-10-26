@@ -32,7 +32,7 @@ class Mushrooms extends Component {
 
   handleSubmit () {
     
-    axios.post('http://localhost:5000/api/mushrooms', {
+    axios.post('http://13.59.104.244/api/mushrooms', {
       data: [
         this.state.capShape,
         this.state.capSurface,

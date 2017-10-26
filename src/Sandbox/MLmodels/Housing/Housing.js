@@ -40,7 +40,7 @@ class Housing extends Component {
         addy = result.data.results[0].formatted_address;
       }
       let zip = addy.slice(addy.length - 10, addy.length - 5);
-      axios.post('http://localhost:5000/api/houseprices', {
+      axios.post('http://13.59.104.244/api/houseprices', {
         info: ["2014", 
           this.state.bedrooms, 
           this.state.bathrooms,

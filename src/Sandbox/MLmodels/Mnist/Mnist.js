@@ -33,7 +33,7 @@ class Mnist extends Component {
 		let image = canvas[0].toDataURL('image/png');
 		let toSend = image.slice(22);
 		canvas[0].width = canvas[0].width;
-		axios.post('http://localhost:5000/api/numberpredict', { image: toSend })
+		axios.post('http://13.59.104.244/api/numberpredict', { image: toSend })
 		.then(response => this.setState({ currentPrediction: response.data.prediction }))
 		.catch(err => console.log(err));
 	}
