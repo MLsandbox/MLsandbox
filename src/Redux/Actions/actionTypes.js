@@ -22,6 +22,7 @@ export function reqAuth (dispatch) {
       const token = response.data.token;
       localStorage.setItem('jwtToken', response.data.token);
       dispatch({type:"VALIDATE_AUTH", user:jwt.decode(token)});
+      dispatch(setPopupState());
     }
   })
   .catch((err) => {

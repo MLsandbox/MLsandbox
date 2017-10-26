@@ -12,6 +12,7 @@ import Mushrooms from './Sandbox/MLmodels/Mushrooms/Mushrooms';
 import Mnist from './Sandbox/MLmodels/Mnist/Mnist';
 import Voicerec from './Sandbox/MLmodels/VoiceRecognition/VoiceRecognition';
 import Chat from './Sandbox/MLmodels/Chatbot/Chatbot';
+import Wiki from './Sandbox/Information/Wiki';
 
 render(
 <Provider store={store}>
@@ -24,6 +25,7 @@ render(
       <Route exact path="/mushrooms" component={Mushrooms} />
       <Route exact path="/MNIST" component={Mnist} />
       <Route exact path="/voicerec" component={Voicerec} />
+      <Route exact path="/Wiki" component={Wiki} />
       <Authroute exact path ="/sandbox" component={Sandbox} />
     </div>
   </BrowserRouter>
