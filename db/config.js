@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 require('dotenv').config();
 // import db credentials
 // instantiate ORM
-const DB = new Sequelize(process.env.NAME, process.env.OWNER, process.env.PASSWORD, {
+const DB = new Sequelize(process.env.NAME, process.env.USERNAME, process.env.PASSWORD, {
   host: process.env.HOST,
   port: process.env.RDS_PORT,
   dialect: 'postgres',

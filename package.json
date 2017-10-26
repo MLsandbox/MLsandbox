@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "nodemon ./server/index.js",
-    "bundle": "webpack -w",
+    "compile": "webpack -w",
     "dev-start": "webpack-dev-server --content-base static/"
   },
   "repository": {
@@ -40,8 +40,11 @@
     "path": "^0.12.7",
     "pg": "^7.3.0",
     "react-bootstrap": "^0.31.3",
+    "react-drawable-canvas": "^1.1.0",
+    "react-google-maps": "^9.0.2",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
+    "react-select": "^1.0.0-rc.10",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "sequelize": "^4.13.10",
@@ -65,6 +68,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "style-loader": "^0.19.0",
+    "url-loader": "^0.6.2",
     "webpack-dev-server": "^2.9.1"
   }
 }
