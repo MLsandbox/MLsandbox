@@ -17,7 +17,7 @@ var Loginform = (props) => {
             id="formControlsPassword"
             type="password"  
             required/></p> 
-            <p className="login_p"><input onClick={props.signIn} type="submit" defaultValue="Sign In"/></p>
+            <p className="login_p"><input onClick={props.signIn} type="button" defaultValue="Sign In"/></p>
         </fieldset>
         </form>
         <p className="login_p">Not a member? 

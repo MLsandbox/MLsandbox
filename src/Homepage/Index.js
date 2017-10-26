@@ -30,7 +30,6 @@ class Homepage extends Component {
       username: username,
       password: password,
     }
-    console.log('logging in as', username, password);
     this.props.dispatch(reqAuth.bind(user));
   }
 
