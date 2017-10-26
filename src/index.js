@@ -9,7 +9,7 @@ import Login from './Loginpage/index';
 import Authroute from './ClientHelpers/AuthRouting/checkAuth';
 import Housing from './Sandbox/MLmodels/Housing/Housing';
 import Mushrooms from './Sandbox/MLmodels/Mushrooms/Mushrooms';
-import Mnist from './Sandbox/MLmodels/Mnist';
+import Mnist from './Sandbox/MLmodels/Mnist/Mnist';
 import Voicerec from './Sandbox/MLmodels/Voicerec';
 import Chat from './Sandbox/MLmodels/Chatbot/Chatbot';
 
