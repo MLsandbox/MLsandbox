@@ -26,13 +26,18 @@ module.exports.signUp = (req, res) => {
         password: req.body.password,
         uuid: uuid(),
       }).then((newUser) => {
-        res.status(201).send('new user created')
+        const token = jwt.sign({
+          id: newUser.dataValues.id,
+          username: newUser.dataValues.username,
+        }, process.env.JWTSECRET)
+        res.status(201).send({ token })
       }).catch((err) => {
         res.status(404).send(err);
       });
     }
     else {
-      res.redirect('exists');
+      console.log('user exists');
+      res.status(201).send('exists');
     }
   }).catch((err) => {
     res.status(404).send(err);
