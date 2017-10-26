@@ -32,7 +32,7 @@ module.exports.signUp = (req, res) => {
       });
     }
     else {
-      res.redirect('/');
+      res.redirect('exists');
     }
   }).catch((err) => {
     res.status(404).send(err);
