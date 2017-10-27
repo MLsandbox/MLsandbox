@@ -16,11 +16,16 @@ class Mushrooms extends Component {
       currentPrediction: 'none',
     }
   }
+  
+  camelCase = (str) => {
+    return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(letter, index) {
+      return index == 0 ? letter.toLowerCase() : letter.toUpperCase();
+    }).replace(/\s+/g, '');
+  }
 
-  handleSelect = (name, label, val) => {
+  handleSelect = (name, val) => {
     this.setState({
-      [name]: val.value,
-      [label]: val.label,
+      [this.camelCase(name)]: val.value,
     })
   }
 
@@ -68,8 +73,8 @@ class Mushrooms extends Component {
                 <Mushroom
                   option={option}
                   name={name}
-                  key={name+1}
-                  id={name+1}
+                  key={name}
+                  id={name}
                   handleSelect={this.handleSelect.bind(this)}
                 />
               );

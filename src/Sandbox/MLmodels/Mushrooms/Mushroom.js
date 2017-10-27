@@ -6,19 +6,22 @@ class Mushroom extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      label: '',
     }
-    this.handleSuggest = this.handleSuggest.bind(this);
   }
 
-  handleSuggest = (value) =>{
-    this.props.handleSelect.call(null, value)
+  handleSuggest = (name, value) =>{
+    this.setState({
+      label: value.label,
+    }, () => {
+      this.props.handleSelect.call(null, name, value)
+    })
   }
-  id = id.split(' ').join('');
-
   
   render() {
 
     let {option, name, handleSelect, id} = this.props;
+    id = id.split(' ').join('');
     
     return (
       <div className="card">
@@ -35,9 +38,9 @@ class Mushroom extends Component {
           <Select
             name={name}
             options={option}
-            onChange={handleSelect}
+            onChange={this.handleSuggest.bind(this, name)}
             placeholder={`Please Select ${name}`}
-            value='test'
+            value={this.state.label}
             removeSelected={false}
           />
           </div>
