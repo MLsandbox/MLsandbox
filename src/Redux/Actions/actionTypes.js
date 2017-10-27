@@ -9,7 +9,6 @@ export function setPopupState (currentState) {
 }
 
 export function reqAuth (dispatch) {
-  console.log('async auth req', this.username, this.password);
   dispatch({type: "REQ_AUTH"});
   axios.post("/api/logIn", {
     username: this.username,
@@ -22,6 +21,28 @@ export function reqAuth (dispatch) {
       const token = response.data.token;
       localStorage.setItem('jwtToken', response.data.token);
       dispatch({type:"VALIDATE_AUTH", user:jwt.decode(token)});
+      dispatch(setPopupState());
+    }
+  })
+  .catch((err) => {
+    dispatch({type: "REQ_AUTH_FAIL"});
+  })
+}
+
+export function reqSignup (dispatch) {
+  dispatch({type: "REQ_AUTH"});
+  axios.post("/api/signUp", {
+    username: this.username,
+    password: this.password,
+  })
+  .then((response) => {
+    if(response.data === 'exists') {
+      dispatch({type: 'INVALID_AUTH'});
+    } else {
+      const token = response.data.token;
+      localStorage.setItem('jwtToken', response.data.token);
+      dispatch({type:"VALIDATE_AUTH", user:jwt.decode(token)});
+      dispatch(setPopupState());
     }
   })
   .catch((err) => {

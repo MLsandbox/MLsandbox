@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'; 
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Options from './Options';
 
@@ -11,7 +12,7 @@ class Sandbox extends Component {
     return(
       <div>
         <h1>Sandbox Component</h1>
-        <h1>LEARN/INFORMATION</h1>
+        <h1><Link to ="/Wiki">LEARN/INFORMATION</Link></h1>
           <Options />
       </div>
     )

@@ -1,7 +1,7 @@
 const initialState = {
   loginPopup: false,
   authentication: { 
-    authorization: true,
+    authorization: false,
     processing: false,
     error: false,
     user: {},

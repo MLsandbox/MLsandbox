@@ -1,6 +1,5 @@
 const { resolve } = require('path');
 const srcDir = resolve(__dirname, 'src');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -33,9 +32,31 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: `${srcDir}/index.html`
-    }),new webpack.ProvidePlugin({
+    }),
+    new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
-    })
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+        screw_ie8: true,
+        conditionals: true,
+        unused: true,
+        comparisons: true,
+        sequences: true,
+        dead_code: true,
+        evaluate: true,
+        if_return: true,
+        join_vars: true
+      },
+      output: {
+        comments: false
+      }
+    }), 
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    new webpack.optimize.ModuleConcatenationPlugin(),
   ]
 }

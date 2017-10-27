@@ -8,7 +8,6 @@ var conditionalRender = (authState, props) => {
   } else {
     return <Loginform 
       signIn={props.signIn} 
-      signUp={props.signUp}
       closePopup={props.closePopup}/>
   }
 }
