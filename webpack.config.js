@@ -1,6 +1,7 @@
 const { resolve } = require('path');
 const srcDir = resolve(__dirname, 'src');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -33,9 +34,11 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: `${srcDir}/index.html`
-    }),new webpack.ProvidePlugin({
+    }),
+    new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
-    })
+    }),
+    new UglifyJSPlugin(), 
   ]
 }

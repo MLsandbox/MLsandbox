@@ -12,7 +12,6 @@ class Homepage extends Component {
     this.openPopup = this.openPopup.bind(this);
     this.closePopup = this.closePopup.bind(this);
     this.signIn = this.signIn.bind(this);
-    this.signUp = this.signUp.bind(this);
   }
 
   closePopup () {
@@ -33,10 +32,6 @@ class Homepage extends Component {
     this.props.dispatch(reqAuth.bind(user));
   }
 
-  signUp() {
-    console.log('signing up')
-  }
-
   render() {
     var popupState = this.props.popupState;
     return (
@@ -46,7 +41,6 @@ class Homepage extends Component {
           <Login 
             processing = {this.props.processing}
             signIn = {this.signIn} 
-            signUp = {this.signUp}
             closePopup={this.closePopup} 
             popupState={popupState}/>
             <Logout dispatch={this.props.dispatch}/>

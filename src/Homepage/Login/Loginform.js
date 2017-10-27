@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Styles from './Login.css';
 import { FormGroup, ControlLabel, FormControl, Modal, Button } from 'react-bootstrap';
 
@@ -21,9 +22,9 @@ var Loginform = (props) => {
         </fieldset>
         </form>
         <p className="login_p">Not a member? 
-          <a onClick={props.signUp} 
+          <Link to ="/login"
             className="login_a" href="#">
-          Sign up now</a>
+          Sign up now</Link>
           <span className="fontawesome-arrow-right"></span></p>
       </div>
     </div>
