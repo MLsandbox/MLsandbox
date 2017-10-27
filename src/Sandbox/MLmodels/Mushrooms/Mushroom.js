@@ -10,7 +10,7 @@ class Mushroom extends Component {
     }
   }
 
-  handleSuggest = (name, value) =>{
+  handleChoice = (name, value) =>{
     this.setState({
       label: value.label,
     }, () => {
@@ -35,14 +35,13 @@ class Mushroom extends Component {
       
         <div id={`collapse${id}`} className="collapse" role="tabpanel" aria-labelledby={`heading${id}`}>
           <div className="card-block">
-          <Select
-            name={name}
-            options={option}
-            onChange={this.handleSuggest.bind(this, name)}
-            placeholder={`Please Select ${name}`}
-            value={this.state.label}
-            removeSelected={false}
-          />
+            <Select
+              name={name}
+              options={option}
+              onChange={this.handleChoice.bind(this, name)}
+              placeholder={`Please Select ${name}`}
+              value={this.state.label}
+            />
           </div>
         </div>
       </div>

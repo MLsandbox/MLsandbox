@@ -6,9 +6,6 @@ import Mushroom from './Mushroom.js';
 import key from './key.json';
 import _ from 'underscore'
 
-import Select from 'react-select';
-import 'react-select/dist/react-select.css';
-
 class Mushrooms extends Component {
   constructor(props) {
     super(props);
