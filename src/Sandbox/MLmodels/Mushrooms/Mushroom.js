@@ -1,36 +1,53 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 
-const Mushroom = ({option, name, handleSelect}) => {
+class Mushroom extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    }
+    this.handleSuggest = this.handleSuggest.bind(this);
+  }
 
-  console.log(option)
+  handleSuggest(value) {
+    this.setState({ text: value.label }, () => {
+      this.props.handleSelect.call(null, this.state)
+    });
+  }
+  id = id.split(' ').join('');
 
-  return (
-    <div className="card">
-      <div className="card-header" role="tab" id="headingOne">
-        <h5 className="mb-0">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            {name}
-          </a>
-        </h5>
-      </div>
+  
+
+  render() {
+
+    let {option, name, handleSelect, id} = this.props;
     
-      <div id="collapseOne" className="collapse" role="tabpanel" aria-labelledby="headingOne">
-        <div className="card-block">
-        <Select
-          name={name}
-          options={option}
-          // onChange={handleSelect.bind(this, "placeholder", "placeholderLabel")}
-          placeholder="select cap shape..."
-          // value={this.state.capShape}
-          // removeSelected={false}
-        />
+    return (
+      <div className="card">
+        <div className="card-header" role="tab" id={`heading${id}`}>
+          <h5 className="mb-0">
+            <a data-toggle="collapse" data-parent="#accordion" href={`#collapse${id}`} aria-expanded="true" aria-controls={`collapse${id}`}>
+              {name}
+            </a>
+          </h5>
+        </div>
+      
+        <div id={`collapse${id}`} className="collapse" role="tabpanel" aria-labelledby={`heading${id}`}>
+          <div className="card-block">
+          <Select
+            name={name}
+            options={option}
+            onChange={handleSelect}
+            placeholder={`Please Select ${name}`}
+            value='test'
+            removeSelected={false}
+          />
+          </div>
         </div>
       </div>
-    </div>
-  );
-
+    );
+  }
 }
 
 export default Mushroom;
