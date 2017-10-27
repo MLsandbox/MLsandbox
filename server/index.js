@@ -34,6 +34,12 @@ const restrict = function(req, res, next) {
     res.redirect('/');
   }
 };
+
+app.get('*.js', function (req, res, next) {
+  req.url = req.url + '.gz';
+  res.set('Content-Encoding', 'gzip');
+  next();
+});
 //routes
 app.use(express.static(path.resolve(__dirname, '../static')));
 
