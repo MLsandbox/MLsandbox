@@ -1,0 +1,58 @@
+body {
+  font-weight: 300;
+  font-size: 100%;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  line-height: 140%;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
+input[name='panel'] {
+  display: none;
+}
+
+label {
+  display: block;
+  padding: 0.8em;
+  width: 100%;
+  height: 2.5em;
+  border-bottom: 0.1em solid hsl(200, 96%, 80%);
+  background: hsl(200, 96%, 50%);
+  color: hsl(0, 100%, 100%);
+  text-transform: uppercase;
+  font-size: 1.8em;
+  line-height: 1em;
+  cursor: pointer;
+}
+
+label:hover {
+  background: hsl(200, 96%, 40%);
+}
+
+.collapsible {
+  display: block;
+  padding: 0 1em;
+  width: 100%;
+  background: hsl(0, 1%, 90%);
+}
+
+input[name='panel'] + .collapsible {
+  overflow: hidden;
+  height: 0;
+
+  -webkit-transition: height 1s ease;
+  -moz-transition: height 1s ease;
+  -ms-transition: height 1s ease;
+  -o-transition: height 1s ease;
+  transition: height 1s ease;
+}
+
+input[name='panel']:checked + .collapsible {
+  overflow: auto;
+  height: 200px; /* needs a numeric value here to keep transition */
+}
