@@ -1,6 +1,5 @@
 /* CSS Document */
-@import url(http://weloveiconfonts.com/api/?family=fontawesome);
-@import url(http://meyerweb.com/eric/tools/css/reset/reset.css);
+@import url(https://meyerweb.com/eric/tools/css/reset/reset.css);
 .loader {
     border: 16px solid #f3f3f3; /* Light grey */
     border-top: 16px solid #3498db; /* Blue */
