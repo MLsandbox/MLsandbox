@@ -1,22 +1,42 @@
 import React, { Component } from 'react';
-import Select from 'react-select';
-import 'react-select/dist/react-select.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import options from './Options.js';
+import Mushroom from './Mushroom.js';
+import key from './key.json';
+import _ from 'underscore'
 
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
 
 class Mushrooms extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currentPrediction: 'none',
+      options: {},
     }
+    
+    for (var classifier in key) {
+      let selections = [];
+      for (var label in key[classifier]) {
+        selections.push({
+          value: key[classifier][label],
+          label,
+        })
+      }
+      this.state.options[classifier] = selections
+    }
+
   }
 
-  handleSelect = (name, val) => {
+  handleSelect = (name, label, val) => {
+    console.log('====================================')
+    console.log(label)
+    console.log('====================================')
     this.setState({
-      [name]: [val.value, val.label],
+      [name]: val.value,
+      [label]: val.label,
     })
   }
 
@@ -55,31 +75,30 @@ class Mushrooms extends Component {
     })
   }
 
-  render() {
+  render () {
+
     return (
+
       <div>
+
+        <div className='mushrooms'>
+          {
+            _.map(options, (option, name) => {
+              return (
+                <Mushroom
+                  option={option}
+                  name={name}
+                  key={name+1}
+                  handleSelect={this.handleSelect.bind(this)}
+                  />
+              );
+            })
+          }
+        </div>
+
+
+
         <div id="accordion" role="tablist" aria-multiselectable="true">
-          <div className="card">
-            <div className="card-header" role="tab" id="headingOne">
-              <h5 className="mb-0">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Cap Shape - {this.state.capShape}
-                </a>
-              </h5>
-            </div>
-        
-            <div id="collapseOne" className="collapse" role="tabpanel" aria-labelledby="headingOne">
-              <div className="card-block">
-              <Select
-                name="capShape"
-                options={options["cap-shape"]}
-                onChange={this.handleSelect.bind(this, "capShape")}
-                placeholder="select cap shape..."
-                value={this.state.capShape}
-              />
-              </div>
-            </div>
-          </div>
           <div className="card">
             <div className="card-header" role="tab" id="headingTwo">
               <h5 className="mb-0">
