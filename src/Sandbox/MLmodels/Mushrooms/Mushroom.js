@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
+import './mushroomStyles.css'
 
 class Mushroom extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class Mushroom extends Component {
     
     return (
       <div className="card">
-        <div className="card-header" role="tab" id={`heading${id}`}>
+        <div className="card-header" role="tab" id={`heading${id}`} >
           <h5 className="mb-0">
             <a data-toggle="collapse" data-parent="#accordion" href={`#collapse${id}`} aria-expanded="false" aria-controls={`collapse${id}`}>
               {this.state.label ? name + ' - ' + this.state.label : name}
@@ -36,6 +37,7 @@ class Mushroom extends Component {
         <div id={`collapse${id}`} className="collapse" role="tabpanel" aria-labelledby={`heading${id}`}>
           <div className="card-block">
             <Select
+              className="card-block"
               name={name}
               options={option}
               onChange={this.handleChoice.bind(this, name)}
