@@ -17,7 +17,7 @@ class Chatbot extends Component {
   }
 
   getResponse(message) {
-    axios.post('http://13.59.104.244/api/tairygreene', {message}).then((result) => {
+    axios.post('https://ml-sandbox.ml/api/tairygreene', {message}).then((result) => {
       let response = {
         message: result.data.response,
         from: "Chat R. Bot",
