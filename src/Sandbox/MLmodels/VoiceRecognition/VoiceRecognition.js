@@ -45,7 +45,7 @@ class VoiceRecognitionWrapper extends Component {
           blob = blob;
           let formData = new FormData();
           formData.append('file', blob);
-          Axios.post('http://13.59.104.244/api/speech', formData, {
+          Axios.post('https://ml-sandbox.ml/api/speech', formData, {
             headers: { 'content-type': 'multipart/form-data' }
           }).then(response => {
             this.setState({prediction: response.data.prediction})
