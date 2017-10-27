@@ -7,8 +7,12 @@ class Mushroom extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      label: undefined,
+      diplayed: false,
     }
+  }
+
+  toggleDisplay = () => {
+    this.setState({diplayed: !this.state.diplayed});
   }
 
   handleChoice = (name, value) =>{
@@ -16,6 +20,7 @@ class Mushroom extends Component {
       label: value.label,
     }, () => {
       this.props.handleSelect.call(null, name, value)
+      this.toggleDisplay();
     })
   }
   
