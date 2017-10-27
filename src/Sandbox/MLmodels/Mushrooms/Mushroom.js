@@ -10,15 +10,12 @@ class Mushroom extends Component {
     this.handleSuggest = this.handleSuggest.bind(this);
   }
 
-  handleSuggest(value) {
-    this.setState({ text: value.label }, () => {
-      this.props.handleSelect.call(null, this.state)
-    });
+  handleSuggest = (value) =>{
+    this.props.handleSelect.call(null, value)
   }
   id = id.split(' ').join('');
 
   
-
   render() {
 
     let {option, name, handleSelect, id} = this.props;

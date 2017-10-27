@@ -14,32 +14,15 @@ class Mushrooms extends Component {
     super(props);
     this.state = {
       currentPrediction: 'none',
-      options: {},
     }
-    
-    for (var classifier in key) {
-      let selections = [];
-      for (var label in key[classifier]) {
-        selections.push({
-          value: key[classifier][label],
-          label,
-        })
-      }
-      this.state.options[classifier] = selections
-    }
-
   }
 
   handleSelect = (name, label, val) => {
-    console.log('====================================')
-    console.log(label)
-    console.log('====================================')
     this.setState({
       [name]: val.value,
       [label]: val.label,
     })
   }
-
 
   handleSubmit = () => {
     
@@ -89,8 +72,9 @@ class Mushrooms extends Component {
                   option={option}
                   name={name}
                   key={name+1}
+                  id={name+1}
                   handleSelect={this.handleSelect.bind(this)}
-                  />
+                />
               );
             })
           }
