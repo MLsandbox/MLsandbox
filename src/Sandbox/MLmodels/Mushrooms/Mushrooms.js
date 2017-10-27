@@ -62,8 +62,9 @@ class Mushrooms extends Component {
 
   render () {
     return (
+    
       <div>
-        <div className='mushrooms'>
+        <div id="accordion" role="tablist" aria-multiselectable="true">
           {
             _.map(options, (option, name) => {
               return (
