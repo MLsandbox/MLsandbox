@@ -20,7 +20,7 @@ class Mushroom extends Component {
   
   render() {
 
-    let {option, name, handleSelect, id} = this.props;
+    let {option, name, id} = this.props;
     id = id.split(' ').join('');
     
     return (
