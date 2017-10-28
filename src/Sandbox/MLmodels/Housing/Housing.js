@@ -72,15 +72,18 @@ class Housing extends Component {
     return (
       <div>
         Number of bedrooms
-        <input
-          className="slider"
-          defaultValue={2}
-          name="bedrooms"
-          type="range"
-          min={0}
-          max={5}
-          onChange={this.handleInputChange}
-        />
+        <div>0
+          <input
+            className="slider"
+            defaultValue={2}
+            name="bedrooms"
+            type="range"
+            min={0}
+            max={5}
+            onChange={this.handleInputChange}
+            list="of5"
+          />5
+        </div>
         Number of bathrooms
         <input
           name="bathrooms"

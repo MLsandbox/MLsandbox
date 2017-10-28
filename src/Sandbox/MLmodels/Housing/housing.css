@@ -2,4 +2,9 @@
   background-color: blue;
   max-width: 200px;
   border-radius: 10px;
+  display: inline;
+}
+
+input[type=range] {
+  display: inline-block;
 }
