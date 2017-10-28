@@ -73,9 +73,9 @@ class Housing extends Component {
         <div className="sidebar">
         {Options.map((option, index) => {
           return (
-            <div key={index}>
-              {option.description}
-              <div>{option.min}
+            <div className="option" key={index}>
+              <div>{option.description}</div>
+              <div className="sliderholder">{option.min}
                 <input
                   className="slider"
                   defaultValue={option.min}
@@ -85,8 +85,8 @@ class Housing extends Component {
                   max={option.max}
                   onChange={this.handleInputChange}
                 />{option.max}
-                <div>Current Selection: {this.state[option.name] || option.min}</div>
               </div>
+              <div>Current Selection: {this.state[option.name] || option.min}</div>
             </div>
           )
         })}
