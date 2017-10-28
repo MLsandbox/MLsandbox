@@ -8,3 +8,15 @@
 input[type=range] {
   display: inline-block;
 }
+
+.sidebar {
+  display: inline-block;
+  float: left;
+  width:20%;
+}
+
+.mapholder {
+  display: inline-block;
+  float: left;
+  width:70%;
+}

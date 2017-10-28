@@ -4,6 +4,7 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
 import mapKey from '../../../ClientHelpers/keys/mapsapi.js';
 import MapComponent from './MapComponent.js';
 import { Link } from 'react-router-dom';
+import Options from './Options.js';
 import './housing.css';
 
 class Housing extends Component {
@@ -22,7 +23,6 @@ class Housing extends Component {
   handleInputChange = (event) => {
     const { value } = event.target;
     const name = event.target.name;
-    console.log(name, value);
     this.setState({
       [name]: value
     });
@@ -49,8 +49,8 @@ class Housing extends Component {
           this.state.livingSpace,
           this.state.lotSize,
           this.state.floors,
-          this.state.waterfront,
-          this.state.view,
+          0, //waterfront boolean
+          0, //number of views
           this.state.condition,
           this.state.grade,
           this.state.livingSpace - this.state.basement,
@@ -70,119 +70,41 @@ class Housing extends Component {
   render() {
     return (
       <div>
-        Number of bedrooms:
-        <div>0
-          <input
-            className="slider"
-            defaultValue={0}
-            name="bedrooms"
-            type="range"
-            min={0}
-            max={5}
-            onChange={this.handleInputChange}
-          />5
-          <div>Current Selection: {this.state.bedrooms || 0}</div>
-        </div>
-        Number of bathrooms:
-        <div>1
-          <input
-            className="slider"
-            defaultValue={1}
-            name="bathrooms"
-            type="range"
-            min={1}
-            max={5}
-            onChange={this.handleInputChange}
-          />5
-          <div>Current Selection: {this.state.bathrooms || 1}</div>
-        </div>
-        Square Feet of Living Space:
-        <div>0
-          <input
-            className="slider"
-            defaultValue={0}
-            name="livingSpace"
-            type="range"
-            min={0}
-            max={10000}
-            onChange={this.handleInputChange}
-          />10,000
-          <div>Current Selection: {this.state.livingSpace || 0} sq. ft.</div>
-        </div>
-        Lot Size: 
-        <div>0
-          <input
-            className="slider"
-            defaultValue={0}
-            name="lotSize"
-            type="range"
-            min={0}
-            max={10000}
-            onChange={this.handleInputChange}
-          />10,000
-          <div>Current Selection: {this.state.lotSize || 0} sq. ft.</div>
-        </div>
-        Floors
-        <input
-          name="floors"
-          type="number"
-          onChange={this.handleInputChange}
-        />
-        Waterfront: this one also to possibly remove
-        <input
-          name="waterfront"
-          type="number"
-          onChange={this.handleInputChange}
-        />
-        View: this is the one to possibly remove.
-        <input
-          name="view"
-          type="number"
-          onChange={this.handleInputChange}
-        />
-        Basement Size
-        <input
-          name="basement"
-          type="number"
-          onChange={this.handleInputChange}
-        />
-        Year Built
-        <input
-          name="yearBuilt"
-          type="number"
-          onChange={this.handleInputChange}
-        />
-        Year Renovated
-        <input
-          name="yearRenovated"
-          type="number"
-          onChange={this.handleInputChange}
-        />
-        Condition(between one and 5)
-        <input
-          name="condition"
-          type="number"
-          onChange={this.handleInputChange}
-        />
-        Grade(quality of housing between 1 and 10
-        <input
-          name="grade"
-          type="number"
-          onChange={this.handleInputChange}
-        />
+        <div className="sidebar">
+        {Options.map((option, index) => {
+          return (
+            <div key={index}>
+              {option.description}
+              <div>{option.min}
+                <input
+                  className="slider"
+                  defaultValue={option.min}
+                  name={option.name}
+                  type="range"
+                  min={option.min}
+                  max={option.max}
+                  onChange={this.handleInputChange}
+                />{option.max}
+                <div>Current Selection: {this.state[option.name] || option.min}</div>
+              </div>
+            </div>
+          )
+        })}
         <div onClick={this.handleSubmit} className="btn">Get Prediction</div>
         <div>Current Prediction: {this.state.currentPrediction}
-          <MapComponent
-             lat={this.state.lat}
-             lng={this.state.lng}
-             handleMapClick={this.handleMapClick}
-             googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${mapKey}&v=3.exp&libraries=geometry,drawing,places`}
-             loadingElement={<div style={{ height: `100%` }} />}
-             containerElement={<div style={{ height: `840px` }} />}
-             mapElement={<div style={{ height: `100%`, width: `80%` }} />}
-           />
-        </div>
         <h1><Link to ="/sandbox">BACK</Link></h1>
+        </div>
+      </div>
+        <MapComponent
+          className="mapholder"
+          lat={this.state.lat}
+          lng={this.state.lng}
+          handleMapClick={this.handleMapClick}
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${mapKey}&v=3.exp&libraries=geometry,drawing,places`}
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `840px` }} />}
+          mapElement={<div style={{ height: `100%`, width: `30:%` }} />}
+        />
       </div>
     )
   }
