@@ -12,7 +12,6 @@ class Mushroom extends Component {
   }
 
   toggleDisplay = () => {
-    console.log('clicked')
     var css = (this.state.displayed === "hidden") ? "show" : "hidden";
     this.setState({"displayed":css});
   }
