@@ -7,7 +7,7 @@
 
 .card {
   font-weight: 300;
-  font-size: 100%;
+  font-size: 50vw;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   line-height: 140%;
   padding: 4px;
@@ -17,13 +17,13 @@
   display: block;
   padding: 0.8em;
   padding-left: 3em;
-  width: 40%;
+  width: 90vw;
   height: 2.5em;
   border-bottom: 0.1em solid hsl(200, 96%, 80%);
   background: hsl(200, 96%, 50%);
   color: hsl(0, 100%, 100%);
   text-transform: uppercase;
-  font-size: 1.8em;
+  font-size: 08vw;
   line-height: 1em;
   cursor: pointer;
 }
@@ -31,7 +31,7 @@
 .card-block {
   display: block;
   padding-left: 3em;
-  width: 40%;
+  width: 40vw;
   background: hsl(0, 1%, 90%);
 }
 
