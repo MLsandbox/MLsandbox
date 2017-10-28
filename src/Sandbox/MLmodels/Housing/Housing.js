@@ -4,6 +4,7 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
 import mapKey from '../../../ClientHelpers/keys/mapsapi.js';
 import MapComponent from './MapComponent.js';
 import { Link } from 'react-router-dom';
+import './housing.css';
 
 class Housing extends Component {
   constructor(props) {
@@ -11,22 +12,24 @@ class Housing extends Component {
     this.state = {
       lat: 46.615567,
       lng: -122.177644,
-      currentPrediction: 'none'
+      currentPrediction: 'none',
+      bedrooms: 0
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleMapClick = this.handleMapClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   
-  handleInputChange (event) {
+  handleInputChange = (event) => {
     const { value } = event.target;
     const name = event.target.name;
+    console.log(name, value);
     this.setState({
       [name]: value
     });
   }
 
-  handleMapClick (e) {
+  handleMapClick =  (e) => {
     this.setState({ lng: e.latLng.lng() }, () => {
       this.setState({ lat: e.latLng.lat() });
     });
@@ -69,9 +72,13 @@ class Housing extends Component {
     return (
       <div>
         Number of bedrooms
-        <input 
+        <input
+          className="slider"
+          defaultValue={2}
           name="bedrooms"
-          type="number"
+          type="range"
+          min={0}
+          max={5}
           onChange={this.handleInputChange}
         />
         Number of bathrooms
