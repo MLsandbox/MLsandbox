@@ -13,7 +13,6 @@ class Housing extends Component {
       lat: 46.615567,
       lng: -122.177644,
       currentPrediction: 'none',
-      bedrooms: 0
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleMapClick = this.handleMapClick.bind(this);
@@ -71,50 +70,71 @@ class Housing extends Component {
   render() {
     return (
       <div>
-        Number of bedrooms
+        Number of bedrooms:
         <div>0
           <input
             className="slider"
-            defaultValue={2}
+            defaultValue={0}
             name="bedrooms"
             type="range"
             min={0}
             max={5}
             onChange={this.handleInputChange}
-            list="of5"
           />5
+          <div>Current Selection: {this.state.bedrooms || 0}</div>
         </div>
-        Number of bathrooms
-        <input
-          name="bathrooms"
-          type="number"
-          onChange={this.handleInputChange}
-        />
-        Square Feet of Living Space
-        <input
-          name="livingSpace"
-          type="number"
-          onChange={this.handleInputChange}
-        />
-        Lot Size 
-        <input
-          name="lotSize"
-          type="number"
-          onChange={this.handleInputChange}
-        />
+        Number of bathrooms:
+        <div>1
+          <input
+            className="slider"
+            defaultValue={1}
+            name="bathrooms"
+            type="range"
+            min={1}
+            max={5}
+            onChange={this.handleInputChange}
+          />5
+          <div>Current Selection: {this.state.bathrooms || 1}</div>
+        </div>
+        Square Feet of Living Space:
+        <div>0
+          <input
+            className="slider"
+            defaultValue={0}
+            name="livingSpace"
+            type="range"
+            min={0}
+            max={10000}
+            onChange={this.handleInputChange}
+          />10,000
+          <div>Current Selection: {this.state.livingSpace || 0} sq. ft.</div>
+        </div>
+        Lot Size: 
+        <div>0
+          <input
+            className="slider"
+            defaultValue={0}
+            name="lotSize"
+            type="range"
+            min={0}
+            max={10000}
+            onChange={this.handleInputChange}
+          />10,000
+          <div>Current Selection: {this.state.lotSize || 0} sq. ft.</div>
+        </div>
         Floors
         <input
           name="floors"
           type="number"
           onChange={this.handleInputChange}
         />
-        Waterfront
+        Waterfront: this one also to possibly remove
         <input
           name="waterfront"
           type="number"
           onChange={this.handleInputChange}
         />
-        View
+        View: this is the one to possibly remove.
         <input
           name="view"
           type="number"
