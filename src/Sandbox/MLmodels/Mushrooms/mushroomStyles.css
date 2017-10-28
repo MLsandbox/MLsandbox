@@ -5,19 +5,70 @@
   -ms-box-sizing: border-box;
 }
 
+.drawer {
+  height: 10vw;
+  width: 100vw;
+  padding-bottom: 10vh;
+}
+
+.fa-bars {
+  color: #73879B;
+  float: right;
+  position: relative;
+  font-size: 10vw;
+  padding: 5vw;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+
+
+
+
+
+
+
+
+
+
 .card {
   font-weight: 300;
-  font-size: 50vw;
+  font-size: 35vw;
   font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  line-height: 140%;
-  padding: 3vw;
+  line-height: 10vw;
+  text-align: center;
+  padding: 5vw 5vw 0 5vw;
 }
 
 .card-header {
   display: block;
-  padding: 0.8em;
-  padding-left: 3em;
-  width: 90vw;
+  padding: 2vw;
+  padding-left: 3vw;
+  width: auto 90vw;
   height: 2.5em;
   background: radial-gradient(#FFBA44 ,#F9AA20);
   color: #F6F7EB;
@@ -36,12 +87,10 @@
 
 .hidden{
   visibility: hidden;
-  transition: visibility 1s, opacity 0.5s linear;
 }
 
 .show {
   visibility: visible;
-  transition: visibility 1s, opacity 0.5s linear;
 }
 
 

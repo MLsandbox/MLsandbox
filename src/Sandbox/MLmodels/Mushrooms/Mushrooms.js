@@ -62,9 +62,16 @@ class Mushrooms extends Component {
 
   render () {
     return (
-    
       <div>
-        <div>
+
+        <div class="dropdown"> 
+          <i className="fa fa-bars fa-5x dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <Link className="dropdown-item" to ="/sandbox">BACK</Link>
+          </div>
+        </div>
+
+        <div className= "mushrooms">
           {
             _.map(options, (option, name) => {
               return (
@@ -83,7 +90,6 @@ class Mushrooms extends Component {
           <div onClick={this.handleSubmit} className="btn">Get Prediction</div>
           <div>Current Prediction: {this.state.currentPrediction}
           </div>
-          <h1><Link to ="/sandbox">BACK</Link></h1>
         </div>
       </div>
     )
