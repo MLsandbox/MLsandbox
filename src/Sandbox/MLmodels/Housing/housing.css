@@ -1,21 +1,25 @@
 .option {
   margin: 0.2vw;
 }
-.firstnum {
-}
 
 .sliderholder {
-  width: 22vw;
-  display: table;
-  margin: 0, auto;
+}
+
+.numholder {
+  display: block;
+}
+
+.firstnum {
+  float:left;
+}
+
+.secondnum {
+  display: inline;
+  float: right;
 }
 
 input[type=range] {
-  width: 12vw;
-  display: inline;
-}
-.secondnum {
-  display: inline;
+  clear: both;
 }
 
 .currentselection {
