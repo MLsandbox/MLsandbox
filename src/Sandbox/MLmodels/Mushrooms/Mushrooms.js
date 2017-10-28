@@ -64,7 +64,7 @@ class Mushrooms extends Component {
     return (
     
       <div>
-        <div id="accordion" role="tablist" aria-multiselectable="true">
+        <div>
           {
             _.map(options, (option, name) => {
               return (
