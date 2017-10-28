@@ -74,14 +74,14 @@ class Housing extends Component {
         {Options.map((option, index) => {
           return (
             <div className="option" key={index}>
-              <div>{option.description}</div>
-                <div className="sliderholder">
+              <div className="optiontitle">{option.description}</div>
+                <div>
                   <div className="numholder">
                     <span className="firstnum">{option.min}</span>
                     <span className="secondnum">{option.max}</span>
                   </div>  
                 </div>
-                <div>
+                <div className="sliderholder">
                   <input
                     className="slider"
                     defaultValue={option.min}
@@ -96,10 +96,9 @@ class Housing extends Component {
             </div>
           )
         })}
+        <div className="currentprediction">Current Prediction: {this.state.currentPrediction}</div>
         <div onClick={this.handleSubmit} className="btn">Get Prediction</div>
-        <div>Current Prediction: {this.state.currentPrediction}
-        <h1><Link to ="/sandbox">BACK</Link></h1>
-        </div>
+        <div className="back"><Link to ="/sandbox">Go Back</Link></div>
       </div>
         <MapComponent
           className="mapholder"
@@ -108,8 +107,8 @@ class Housing extends Component {
           handleMapClick={this.handleMapClick}
           googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${mapKey}&v=3.exp&libraries=geometry,drawing,places`}
           loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `840px` }} />}
-          mapElement={<div style={{ height: `100%`, width: `30:%` }} />}
+          containerElement={<div style={{ height: `60vw` }} />}
+          mapElement={<div style={{ height: `60vw`, width: `80vw` }} />}
         />
       </div>
     )

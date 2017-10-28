@@ -9,13 +9,13 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>
       mapTypeControl: false,
       panControl: false,
       streetViewControl: false,
-      gestureHandling: 'none',
+      gestureHandling: 'cooperative',
       zoomControl: false,
       scrollwheel: false,
-      draggable: false
+      draggable: true
     }}
-    defaultZoom={12}
-    defaultCenter={{ lat: 47.595582, lng: -122.249828 }}
+    defaultZoom={14}
+    defaultCenter={{ lat: 47.609343, lng: -122.334851 }}
   >
     <Marker position={{ lat: props.lat, lng: props.lng }} />
   </GoogleMap>

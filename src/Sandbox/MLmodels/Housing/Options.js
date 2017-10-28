@@ -48,13 +48,13 @@ module.exports = [
      max: 2013
    },
    {
-     description: "Condition of Housing",
+     description: "Condition of Housing:",
      name: "condition",
      min: 1,
      max: 5
    },
    {
-     description: "Grade (Quality of Housing)", 
+     description: "Grade (Quality of Housing):", 
      name: "grade",
      min: 1,
      max: 10
