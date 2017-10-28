@@ -4,7 +4,6 @@ import Footer from './Footer/Footer';
 import { setPopupState, reqAuth } from '../Redux/Actions/actionTypes';
 import { connect } from 'react-redux';
 import Logout from '../Logout/index';
-var logoSrc = 'https://cleartheairchicago.com/files/2014/06/logo-placeholder.jpg';
 
 class Homepage extends Component {
   constructor (props) {
