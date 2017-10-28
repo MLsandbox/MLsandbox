@@ -69,7 +69,7 @@ class Housing extends Component {
 
   render() {
     return (
-      <div>
+      <div className="housing">
         <div className="sidebar">
         {Options.map((option, index) => {
           return (
@@ -98,8 +98,9 @@ class Housing extends Component {
         })}
         <div className="currentprediction">Current Prediction: {this.state.currentPrediction}</div>
         <div onClick={this.handleSubmit} className="btn">Get Prediction</div>
-        <div className="back"><Link to ="/sandbox">Go Back</Link></div>
+        <div className="btn"><Link className="back" to ="/sandbox">Go Back</Link></div>
       </div>
+        <div className="mapheader">Put map header here</div>
         <MapComponent
           className="mapholder"
           lat={this.state.lat}
@@ -108,7 +109,7 @@ class Housing extends Component {
           googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${mapKey}&v=3.exp&libraries=geometry,drawing,places`}
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `60vw` }} />}
-          mapElement={<div style={{ height: `60vw`, width: `80vw` }} />}
+          mapElement={<div style={{ height: `50vw`, width: `80vw` }} />}
         />
       </div>
     )

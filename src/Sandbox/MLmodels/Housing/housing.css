@@ -1,7 +1,13 @@
+.housing{
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
 .option {
+  background: radial-gradient(#FFBA44 ,#F9AA20);
   padding: 0.5vw 0 0.5vw 0;
-  border: 1px solid black;
   margin: 0.5vw;
+  color: #F6F7EB;
 }
 
 .optiontitle {
@@ -48,7 +54,7 @@ input[type=range] {
   display: inline-block;
   float: left;
   width: 20vw;
-  border-right: 1px solid black;
+  border-right: 0.1vw  solid black;
 }
 
 .mapholder {
@@ -58,16 +64,18 @@ input[type=range] {
   width: 70vw;
 }
 
-.btn, .back  {
+.btn { 
+  background: radial-gradient(#FFBA44 ,#F9AA20);
   height: 3vw;
+  margin: 0.3vw 0.3vw 0.3vw 5vw;
   padding: 0.5vw;
   text-align: center;
   width: 10vw;
   font-size: 1.2vw;
   border: 0.1vw solid black;
   border-radius: 0.5vw;
-  color: black;
   text-decoration: none;
+  color: #F6F7EB;
 }
 
 .currentprediction {
@@ -75,3 +83,8 @@ input[type=range] {
   text-align: center;
   margin-bottom: 1vw;
 }
+
+.mapheader {
+  height: 6vw;
+}
+
