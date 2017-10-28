@@ -75,18 +75,20 @@ class Housing extends Component {
           return (
             <div className="option" key={index}>
               <div>{option.description}</div>
-              <div className="sliderholder">{option.min}
-                <input
-                  className="slider"
-                  defaultValue={option.min}
-                  name={option.name}
-                  type="range"
-                  min={option.min}
-                  max={option.max}
-                  onChange={this.handleInputChange}
-                />{option.max}
+              <div className="holderholder">
+                <div className="sliderholder"><span className="firstnum">{option.min}</span>
+                  <input
+                    className="slider"
+                    defaultValue={option.min}
+                    name={option.name}
+                    type="range"
+                    min={option.min}
+                    max={option.max}
+                    onChange={this.handleInputChange}
+                  /><span className="secondnum">{option.max}</span>
+                </div>
               </div>
-              <div>Current Selection: {this.state[option.name] || option.min}</div>
+              <div className="currentselection">Current Selection: {this.state[option.name] || option.min}</div>
             </div>
           )
         })}
