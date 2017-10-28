@@ -36,9 +36,17 @@
 }
 
 .hidden{
-  display: none;
+  visibility: hidden;
+  transition: visibility 1s, opacity 0.5s linear;
 }
 
 .show {
-  display: block;
+  visibility: visible;
+  transition: visibility 1s, opacity 0.5s linear;
 }
+
+
+
+
+
+
