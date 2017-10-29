@@ -1,0 +1,28 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+.routes {
+  height: 100%;
+  width: 100%;
+}
+
+#homepage-root {
+  height: 100%;
+  width: 100%;
+}
+
+.intro {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(73, 212, 131);
+}
