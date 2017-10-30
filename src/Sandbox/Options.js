@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './index.css';
 
 var Options = () => {
   return (
@@ -19,6 +20,7 @@ var Options = () => {
             Go ahead and click on the blocks to watch 'em pop
           </h2>
           <input id='1' type='checkbox' onChange={console.log}>
+          </input>
           <label>
             <div>
               <div className='circle'></div>
@@ -26,7 +28,6 @@ var Options = () => {
             </div>
             <p>Congrats, you managed to click the box! Thanks for checking out this pen. Take a look at some of my other stuff too.</p>
           </label>
-          </input>
         </div>
     </div>
   );
