@@ -92,7 +92,3 @@
   color: #fff;
   outline: 0;
 }
-
-.fa .fa-envelope-o:focus {
-  display:none;
-}

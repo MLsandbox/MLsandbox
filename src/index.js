@@ -17,7 +17,7 @@ import Wiki from './Sandbox/Information/Wiki';
 render(
 <Provider store={store}>
   <BrowserRouter history={browserHistory}>
-    <div class="routes">
+    <div className="routes">
       <Route exact path="/" component={Homepage} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/housing" component={Housing} />
