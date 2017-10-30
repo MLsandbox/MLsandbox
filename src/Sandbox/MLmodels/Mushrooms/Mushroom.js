@@ -31,24 +31,20 @@ class Mushroom extends Component {
     id = id.split(' ').join('');
     
     return (
-      <div className="card">
-        <div className="card-header" onClick={this.toggleDisplay}>
-          <h5>
+      <div className="mushroom-card">
+        <div onClick={this.toggleDisplay}>
+          <h5 className="mushroom-card-header">
             {this.state.label ? name + ' - ' + this.state.label : name}
           </h5>
-        </div>
-      
-        <div >
-          <div className={`card-block ${this.state.displayed}`}>
-            <Select
-              className="card-block"
-              name={name}
-              options={option}
-              onChange={this.handleChoice.bind(this, name)}
-              placeholder={`Please Select ${name}`}
-              value={this.state.label}
-            />
-          </div>
+        </div>   
+        <div className={`mushroom-card-block ${this.state.displayed}`}>
+          <Select
+            name={name}
+            options={option}
+            onChange={this.handleChoice.bind(this, name)}
+            placeholder={`Please Select ${name}`}
+            value={this.state.label}
+          />
         </div>
       </div>
     );

@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './drawerStyles.css'
  
-const Drawer = (props) => {
+const Drawer = ({modelName}) => {
   return (
     <nav className="navbar navbar-dark drawer">
-      <a className="navbar-brand transparent" href="#">ml-sandbox</a>
+      <a className="navbar-brand name" href="#">{modelName}</a>
       <button
         className="navbar-toggler"
         type="button"

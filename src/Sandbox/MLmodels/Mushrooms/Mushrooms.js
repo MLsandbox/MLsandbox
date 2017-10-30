@@ -67,7 +67,7 @@ class Mushrooms extends Component {
   render () {
     return (
       <div>
-        <NavDrawer />
+        <NavDrawer modelName="ml-sandbox-mushrooms"/>
         <div className= "mushrooms">
           {
             _.map(options, (option, name) => {
