@@ -2,7 +2,7 @@ const { resolve } = require('path');
 const srcDir = resolve(__dirname, 'src');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-var CompressionPlugin = require('compression-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: `${srcDir}/index.js`,

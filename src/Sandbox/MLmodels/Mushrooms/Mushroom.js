@@ -7,12 +7,13 @@ class Mushroom extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      diplayed: false,
+      displayed: "hidden",
     }
   }
 
   toggleDisplay = () => {
-    this.setState({diplayed: !this.state.diplayed});
+    var css = (this.state.displayed === "hidden") ? "show" : "hidden";
+    this.setState({"displayed":css});
   }
 
   handleChoice = (name, value) =>{
@@ -20,7 +21,7 @@ class Mushroom extends Component {
       label: value.label,
     }, () => {
       this.props.handleSelect.call(null, name, value)
-      this.toggleDisplay();
+      this.toggleDisplay()
     })
   }
   
@@ -31,22 +32,19 @@ class Mushroom extends Component {
     
     return (
       <div className="card">
-        <div className="card-header" role="tab" id={`heading${id}`} >
-          <h5 className="mb-0">
-            <a data-toggle="collapse" data-parent="#accordion" href={`#collapse${id}`} aria-expanded="false" aria-controls={`collapse${id}`}>
-              {this.state.label ? name + ' - ' + this.state.label : name}
-            </a>
+        <div className="card-header" onClick={this.toggleDisplay}>
+          <h5>
+            {this.state.label ? name + ' - ' + this.state.label : name}
           </h5>
         </div>
       
-        <div id={`collapse${id}`} className="collapse" role="tabpanel" aria-labelledby={`heading${id}`}>
-          <div className="card-block">
+        <div >
+          <div className={`card-block ${this.state.displayed}`}>
             <Select
               className="card-block"
               name={name}
               options={option}
               onChange={this.handleChoice.bind(this, name)}
-              onClose={() => {console.log('hi')}}
               placeholder={`Please Select ${name}`}
               value={this.state.label}
             />
