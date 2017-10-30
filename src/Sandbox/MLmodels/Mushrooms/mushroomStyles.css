@@ -9,20 +9,26 @@
   height: 10vw;
   width: 100vw;
   padding-bottom: 10vh;
+  font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  
 }
 
 .fa-bars {
   color: #73879B;
-  float: right;
   position: relative;
   font-size: 10vw;
   padding: 5vw;
+  float: right;
+}
+
+.dropdown-item {
+  font-size: 10vw;
+  float: right;
 }
 
 .card {
   font-weight: 300;
   font-size: 35vw;
-  font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;    
   line-height: 10vw;
   text-align: center;
   padding: 5vw 5vw 0 5vw;
@@ -56,8 +62,3 @@
 .show {
   visibility: visible;
 }
-
-
-
-
-
