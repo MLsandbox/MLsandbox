@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Login from './Login/Login';
 import Footer from './Footer/Footer';
 import { setPopupState, reqAuth } from '../Redux/Actions/actionTypes';
 import { connect } from 'react-redux';
 import Logout from '../Logout/index';
-var logoSrc = 'https://cleartheairchicago.com/files/2014/06/logo-placeholder.jpg';
+import Styles from'./index.css';
 
 class Homepage extends Component {
   constructor (props) {
@@ -35,17 +36,23 @@ class Homepage extends Component {
   render() {
     var popupState = this.props.popupState;
     return (
-      <div>
-        <h1>Welcome</h1>
-          <img id="logo" src={logoSrc}/>
-          <Login 
-            processing = {this.props.processing}
-            signIn = {this.signIn} 
-            closePopup={this.closePopup} 
-            popupState={popupState}/>
-            <Logout dispatch={this.props.dispatch}/>
-          <div><a href="#" onClick={this.openPopup} >LOGIN</a></div>
-          <Footer />
+      <div id="homepage-root">
+        <Login 
+        processing = {this.props.processing}
+        signIn = {this.signIn} 
+        closePopup={this.closePopup} 
+        popupState={popupState}/>
+        <section className="intro">
+          <div className="inner">
+            <div className="content">
+                <h1>Welcome</h1>
+                <a id="login-btn" href="#" onClick={this.openPopup} >LOGIN</a>
+            </div>
+          </div>
+        </section>
+        <Footer />
+        <Logout dispatch={this.props.dispatch}/>
+        <h1><Link to ="/sandbox">Sandbox</Link></h1>
       </div>
     );
   }

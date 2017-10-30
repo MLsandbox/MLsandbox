@@ -10,11 +10,11 @@ var Loginform = (props) => {
         <a href="#" id="close-body" onClick={props.closePopup} className="close-button"></a>
         <form id="login-fields">
         <fieldset className="clearfix">
-          <p className="login_p"><span className="fontawesome-user"></span>
+          <p className="login_p"><span className="fa fa-user"></span>
             <input type="text" defaultValue="Username" 
             id="formControlsEmail"
             required/></p>
-          <p className="login_p"><span className="fontawesome-lock"></span><input 
+          <p className="login_p"><span className="fa fa-lock"></span><input 
             id="formControlsPassword"
             type="password"  
             required/></p> 

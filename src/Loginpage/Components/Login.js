@@ -3,8 +3,8 @@ import React from 'react';
 var Login = (props) => {
   return (
     <div className="col-sm-6">
-      <form className="login-page">
-        <fieldset>
+      <form className="auth-page-ele">
+        <fieldset className="auth-form-container">
           <legend className="legend">Login</legend>
           <div className="loginpage-input">
             <input id="login-form-email" placeholder="Username" required />
