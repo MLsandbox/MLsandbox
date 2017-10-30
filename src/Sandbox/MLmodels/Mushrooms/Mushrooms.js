@@ -5,9 +5,8 @@ import options from './Options.js';
 import Mushroom from './Mushroom.js';
 import key from './key.json';
 import _ from 'underscore'
-import NavDrawer from '../../Drawer.js'
+import NavDrawer from '../../Drawer/Drawer.js'
 import 'bootstrap/dist/css/bootstrap.css';
-
 
 class Mushrooms extends Component {
 
