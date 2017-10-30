@@ -44,6 +44,7 @@
     "react-drawable-canvas": "^1.1.0",
     "react-google-maps": "^9.0.2",
     "react-mic": "^9.0.0",
+    "react-rangeslider": "^2.2.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-select": "^1.0.0-rc.10",

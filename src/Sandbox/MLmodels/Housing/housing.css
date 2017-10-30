@@ -1,0 +1,104 @@
+.housing{
+  font-family: 'Lato', sans-serif;
+  font-weight: 300; 
+}
+
+.sidebar {
+  color: #F6F7EB;
+  background: linear-gradient(to bottom right, #E2E2D7, #F6F7EB); 
+  font-size: 1vw;
+  display: inline-block;
+  float: left;
+  width: 20vw;
+}
+
+.title {
+  color: #73879B;
+  font-size: 1.75vw;
+  text-align: center;
+  padding: 0.5vw;
+}
+
+.option {
+  background: radial-gradient(#FFBA44 ,#F9AA20);
+  padding: 0.5vw 0 0.5vw 0;
+  margin: 0.5vw;
+}
+
+.optiontitle {
+  text-align: center;
+  margin-bottom: 0.5vw;
+}
+  
+.sliderholder {
+  margin-left: 2vw;
+  margin-right: 2.5vw;
+  margin-bottom: 0.5vw;
+}
+
+.numholder {
+  display: block;
+}
+
+.firstnum, .secondnum {
+  font-size: 0.9vw;
+  margin-bottom: 0.3vw;
+}
+
+.firstnum {
+  margin-left: 1vw;
+  float:left;
+}
+
+.secondnum {
+  margin-right: 1vw;
+  display: inline;
+  float: right;
+}
+
+input[type=range] {
+  clear: both;
+  background: radial-gradient(#E2E2D7, #73879B);
+  border-radius: 10vw;
+  height: 1vw;
+  margin-bottom: 1vw;
+}
+
+.currentselection {
+  clear: left;
+  display: block;
+  text-align: center;
+}
+
+.mapholder {
+  margin: 1vw;
+  display: inline-block;
+  float: left;
+  width: 70vw;
+}
+
+.btn { 
+  font-size: 0.5vw;
+  background: radial-gradient(#FFBA44 ,#F9AA20);
+  height: 3vw;
+  margin: 0.3vw 0.3vw 0.3vw 5vw;
+  padding: 0.5vw;
+  text-align: center;
+  width: 10vw;
+  font-size: 1.2vw;
+  border-radius: 0.5vw;
+  text-decoration: none;
+  color: #F6F7EB;
+}
+
+.currentprediction {
+  color: #73879B;
+  font-size: 1.2vw;
+  text-align: center;
+  margin-bottom: 1vw;
+}
+
+.mapheader {
+  height: 6vw;
+}
+
