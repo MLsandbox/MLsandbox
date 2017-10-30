@@ -45,8 +45,8 @@ class Homepage extends Component {
         <section className="intro">
           <div className="inner">
             <div className="content">
-                <h1>Welcome My Brothers</h1>
-                <a href="#" onClick={this.openPopup} >LOGIN</a>
+                <h1>Welcome</h1>
+                <a id="login-btn" href="#" onClick={this.openPopup} >LOGIN</a>
             </div>
           </div>
         </section>

@@ -3,11 +3,11 @@ import React from 'react';
 var Signupform = (props) => {
   return (
     <div className="col-sm-6">
-      <form className="login-page">
-        <fieldset>
+      <form className="auth-page-ele">
+        <fieldset className="auth-form-container">
           <legend className="legend">Sign Up</legend>
           <div className="loginpage-input">
-            <input id="signup-form-email" type="email" placeholder="Email" required />
+            <input id="signup-form-email" type="email" placeholder="Username" required />
             <span><i className="fa fa-envelope-o"></i></span>
           </div>
           <div className="loginpage-input">

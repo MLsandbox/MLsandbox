@@ -1,3 +1,7 @@
+.auth-form-container {
+  background-color: gray;
+}
+
 .login-body {
   width: 100%;
   height: 100%;
@@ -6,7 +10,7 @@
   font-weight: 200;
 }
 
-.login-page {
+.auth-page-ele {
   position: relative;
   top: 100%;
   width: 250px;
@@ -63,10 +67,8 @@
   color: #a1a1a1;
 }
 
-.loginpage-input input:focus {
-  padding: 10px 5px 10px 10px;
-  outline: 0;
-  border-color: #FF7052;
+.row {
+  margin-top: 25%;
 }
 
 .submit {
@@ -89,4 +91,8 @@
   background: #FF7052;
   color: #fff;
   outline: 0;
+}
+
+.fa .fa-envelope-o:focus {
+  display:none;
 }
