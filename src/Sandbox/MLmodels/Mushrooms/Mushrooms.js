@@ -5,8 +5,11 @@ import options from './Options.js';
 import Mushroom from './Mushroom.js';
 import key from './key.json';
 import _ from 'underscore'
+import NavDrawer from '../../Drawer/Drawer.js'
+import 'bootstrap/dist/css/bootstrap.css';
 
 class Mushrooms extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -60,11 +63,12 @@ class Mushrooms extends Component {
     })
   }
 
+
   render () {
     return (
-    
       <div>
-        <div id="accordion" role="tablist" aria-multiselectable="true">
+        <NavDrawer />
+        <div className= "mushrooms">
           {
             _.map(options, (option, name) => {
               return (
@@ -83,7 +87,6 @@ class Mushrooms extends Component {
           <div onClick={this.handleSubmit} className="btn">Get Prediction</div>
           <div>Current Prediction: {this.state.currentPrediction}
           </div>
-          <h1><Link to ="/sandbox">BACK</Link></h1>
         </div>
       </div>
     )
@@ -91,3 +94,7 @@ class Mushrooms extends Component {
 }
 
 export default Mushrooms;
+
+
+
+
