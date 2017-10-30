@@ -13,7 +13,7 @@ class Housing extends Component {
     this.state = {
       lat: 46.615567,
       lng: -122.177644,
-      currentPrediction: 'none',
+      currentPrediction: 'None',
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleMapClick = this.handleMapClick.bind(this);
@@ -71,6 +71,7 @@ class Housing extends Component {
     return (
       <div className="housing">
         <div className="sidebar">
+          <div className="title">Choose Your Options: </div>
         {Options.map((option, index) => {
           return (
             <div className="option" key={index}>
@@ -100,6 +101,7 @@ class Housing extends Component {
         <div onClick={this.handleSubmit} className="btn">Get Prediction</div>
         <Link className="btn" to ="/sandbox">Go Back</Link>
       </div>
+      <div className="mapcontain">
         <div className="mapheader">Put map header here</div>
         <MapComponent
           className="mapholder"
@@ -112,6 +114,7 @@ class Housing extends Component {
           mapElement={<div style={{ height: `50vw`, width: `80vw` }} />}
         />
       </div>
+    </div>
     )
   }
 }
