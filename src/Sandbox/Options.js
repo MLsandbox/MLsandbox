@@ -17,16 +17,14 @@ var Options = () => {
             Oh, hey there
           </h1>
           <h2>
-            Go ahead and click on the blocks to watch 'em pop
+            Go ahead and click on the blocks to atch 'em pop
           </h2>
-          <input id='1' type='checkbox' onChange={console.log}>
-          </input>
+          <input id='1' type='checkbox'></input>
           <label>
             <div>
               <div className='circle'></div>
               <span>Click me</span>
             </div>
-            <p>Congrats, you managed to click the box! Thanks for checking out this pen. Take a look at some of my other stuff too.</p>
           </label>
         </div>
     </div>
