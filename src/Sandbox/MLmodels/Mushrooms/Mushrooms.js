@@ -5,7 +5,9 @@ import options from './Options.js';
 import Mushroom from './Mushroom.js';
 import key from './key.json';
 import _ from 'underscore'
+import NavDrawer from '../../Drawer.js'
 import 'bootstrap/dist/css/bootstrap.css';
+
 
 class Mushrooms extends Component {
 
@@ -66,28 +68,7 @@ class Mushrooms extends Component {
   render () {
     return (
       <div>
-        <nav className="navbar navbar-dark drawer">
-          <a className="navbar-brand transparent" href="#">ml-sandbox</a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#siteNav"
-            aria-controls="siteNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="siteNav">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item">
-                <Link className="nav-link" to ="/sandbox">BACK</Link>
-              </li>
-            </ul>
-          </div>
-        </nav>
-
+        <NavDrawer />
         <div className= "mushrooms">
           {
             _.map(options, (option, name) => {
