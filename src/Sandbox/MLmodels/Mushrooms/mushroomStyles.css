@@ -5,27 +5,23 @@
   -ms-box-sizing: border-box;
 }
 
-.drawer {
-  height: 10vw;
-  width: 100vw;
-  padding-bottom: 10vh;
+.drawer{
+  background-color: #73879B!important;
   font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  
+  font-weight: 300;  
+  font-size: 4vw;
+  text-align: right;
 }
 
-.fa-bars {
-  color: #73879B;
-  position: relative;
-  font-size: 10vw;
-  padding: 5vw;
-  float: right;
+.nav-item {
+  padding-top: 1vw;
 }
 
-.dropdown-item {
-  font-size: 10vw;
-  float: right;
+.transparent {
+  opacity: 0;
 }
 
-.card {
+/* .card {
   font-weight: 300;
   font-size: 35vw;
   font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;    
@@ -61,4 +57,4 @@
 
 .show {
   visibility: visible;
-}
+} */
