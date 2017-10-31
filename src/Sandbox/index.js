@@ -18,10 +18,14 @@ class Sandbox extends Component {
   render () {
     return(
       <div className="sandbox-page">
-        <div className="greeting">Hello, {this.props.user}</div>
-        <div className="wiki-link"><Link to ="/Wiki">LEARN/INFORMATION</Link></div>
-        <div className="profile-link"><Link to ="/settings">Profile settings</Link></div>
-        <Logout />
+        <div>
+          <div className="user-management">
+            <div className="greeting">Hello, {this.props.user}</div>
+            <div className="profile-link"><Link to ="/settings">Profile settings</Link></div>
+            <Logout />
+          </div>
+          <div className="wiki-link"><Link to ="/Wiki">LEARN/INFORMATION</Link></div>
+        </div>
         <Options />
       </div>
     )
