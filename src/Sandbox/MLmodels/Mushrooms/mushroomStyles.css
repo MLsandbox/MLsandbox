@@ -11,7 +11,7 @@
   font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;    
   line-height: 10vw;
   text-align: center;
-  padding: 3vw 6vw
+  padding: 3vw 6vw 0vw 6vw;
 }
 
 .Select-placeholder {

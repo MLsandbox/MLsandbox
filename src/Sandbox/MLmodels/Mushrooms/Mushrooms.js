@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { fadeInUpBig } from 'react-animations';
+import { StyleSheet, css } from 'aphrodite';
 import axios from 'axios';
 import options from './Options.js';
 import Mushroom from './Mushroom.js';
 import key from './key.json';
-import _ from 'underscore'
+import _ from 'underscore';
 import NavDrawer from '../../Drawer/Drawer.js'
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -15,6 +17,12 @@ class Mushrooms extends Component {
     this.state = {
       currentPrediction: 'none',
     }
+    this.styles = StyleSheet.create({
+      fadeInUpBig: {
+        animationName: fadeInUpBig,
+        animationDuration: '1.5s'
+      }
+    })
   }
   
   camelCase = (str) => {
@@ -63,12 +71,12 @@ class Mushrooms extends Component {
     })
   }
 
-
   render () {
+    console.log(this.styles)
     return (
       <div>
         <NavDrawer modelName="ml-sandbox-mushrooms"/>
-        <div className= "mushrooms">
+        <div className={css(this.styles.fadeInUpBig)}>
           {
             _.map(options, (option, name) => {
               return (
@@ -84,7 +92,7 @@ class Mushrooms extends Component {
           }
         </div>
         <div>
-          <div onClick={this.handleSubmit} className="btn">Get Prediction</div>
+          <button onClick={this.handleSubmit} className='mushroom-prediction-btn'>Get Prediction</button>
           <div>Current Prediction: {this.state.currentPrediction}
           </div>
         </div>

@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/thismax/MLsandbox#readme",
   "dependencies": {
+    "aphrodite": "^1.2.5",
     "axios": "^0.16.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "bcrypt": "^1.0.3",
@@ -40,6 +41,7 @@
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "pg": "^7.3.0",
+    "react-animations": "^0.1.0",
     "react-bootstrap": "^0.31.3",
     "react-drawable-canvas": "^1.1.0",
     "react-google-maps": "^9.0.2",
