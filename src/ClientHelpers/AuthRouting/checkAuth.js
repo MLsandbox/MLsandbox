@@ -1,10 +1,8 @@
-import decode from 'jwt-decode';
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 
 const checkAuth = () => {
   const token = localStorage.jwtToken;
-  const refreshToken = localStorage.getItem('refreshToken');
   if (!token) {
     return false;
   }

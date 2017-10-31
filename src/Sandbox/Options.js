@@ -26,5 +26,3 @@ var Options = () => {
 }
 
 export default Options;
-
-//<Link to ="/housing">Housing Model</Link>
