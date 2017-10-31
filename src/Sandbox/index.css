@@ -3,7 +3,7 @@
   height: 200px;
   background: #92b2cd;
   display: inline-block;
-  border-radius: 2px;
+  border-radius: 20px;
   cursor: pointer;
   text-align: center;
 }
@@ -41,10 +41,6 @@
   transition-duration: 0.1s;
   transition-property: transform;
 }
-.model-container .wrapper label:nth-of-type(1) {
-  transform-origin: 0% 0%;
-}
-
 
 .model-container .wrapper .circle {
   visibility: visible;
