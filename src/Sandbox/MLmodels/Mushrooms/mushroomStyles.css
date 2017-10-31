@@ -18,22 +18,28 @@
   line-height: 10vw!important;
 }
 
-.mushroom-card-header {
+.mushroom {
+  margin: auto;
   display: block;
-  padding-top: 2vw;
+}
+
+.mushroom-card-header {
+  margin: auto;
+  display: block;
+  padding-top: 0.5vw;
   padding-right: 4vw;
   padding-left: 4vw;
-  width: auto 90vw;
-  height: 2.5em;
+  font-weight: 300!important;
+  height: 17vw;
   background: radial-gradient(#FFBA44 ,#F9AA20);
   color: #F6F7EB;
   text-transform: uppercase;
   font-size: 7vw;
-  line-height: 1em;
   cursor: pointer;
 }
 
 .mushroom-card-block {
+  margin: auto;
   display: block;
   font-size: 3vw;
   background: #E2E2D7;
@@ -64,4 +70,26 @@
 
 .mushroom-current-prediction {
   padding: 8vw;
+}
+
+@media (min-width: 768px) { 
+  .mushroom-card-header {
+    font-size: 54px;
+    width: 660px;
+    height: 140px;
+  }
+  .mushroom-card-block {
+    width: 660px;
+    height: 140px;
+    font-size: 54px;  
+  }
+  .mushroom-prediction {
+    font-size: 54px;    
+  }
+  .mushroom-prediction-btn {
+    font-size: 54px;
+  }
+  .Select {
+    font-size: 36px!important;
+  }
 }

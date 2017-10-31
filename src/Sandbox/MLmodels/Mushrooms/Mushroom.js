@@ -32,7 +32,7 @@ class Mushroom extends Component {
     
     return (
       <div className="mushroom-card">
-        <div onClick={this.toggleDisplay}>
+        <div onClick={this.toggleDisplay} className="mushroom">
           <h5 className="mushroom-card-header">
             {this.state.label ? name + ' - ' + this.state.label : name}
           </h5>
