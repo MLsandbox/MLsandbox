@@ -47,7 +47,7 @@
 /* mushroom selector */
 
 .Select-placeholder {
-  line-height: 10vw!important;
+  line-height: 12vw!important;
 }
 
 .mushroom-card-block {
@@ -72,11 +72,15 @@
     font-size: 54px;  
   }
 
-  .Select {
+  .Select-control {
     font-size: 36px!important;
-    line-height: 12px!important;
+    height: 30px!important;
   }
   
+  .Select-placeholder {
+    padding: 8px!important;
+  }
+
 }
 
 /* mushroom prediction */
