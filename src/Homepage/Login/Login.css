@@ -22,7 +22,7 @@
 
 
 .modal-body {
-  padding: 0px;
+  padding: 0px !important;
 }
 
 .login_container {
@@ -127,7 +127,7 @@ input {
 }
 
 .modal-content {
-  width: 310px;
+  width: 500px !important; 
 }
 
 #login-fields {
