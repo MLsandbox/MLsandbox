@@ -5,6 +5,8 @@
   -ms-box-sizing: border-box;
 }
 
+/* mushroom card and header */
+
 .mushroom-card {
   font-weight: 300;
   font-size: 35vw;
@@ -12,15 +14,6 @@
   line-height: 10vw;
   text-align: center;
   padding: 3vw 6vw 0vw 6vw;
-}
-
-.Select-placeholder {
-  line-height: 10vw!important;
-}
-
-.mushroom {
-  margin: auto;
-  display: block;
 }
 
 .mushroom-card-header {
@@ -38,6 +31,25 @@
   cursor: pointer;
 }
 
+.mushroom {
+  margin: auto;
+  display: block;
+}
+
+@media (min-width: 768px) { 
+  .mushroom-card-header {
+    font-size: 54px;
+    width: 660px;
+    height: 140px;
+  }
+}
+
+/* mushroom selector */
+
+.Select-placeholder {
+  line-height: 10vw!important;
+}
+
 .mushroom-card-block {
   margin: auto;
   display: block;
@@ -52,6 +64,22 @@
 .show {
   display: visible;
 }
+
+@media (min-width: 768px) { 
+  
+  .mushroom-card-block {
+    width: 660px;
+    height: 140px;
+    font-size: 54px;  
+  }
+
+  .Select {
+    font-size: 36px!important;
+  }
+  
+}
+
+/* mushroom prediction */
 
 .mushroom-prediction {
   font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;      
@@ -73,23 +101,16 @@
 }
 
 @media (min-width: 768px) { 
-  .mushroom-card-header {
-    font-size: 54px;
-    width: 660px;
-    height: 140px;
-  }
-  .mushroom-card-block {
-    width: 660px;
-    height: 140px;
-    font-size: 54px;  
-  }
+  
   .mushroom-prediction {
-    font-size: 54px;    
+    font-size: 54px!important;    
   }
   .mushroom-prediction-btn {
-    font-size: 54px;
+    font-size: 54px!important;
   }
   .Select {
     font-size: 36px!important;
   }
 }
+
+
