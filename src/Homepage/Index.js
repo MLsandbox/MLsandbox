@@ -51,7 +51,6 @@ class Homepage extends Component {
           </div>
         </section>
         <Footer />
-        <Logout dispatch={this.props.dispatch}/>
         <h1><Link to ="/sandbox">Sandbox</Link></h1>
       </div>
     );

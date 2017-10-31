@@ -1,7 +1,7 @@
 import React, { Component } from 'react'; 
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 import Options from './Options';
+import Logout from '../Logout/index';
 
 class Sandbox extends Component {
   constructor (props) {
@@ -12,16 +12,12 @@ class Sandbox extends Component {
     return(
       <div>
         <h1><Link to ="/Wiki">LEARN/INFORMATION</Link></h1>
-          <Options />
+        <h1><Link to ="/settings">Profile settings</Link></h1>
+        <Logout />
+        <Options />
       </div>
     )
   }
 }
 
-var Sandboxcomp = connect((state) => {
-  return { 
-    authentication: state.auth.authentication.authorization,
-  }
-})(Sandbox);
-
-export default Sandboxcomp;
+export default Sandbox;

@@ -20,8 +20,6 @@ var buildDashboard = () => {
 var Options = () => {
   return (
     <div className="model-container">
-      Options
-      <h1><Link to ="/settings">Profile settings</Link></h1>
       { buildDashboard() }
     </div>
   );

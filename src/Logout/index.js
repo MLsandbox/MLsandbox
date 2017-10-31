@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class Logout extends Component {
   constructor (props) {
@@ -13,12 +15,21 @@ class Logout extends Component {
   }
 
   render () {
-    return (
-      <div onClick={this.logoutHandler}>
+    console.log(this.props.authentication)
+    if(this.props.authentication) {
+      return (
+        <div onClick={this.logoutHandler}>
         LOGOUT
-      </div>
-    )
+        </div>
+      )
+    } else {
+      return (<Redirect to={{ pathname: '/login'}}/>);
+    }
   }
 }
 
-export default Logout;
+export default connect((state) => {
+  return { 
+    authentication: state.auth.authentication.authorization,
+  }
+})(Logout);;
