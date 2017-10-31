@@ -74,3 +74,13 @@
     transform: scale(1);
   }
 }
+
+.sandbox-heading {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.sandbox-heading .wiki-link {
+  justify-self: flex-end;
+}

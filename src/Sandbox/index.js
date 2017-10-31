@@ -18,7 +18,7 @@ class Sandbox extends Component {
   render () {
     return(
       <div className="sandbox-page">
-        <div>
+        <div className="sandbox-heading">
           <div className="user-management">
             <div className="greeting">Hello, {this.props.user}</div>
             <div className="profile-link"><Link to ="/settings">Profile settings</Link></div>
