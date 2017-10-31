@@ -94,7 +94,7 @@ class Mushrooms extends Component {
 
   render () {
     return (
-      <div className={`mushrooms ${this.styles.zoomIn}`}>
+      <div className='mushrooms'>
         <NavDrawer modelName="ml-sandbox-mushrooms"/>
         <div className={css(this.styles.fadeInUpBig)}>
           {

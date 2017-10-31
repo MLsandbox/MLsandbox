@@ -53,11 +53,13 @@
   text-align: center;
   line-height: 4vw;
   font-weight: 300;
+  font-size: 4vw!important;
 }
 
 .mushroom-prediction-btn {
   font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif!important;        
   font-weight: 300!important;
+  font-size: 4vw!important;
 }
 
 .mushroom-current-prediction {
