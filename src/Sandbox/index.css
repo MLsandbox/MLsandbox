@@ -1,7 +1,8 @@
 .model-container {
   display: flex;
   justify-content: space-around;
-  flex-flow: wrap;
+  flex-flow: wrap;  
+  margin-top: 9vw;
 }
 
 .model-container .wrapper label {
@@ -9,7 +10,7 @@
   height: 200px;
   background: #92b2cd;
   display: inline-block;
-  border-radius: 20px;
+  border-radius: 6px;
   cursor: pointer;
   text-align: center;
 }
