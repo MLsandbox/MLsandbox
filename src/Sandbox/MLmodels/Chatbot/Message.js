@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 const Message = ({message}) => {
   if (message.message) {
-    console.log(message);
     return (
       <li className={`${message.from}-message`}><div className="sender-bubble">{message.message}</div></li> 
     );

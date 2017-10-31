@@ -12,12 +12,13 @@
 }
 
 .chat-thread {
-  padding-top: 7vw;
+  padding: 5vw 7vw;
   font-size: 4vw;
 }
 
 .user-message {
   text-align: right;
+  padding: 3vw;
 }
 
 .bot-message {
