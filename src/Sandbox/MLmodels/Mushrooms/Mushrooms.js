@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { fadeInUpBig } from 'react-animations';
+import { fadeInUpBig, zoomIn, fadeIn } from 'react-animations';
 import { StyleSheet, css } from 'aphrodite';
 import axios from 'axios';
 import options from './Options.js';
@@ -9,19 +9,29 @@ import key from './key.json';
 import _ from 'underscore';
 import NavDrawer from '../../Drawer/Drawer.js'
 import 'bootstrap/dist/css/bootstrap.css';
+import './mushroomStyles.css';
 
 class Mushrooms extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      currentPrediction: 'none',
+      currentPrediction: '',
+      animation: '',
     }
     this.styles = StyleSheet.create({
+      zoomIn:  {
+        animationName: zoomIn,
+        animationDuration: '.5s'
+      },
+      fadeIn:  {
+        animationName: fadeIn,
+        animationDuration: '1s'
+      },
       fadeInUpBig: {
         animationName: fadeInUpBig,
         animationDuration: '1.5s'
-      }
+      },
     })
   }
   
@@ -32,6 +42,7 @@ class Mushrooms extends Component {
   }
 
   handleSelect = (name, val) => {
+    console.log(val.value);
     this.setState({
       [this.camelCase(name)]: val.value,
     })
@@ -65,16 +76,25 @@ class Mushrooms extends Component {
         this.state.habitat,
       ]
     }).then((results) => {
-      results.data.prediction === 1 ? this.setState({currentPrediction: 'Poison x('}) : this.setState({currentPrediction: 'Edible :)'});
+      this.setState({
+        animation: this.styles.fadeIn,
+      }, () => {
+        results.data.prediction === 1 ? this.setState({currentPrediction: 'Poison x('}) : this.setState({currentPrediction: 'Edible :)'});        
+      })
     }).catch((err) => {
-      console.error(err);
+      this.setState({
+        animation: this.styles.zoomIn,
+      }, () => {
+        this.setState({
+          currentPrediction: 'Did you remember to select all options?'
+        })
+      })
     })
   }
 
   render () {
-    console.log(this.styles)
     return (
-      <div>
+      <div className={`mushrooms ${this.styles.zoomIn}`}>
         <NavDrawer modelName="ml-sandbox-mushrooms"/>
         <div className={css(this.styles.fadeInUpBig)}>
           {
@@ -91,11 +111,14 @@ class Mushrooms extends Component {
             })
           }
         </div>
-        <div>
-          <button onClick={this.handleSubmit} className='mushroom-prediction-btn'>Get Prediction</button>
-          <div>Current Prediction: {this.state.currentPrediction}
+
+        <div className='mushroom-prediction'>
+          <button type='button' onClick={this.handleSubmit} className='btn-outline-secondary btn mushroom-prediction-btn'>Get Prediction</button>
+          <div className={`mushroom-current-prediction ${css(this.state.animation)}`}>
+            {this.state.currentPrediction === '' ? '' : this.state.currentPrediction}
           </div>
         </div>
+
       </div>
     )
   }
