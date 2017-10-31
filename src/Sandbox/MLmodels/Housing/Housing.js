@@ -98,8 +98,8 @@ class Housing extends Component {
           )
         })}
         <div className="currentprediction">Current Prediction: {this.state.currentPrediction}</div>
-        <div onClick={this.handleSubmit} className="btn">Get Prediction</div>
-        <Link className="btn" to ="/sandbox">Go Back</Link>
+        <div onClick={this.handleSubmit} className="housing-btn">Get Prediction</div>
+        <Link className="housing-btn" to ="/sandbox">Go Back</Link>
       </div>
       <div className="mapcontain">
         <div className="mapheader">Put map header here</div>

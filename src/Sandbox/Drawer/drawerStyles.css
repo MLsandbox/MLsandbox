@@ -13,10 +13,20 @@
   text-align: right;
 }
 
+.name {
+  font-size: 4vw!important;
+}
+
 .nav-item {
   padding-top: 1vw;
 }
 
 .transparent {
   opacity: 0;
+}
+
+@media (min-width: 768px) { 
+  .name {
+    font-size: 30px!important;
+  }
 }
