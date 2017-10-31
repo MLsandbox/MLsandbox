@@ -9,18 +9,29 @@
   font-weight: 300;
   font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;    
   text-align: center;
+  height: 100%;
 }
 
 .chat-thread {
   padding: 5vw 7vw;
   font-size: 4vw;
+  color: #3A3A37;
+  height: 80%;
+  overflow: scroll;
 }
 
 .user-message {
   text-align: right;
   padding: 3vw;
+  border-bottom: 0.5px solid rgba(255, 186, 68, .7)
 }
 
 .bot-message {
   text-align: left;
+  padding: 3vw;
+  border-bottom: 0.5px solid rgba(255, 186, 68, .7)
+}
+
+.sender-bubble {
+  padding: 2vw;
 }
