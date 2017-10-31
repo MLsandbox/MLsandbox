@@ -19,19 +19,26 @@ class Chatbot extends Component {
     }
   }
 
-  getResponse(message) {
+  getResponse = (message) => {
     axios.post('https://ml-sandbox.ml/api/tairygreene', {message}).then((result) => {
       let response = {
         message: result.data.response,
         from: "bot",
       }
-      this.setState({messages: [...this.state.messages, response]})      
+      this.setState({messages: [...this.state.messages, response]}, () => {
+        this.autoScroll();
+      })    
     }).catch((err) => {
       console.log(err);
     })
   }
 
-  handleSubmit (event) {
+  autoScroll = () => {
+    let div = document.getElementById('scrollDown');
+    div.scrollTop = div.scrollHeight;
+  }
+
+  handleSubmit = (event) => {
     const message = event.target.value;
     if (event.key == 'Enter' && message) {
       const query = {
@@ -39,6 +46,7 @@ class Chatbot extends Component {
         from: 'user',
       }
       this.setState({messages: [...this.state.messages, query]}, () => {
+        this.autoScroll();
         this.getResponse(query.message)
       })
       event.target.value = '';
@@ -49,7 +57,7 @@ class Chatbot extends Component {
     return (
       <div className="chatterbot-component">
         <NavDrawer modelName='ml-sandbox-chatbot'/>
-        <ul className="chat-thread">
+        <ul className="chat-thread" id="scrollDown">
           <Messages 
             messages={this.state.messages}
           />
