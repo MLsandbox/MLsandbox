@@ -1,0 +1,24 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
+.chatterbot-component {
+  font-weight: 300;
+  font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;    
+  text-align: center;
+  padding: 3vw 6vw 0vw 6vw;
+}
+
+.chat-thread {
+  padding-top: 7vw;
+  font-size: 4vw;
+}
+
+.user-input-wrapper {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}

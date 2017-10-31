@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Messages from './Messages.js';
+import NavDrawer from '../../Drawer/Drawer.js'
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.css';
+import './chatbotStyles.css'
 
 class Chatbot extends Component {
   constructor(props) {
@@ -9,8 +12,8 @@ class Chatbot extends Component {
     this.state = {
       messages:[
         {
-          from: "Chat R. Bot",
-          message: "Hi!  I'm Chat R. Bot.  What's your name?"
+          from: "bot",
+          message: "Hello, how are you today?"
         }
       ]
     }
@@ -20,7 +23,7 @@ class Chatbot extends Component {
     axios.post('https://ml-sandbox.ml/api/tairygreene', {message}).then((result) => {
       let response = {
         message: result.data.response,
-        from: "Chat R. Bot",
+        from: "bot",
       }
       this.setState({messages: [...this.state.messages, response]})      
     }).catch((err) => {
@@ -44,16 +47,16 @@ class Chatbot extends Component {
   
   render() {
     return (
-      <div>
+      <div className="chatterbot-component">
+        <NavDrawer modelName='ml-sandbox-chatbot'/>
         <ul className="chat-thread">
-        <Messages 
-          messages={this.state.messages}
-        />
+          <Messages 
+            messages={this.state.messages}
+          />
         </ul>
-        <div className="user_input-wrapper">
-          <input className='user_input' type="text" placeholder='Enter a message...' onKeyUp={this.handleSubmit.bind(this)}/>
+        <div className="user-input-wrapper">
+          <input className='user-input' type="text" placeholder='Enter a message...' onKeyUp={this.handleSubmit.bind(this)}/>
         </div>
-        <h1><Link to ="/sandbox">BACK</Link></h1>
       </div>
     )
   }
