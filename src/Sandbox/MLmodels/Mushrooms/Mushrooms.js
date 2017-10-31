@@ -49,7 +49,7 @@ class Mushrooms extends Component {
   }
 
   handleSubmit = () => {
-    
+    console.log(this.state)
     axios.post('https://ml-sandbox.ml/api/mushrooms', {
       data: [
         this.state.capShape,
@@ -57,17 +57,17 @@ class Mushrooms extends Component {
         this.state.capColor,
         this.state.bruises,
         this.state.odor,
-        this.state.gillAttachment,
+        1,
         this.state.gillSpacing,
         this.state.gillSize,
         this.state.gillColor,
         this.state.stalkShape,
         this.state.stalkRoot,
-        this.state.stalkSurfaceAboveRing,
-        this.state.stalkSurfaceBelowRing,
-        this.state.stalkColorAboveRing,
-        this.state.stalkColorBelowRing,
-        this.state.veilType,
+        2,
+        2,
+        7,
+        7,
+        0,
         this.state.veilColor,
         this.state.ringNumber,
         this.state.ringType,
