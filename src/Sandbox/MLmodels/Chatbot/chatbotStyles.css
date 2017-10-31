@@ -9,7 +9,6 @@
   font-weight: 300;
   font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;    
   text-align: center;
-  padding: 3vw 6vw 0vw 6vw;
 }
 
 .chat-thread {
@@ -17,8 +16,10 @@
   font-size: 4vw;
 }
 
-.user-input-wrapper {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+.user-message {
+  text-align: right;
+}
+
+.bot-message {
+  text-align: left;
 }
