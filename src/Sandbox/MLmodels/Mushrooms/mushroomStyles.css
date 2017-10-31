@@ -69,12 +69,12 @@
   
   .mushroom-card-block {
     width: 660px;
-    height: 140px;
     font-size: 54px;  
   }
 
   .Select {
     font-size: 36px!important;
+    line-height: 12px!important;
   }
   
 }
