@@ -5,6 +5,8 @@
   -ms-box-sizing: border-box;
 }
 
+/* main component */
+
 .chatterbot-component {
   font-weight: 300!important;
   font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;    
@@ -12,8 +14,10 @@
   height: 100%;
 }
 
+/* messages */
+
 .chat-thread {
-  padding: 5vw 7vw;
+  padding: 0 7vw 5vw 7vw;
   font-size: 4vw;
   color: #3A3A37;
   height: 75%;
@@ -36,8 +40,35 @@
   padding: 2vw;
 }
 
+@media (min-width: 600px) {
+  .chat-thread {
+    max-width: 600px;
+    padding: 0 15px 0 0;
+    margin: auto;
+    display: block;
+  }
+  .bot-message {
+    padding: 0;
+  }
+  .user-message {
+    padding: 0;
+  }
+  .sender-bubble{
+    font-size: 22px;
+    padding: 20px;
+  }
+}
+
+@media (min-width: 100px) {
+  .chat-thread {
+    max-width: 1000px;
+  }
+}
+
+/* user submit */
+
 .user-input-wrapper {
-  padding-top: 5vw;
+  padding: 5vw 0 ;
 }
 
 .user-input-wrapper .user-input {
@@ -52,3 +83,9 @@
   outline: none;
 }
 
+@media (min-width: 600px) {
+  .user-input-wrapper .user-input {
+    font-size: 22px;
+    padding: 15px;
+  }
+}
