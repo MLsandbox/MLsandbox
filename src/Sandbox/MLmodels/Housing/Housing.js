@@ -99,7 +99,7 @@ class Housing extends Component {
         <div onClick={this.handleSubmit} className="housing-btn">Get Prediction</div>
       </div>
       <div className="mapcontain">
-        <div className="mapheader">To get a prediction on what property with certain specifications might cost in Kings County, Washington, place a pin on the map, enter options and click the prediction button!</div>
+        <div className="mapheader">To get a prediction on what property with certain specifications might cost in Kings County, Washington, place a pin on the map enter options and click the prediction button!</div>
         <MapComponent
           className="mapholder"
           lat={this.state.lat}

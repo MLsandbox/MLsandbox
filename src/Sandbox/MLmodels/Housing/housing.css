@@ -58,7 +58,10 @@
   display: inline;
   float: right;
 }
-
+*:focus {
+  outline: none;
+}
+  
 input[type=range] {
   display: block;
   width: 15vw;
@@ -125,8 +128,8 @@ input[type=range]::-ms-thumb {
   user-select: none;
 }
 .housing-btn:active { 
-  background: linear-gradient(to bottom right, #E2E2D7, #F6F7EB); 
   box-shadow: none;
+  background: white;
 }
 
 .currentprediction {
