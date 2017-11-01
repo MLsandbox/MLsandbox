@@ -37,5 +37,4 @@ const Drawer = ({modelName, description}) => {
   )
 }
 
-
 export default Drawer;
