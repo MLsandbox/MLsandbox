@@ -11,12 +11,13 @@ var Loginform = (props) => {
         <form id="login-fields">
         <fieldset className="clearfix">
           <p className="login_p"><span className="fa fa-user"></span>
-            <input type="text" defaultValue="Username" 
+            <input type="text" placeholder="Username" 
             id="formControlsEmail"
             required/></p>
           <p className="login_p"><span className="fa fa-lock"></span><input 
             id="formControlsPassword"
-            type="password"  
+            type="password" 
+            placeholder="Password" 
             required/></p> 
             <p className="login_p"><input onClick={props.signIn} type="button" defaultValue="Sign In"/></p>
         </fieldset>
