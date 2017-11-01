@@ -29,7 +29,7 @@ class Mnist extends Component {
 		this.clearCanvas = this.clearCanvas.bind(this);
 	}
 
-	getPrediction (e) {
+  getPrediction = (e) => {
 		let canvas = document.getElementsByTagName('canvas');
 		let image = canvas[0].toDataURL('image/png');
 		let toSend = image.slice(22);
@@ -39,7 +39,7 @@ class Mnist extends Component {
 		.catch(err => console.log(err));
 	}
 
-	clearCanvas (e) {
+  clearCanvas = (e) => {
 		let canvas = document.getElementsByTagName('canvas');
 		canvas[0].width = canvas[0].width;
 	}
