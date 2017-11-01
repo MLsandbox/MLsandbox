@@ -70,7 +70,6 @@ class VoiceRecognitionWrapper extends Component {
         <div>Second Version:
           <button onClick={this.recordAndSubmit}>Get new recording</button>
         </div>
-        <h1><Link to ="/sandbox">BACK</Link></h1>
       </div>
     )
   }
