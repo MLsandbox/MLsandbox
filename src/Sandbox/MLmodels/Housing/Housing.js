@@ -14,7 +14,6 @@ class Housing extends Component {
     this.state = {
       lat: 47.607578,
       lng: -122.333564,
-      currentPrediction: 'None',
       bedrooms: 0, bathrooms: 1, livingSpace: 0, lotSize: 0, floors: 1, condition: 1, grade: 1, basement: 0, yearBuilt: 1900, yearRenovated: 1900
     }
   }
@@ -61,7 +60,7 @@ class Housing extends Component {
           this.state.lng,
           this.state.livingSpace,
           this.state.lotSize] 
-      }).then(results => this.setState({ currentPrediction: results.data.prediction }))
+      }).then(results => this.setState({ currentPrediction: "$" +  Math.abs(Math.floor(results.data.prediction)) }))
       .catch(err => console.log(err));
     })
   }
@@ -84,7 +83,6 @@ class Housing extends Component {
                 </div>
                 <div className="sliderholder">
                   <input
-                    className="slider"
                     defaultValue={option.min}
                     name={option.name}
                     type="range"
@@ -97,7 +95,7 @@ class Housing extends Component {
             </div>
           )
         })}
-        <div className="currentprediction">Current Prediction: {this.state.currentPrediction}</div>
+        <div className="currentprediction">Current Prediction: {this.state.currentPrediction || "None"}</div>
         <div onClick={this.handleSubmit} className="housing-btn">Get Prediction</div>
       </div>
       <div className="mapcontain">

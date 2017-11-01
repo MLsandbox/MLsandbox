@@ -6,8 +6,8 @@
 }
 
 .sidebar {
-  color: #F6F7EB;
-  background: linear-gradient(to bottom right, #E2E2D7, #F6F7EB); 
+  color: #73879B;
+  background: radial-gradient(#FFBA44 ,#F9AA20);
   font-size: 1vw;
   display: inline-block;
   float: left;
@@ -22,7 +22,7 @@
 }
 
 .option {
-  background: radial-gradient(#FFBA44 ,#F9AA20);
+  background: linear-gradient(to bottom right, #E2E2D7, #F6F7EB); 
   padding: 0.5vw 0 0.5vw 0;
   margin: 0.5vw;
 }
@@ -59,6 +59,8 @@
 }
 
 input[type=range] {
+  display: block;
+  width: 15vw;
   clear: both;
   background: radial-gradient(#E2E2D7, #73879B);
   border-radius: 10vw;
@@ -81,7 +83,7 @@ input[type=range] {
 
 .housing-btn { 
   font-size: 0.5vw;
-  background: radial-gradient(#FFBA44 ,#F9AA20);
+  background: linear-gradient(to bottom right, #E2E2D7, #F6F7EB); 
   height: 3vw;
   margin: 0.3vw 0.3vw 0.3vw 5vw;
   padding: 0.5vw;
@@ -90,7 +92,6 @@ input[type=range] {
   font-size: 1.2vw;
   border-radius: 0.5vw;
   text-decoration: none;
-  color: #F6F7EB;
 }
 
 .currentprediction {
