@@ -77,6 +77,25 @@ input[type='range']::-webkit-slider-thumb {
   background-color: #FFBA44;
   box-shadow: 1px 1px 1px #73879B, 0px 0px 1px #E2E2D7;
 }
+
+input[type=range]::-moz-range-thumb {
+  width: 1vw;
+  height: 2vw;
+  border-radius: 0.3vw;
+  cursor: pointer;
+  background-color: #FFBA44;
+  box-shadow: 1px 1px 1px #73879B, 0px 0px 1px #E2E2D7;
+}
+
+input[type=range]::-ms-thumb {
+  width: 1vw;
+  height: 2vw;
+  border-radius: 0.3vw;
+  cursor: pointer;
+  background-color: #FFBA44;
+  box-shadow: 1px 1px 1px #73879B, 0px 0px 1px #E2E2D7;
+}
+
 .currentselection {
   clear: left;
   display: block;
