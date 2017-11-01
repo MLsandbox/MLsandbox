@@ -1,26 +1,29 @@
 .model-container {
   display: flex;
+  align-items: center;
   justify-content: space-around;
-  flex-flow: wrap;  
-  margin-top: 4vw;
+  flex-direction: row;  
+  flex-flow: wrap;
+  margin-top: 12vw;
   background-color: #f0f0f0;
 }
 
 .model-container .wrapper label {
   width: 200px;
   height: 200px;
-  background: #92b2cd;
+  margin-bottom: 2vw;
+  color: #F9AA20;
+  background: radial-gradient(#F6F7EB ,rgb(249, 250, 231));
   display: inline-block;
-  border-radius: 6px;
+  border: solid #FFBA44;
   cursor: pointer;
   text-align: center;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.26);
 }
 
-.model-container .wrapper label a {
-  border: solid #e4bb36;
-  padding: 5px;
-  border-radius: 3px;
+.model-container .wrapper label:hover {
+  background:rgb(246, 248, 204);
+  box-shadow: none;
 }
 
 .model-container .wrapper label span {
@@ -55,7 +58,7 @@
   visibility: visible;
   width: 40px;
   height: 40px;
-  border: 3px solid white;
+  border: 3px solid rgb(253, 200, 115);
   border-radius: 100%;
   opacity: 0.3;
   margin: 60px auto 30px auto;

@@ -6,18 +6,16 @@ import MapComponent from './MapComponent.js';
 import { Link } from 'react-router-dom';
 import Options from './Options.js';
 import './housing.css';
+import NavDrawer from '../../Drawer/Drawer.js';
 
 class Housing extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lat: 46.615567,
-      lng: -122.177644,
-      currentPrediction: 'None',
+      lat: 47.607578,
+      lng: -122.333564,
+      bedrooms: 0, bathrooms: 1, livingSpace: 0, lotSize: 0, floors: 1, condition: 1, grade: 1, basement: 0, yearBuilt: 1900, yearRenovated: 1900
     }
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleMapClick = this.handleMapClick.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
   
   handleInputChange = (event) => {
@@ -34,7 +32,7 @@ class Housing extends Component {
     });
   }
 
-  handleSubmit () {
+  handleSubmit = () => {
     axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state.lat},${this.state.lng}&sensor=false`)
     .then((result) => {
       let addy = '98105, USA';
@@ -62,7 +60,7 @@ class Housing extends Component {
           this.state.lng,
           this.state.livingSpace,
           this.state.lotSize] 
-      }).then(results => this.setState({ currentPrediction: results.data.prediction }))
+      }).then(results => this.setState({ currentPrediction: "$" +  Math.abs(Math.floor(results.data.prediction)) }))
       .catch(err => console.log(err));
     })
   }
@@ -70,6 +68,7 @@ class Housing extends Component {
   render() {
     return (
       <div className="housing">
+        <NavDrawer modelName="ml-sandbox-housing-prices-prediction" />
         <div className="sidebar">
           <div className="title">Choose Your Options: </div>
         {Options.map((option, index) => {
@@ -84,7 +83,6 @@ class Housing extends Component {
                 </div>
                 <div className="sliderholder">
                   <input
-                    className="slider"
                     defaultValue={option.min}
                     name={option.name}
                     type="range"
@@ -97,12 +95,11 @@ class Housing extends Component {
             </div>
           )
         })}
-        <div className="currentprediction">Current Prediction: {this.state.currentPrediction}</div>
+        <div className="currentprediction">Current Prediction: {this.state.currentPrediction || "None"}</div>
         <div onClick={this.handleSubmit} className="housing-btn">Get Prediction</div>
-        <Link className="housing-btn" to ="/sandbox">Go Back</Link>
       </div>
       <div className="mapcontain">
-        <div className="mapheader">Put map header here</div>
+        <div className="mapheader">To get a prediction on what property with certain specifications might cost in Kings County, Washington, place a pin on the map enter options and click the prediction button!</div>
         <MapComponent
           className="mapholder"
           lat={this.state.lat}

@@ -36,8 +36,8 @@ export function reqSignup (dispatch) {
     password: this.password,
   })
   .then((response) => {
-    if(response.data === 'exists') {
-      dispatch({type: 'INVALID_AUTH'});
+    if(response.data === 'exists' || 'invalid signup info') {
+      dispatch({type: 'INVALID_SIGNUP', data: response.data});
     } else {
       const token = response.data.token;
       localStorage.setItem('jwtToken', response.data.token);
