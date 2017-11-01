@@ -22,10 +22,8 @@ var Loginform = (props) => {
             <p className="login_p"><input onClick={props.signIn} type="button" defaultValue="Sign In"/></p>
         </fieldset>
         </form>
-        <p className="login_p" data-dismiss="modal">Not a member? 
-          <Link to ="/login"
-            className="login_a" href="#">
-          Sign up now</Link>
+        <p className="login_p">Not a member? 
+          <a href="#">Sign up now</a>
           <span className="fontawesome-arrow-right"></span></p>
       </div>
     </div>
