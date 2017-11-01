@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Options from './Options';
 import Logout from '../Logout/index';
 import jwt from 'jsonwebtoken';
+import Dropdown from './Dashboard/Dropdown/Dropdown.js';
 
 class Sandbox extends Component {
   constructor (props) {
@@ -18,14 +19,7 @@ class Sandbox extends Component {
   render () {
     return(
       <div className="sandbox-page">
-        <div className="sandbox-heading">
-          <div className="user-management">
-            <div className="greeting">Hello, {this.props.user}</div>
-            <Link to ="/settings"><div className="profile-link">Profile settings</div></Link>
-            <Logout />
-          </div>
-          <Link to ="/Wiki"><div className="wiki-link">LEARN/INFORMATION</div></Link>
-        </div>
+        <Dropdown modelName="Sandbox"/>
         <Options />
       </div>
     )
@@ -37,3 +31,12 @@ export default connect((store) => {
     user: store.auth.authentication.user.username
   }
 })(Sandbox);
+
+/* <div className="sandbox-heading">
+<div className="user-management">
+  <div className="greeting">Hello, {this.props.user}</div>
+  <Link to ="/settings"><div className="profile-link">Profile settings</div></Link>
+  <Logout />
+</div>
+<Link to ="/Wiki"><div className="wiki-link">LEARN/INFORMATION</div></Link>
+</div> */

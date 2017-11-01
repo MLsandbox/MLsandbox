@@ -128,6 +128,7 @@ input {
 
 .modal-content {
   width: 500px !important; 
+  border: 0px !important;
 }
 
 #login-fields {
