@@ -12,13 +12,11 @@ class Housing extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lat: 46.615567,
-      lng: -122.177644,
+      lat: 47.607578,
+      lng: -122.333564,
       currentPrediction: 'None',
+      bedrooms: 0, bathrooms: 1, livingSpace: 0, lotSize: 0, floors: 1, condition: 1, grade: 1, basement: 0, yearBuilt: 1900, yearRenovated: 1900
     }
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleMapClick = this.handleMapClick.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
   
   handleInputChange = (event) => {
@@ -35,7 +33,7 @@ class Housing extends Component {
     });
   }
 
-  handleSubmit () {
+  handleSubmit = () => {
     axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state.lat},${this.state.lng}&sensor=false`)
     .then((result) => {
       let addy = '98105, USA';

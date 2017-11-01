@@ -1,6 +1,8 @@
 .housing {
   font-family: 'Lato', sans-serif;
   font-weight: 300; 
+  background: linear-gradient(to bottom right, #E2E2D7, #F6F7EB); 
+  height: 100vw;
 }
 
 .sidebar {
