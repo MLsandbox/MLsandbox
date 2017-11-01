@@ -18,7 +18,12 @@
   border: solid #FFBA44;
   cursor: pointer;
   text-align: center;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.26);
+}
+
+.model-container .wrapper label:hover {
+  background:rgb(246, 248, 204);
+  box-shadow: none;
 }
 
 .model-container .wrapper label span {
