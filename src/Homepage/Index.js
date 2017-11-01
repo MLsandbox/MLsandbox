@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Login from './Login/Login';
 import Footer from './Footer/Footer';
 import { setPopupState, reqAuth } from '../Redux/Actions/actionTypes';
@@ -11,6 +11,7 @@ class Homepage extends Component {
   constructor (props) {
     super(props);
     this.signIn = this.signIn.bind(this);
+    this.redirect = this.redirect.bind(this);
   }
 
   signIn() {
@@ -21,7 +22,13 @@ class Homepage extends Component {
       password: password,
     }
     this.props.dispatch(reqAuth.bind(user));
-    
+  }
+
+  redirect(){
+    if(this.props.auth) {
+      document.getElementById('close-body').click();
+      return (<Redirect to={{pathname:"/sandbox"}} />);
+    }
   }
 
   render() {
@@ -36,6 +43,7 @@ class Homepage extends Component {
             <div className="content">
                 <h1>Welcome</h1>
                 <a id="login-btn" href="#" data-toggle="modal" data-target="#auth-popup" >LOGIN</a>
+                {this.redirect()};
             </div>
           </div>
         </section>
@@ -49,6 +57,7 @@ class Homepage extends Component {
 var Homepagecomp = connect((store) => {
   return {
     processing:store.auth.authentication.processing,
+    auth: store.auth.authentication.authorization,
   }
 })(Homepage)
 
