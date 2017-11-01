@@ -50,6 +50,9 @@ class Homepage extends Component {
             </div>
           </div>
         </section>
+        <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive">
+          Launch demo modal
+        </button>
         <Footer />
         <h1><Link to ="/sandbox">Sandbox</Link></h1>
       </div>
