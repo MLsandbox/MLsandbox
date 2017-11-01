@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import '../Sandbox/Drawer/drawerStyles.css'
 
 class Logout extends Component {
   constructor (props) {
@@ -18,12 +19,12 @@ class Logout extends Component {
     console.log(this.props.authentication)
     if(this.props.authentication) {
       return (
-        <div className="logout-btn" onClick={this.logoutHandler}>
+        <a className="nav-link" onClick={this.logoutHandler}>
         LOGOUT
-        </div>
+        </a>
       )
     } else {
-      return (<Redirect to={{ pathname: '/login'}}/>);
+      return (<Redirect to={{ pathname: '/'}}/>);
     }
   }
 }
