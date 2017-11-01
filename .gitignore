@@ -64,3 +64,4 @@ bundle
 server/test.js
 /src/ClientHelpers/keys
 *.gz
+*.swp
