@@ -66,12 +66,13 @@
 .wiki-link{
   display: flex;
   width: 45vw;
-  margin: 2% 2% 0 2%;
-  height: 22.6;
+  margin: 2% 2% 0 -2%;
+  height: 22.6vw;
   justify-content: center;
   align-items: center; 
   background: white;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  font-size: 3vw;
 }
 
 /* Animations */
@@ -118,6 +119,7 @@
   width: 50vw;
   height: 10vw;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  font-size: 3vw;
 }
 
 .user-management .profile-link {
@@ -129,6 +131,7 @@
   width: 50vw;
   height: 5vw;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  font-size: 3vw;
 }
 
 .user-management .logout-btn {
@@ -141,4 +144,5 @@
   width: 50vw;
   height: 5vw;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  font-size: 3vw;
 }
