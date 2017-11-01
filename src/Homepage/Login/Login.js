@@ -1,5 +1,4 @@
 import React from 'react';
-import { FormGroup, ControlLabel, FormControl, Modal, Button } from 'react-bootstrap';
 import Loginform from './Loginform';
 import Loader from './Loader';
 var conditionalRender = (authState, props) => {
@@ -7,20 +6,31 @@ var conditionalRender = (authState, props) => {
     return <Loader/>
   } else {
     return <Loginform 
-      signIn={props.signIn} 
-      closePopup={props.closePopup}/>
+      signIn={props.signIn} />
   }
 }
 
+// <div className="modal-container">
+// <modal show={props.popupState} onHide={props.closePopup}>
+//   <div>
+//     {conditionalRender(props.authenticating, props)}
+//   </div>
+// </modal>
+
 var Login = (props) => {
   return (
-  <div className="modal-container">
-    <Modal show={props.popupState} onHide={props.closePopup}>
-      <Modal.Body>
-        {conditionalRender(props.authenticating, props)}
-      </Modal.Body>
-    </Modal>
+  <div id="auth-popup" className="modal fade" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLiveLabel" style={{display: "none"}} aria-hidden="true">
+    <div className="modal-dialog" role="document">
+      <div className="modal-content">
+        <div className="modal-body">
+        <Loginform 
+          signIn={props.signIn} 
+        />
+        </div>
+      </div>
+    </div>
   </div>
+
   );
 }
 

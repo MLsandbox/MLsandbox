@@ -7,7 +7,7 @@ var Loginform = (props) => {
   return (
     <div className="login_container">
       <div id="login">
-        <a href="#" id="close-body" onClick={props.closePopup} className="close-button"></a>
+        <a href="#" id="close-body" data-dismiss="modal" aria-label="Close" className="close-button"></a>
         <form id="login-fields">
         <fieldset className="clearfix">
           <p className="login_p"><span className="fa fa-user"></span>
@@ -21,7 +21,7 @@ var Loginform = (props) => {
             <p className="login_p"><input onClick={props.signIn} type="button" defaultValue="Sign In"/></p>
         </fieldset>
         </form>
-        <p className="login_p">Not a member? 
+        <p className="login_p" data-dismiss="modal">Not a member? 
           <Link to ="/login"
             className="login_a" href="#">
           Sign up now</Link>
