@@ -16,7 +16,7 @@ const Authroute = (props) => {
       return checkAuth() ? (
         <Component storage={props} />
       ) : (
-        <Redirect to={{ pathname: '/login'}}/>
+        <Redirect to={{ pathname: '/'}}/>
       )
     }}/>
   )

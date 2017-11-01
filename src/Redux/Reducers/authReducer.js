@@ -29,6 +29,17 @@ function auth (state = initState, action) {
           }
         })
     break;
+    case 'INVALID_SIGNUP':
+      console.log('user error with signup');
+      return Object.assign({}, state, 
+        { 
+          authentication: { 
+            authorization: false,
+            authenticating: false,
+            error: action.data,
+          }
+        })
+    break;
     case 'LOGOUT':
       console.log('you have successfully logged out');
       return Object.assign({}, state,
@@ -48,7 +59,7 @@ function auth (state = initState, action) {
         authentication: { 
           authorization: false,
           authenticating: false,
-          error: false,
+          error: true,
         }
       })
     break;

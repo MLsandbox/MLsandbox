@@ -15,8 +15,19 @@ const comparePasswords = (inputPassword, storedPassword) => {
     });
   });
 };
+
+const validSignupInfo = (username, password) => {
+  if(username.length < 3 || password.length < 6) {
+    return false;
+  } else {
+    return true;
+  }
+};
 // checks for an existing user and either creates a new user or redirects to root
 module.exports.signUp = (req, res) => {
+  if(!validSignupInfo(req.body.username, req.body.password)) {
+    res.status(201).send('invalid signup info');
+  }
   DB.User.findOne({where: {
     username: req.body.username,
   }}).then((result) => {

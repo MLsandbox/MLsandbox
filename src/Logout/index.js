@@ -18,12 +18,12 @@ class Logout extends Component {
     console.log(this.props.authentication)
     if(this.props.authentication) {
       return (
-        <div className="logout-btn" onClick={this.logoutHandler}>
-        LOGOUT
-        </div>
+        <a className="nav-link" onClick={this.logoutHandler}>
+          LOGOUT
+        </a>
       )
     } else {
-      return (<Redirect to={{ pathname: '/login'}}/>);
+      return (<Redirect to={{ pathname: '/'}}/>);
     }
   }
 }
