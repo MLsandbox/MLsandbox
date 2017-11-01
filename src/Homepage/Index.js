@@ -25,8 +25,11 @@ class Homepage extends Component {
   }
 
   redirect(){
+    console.log(this.props.auth);
     if(this.props.auth) {
-      document.getElementById('close-body').click();
+      if( document.getElementById('close-body') ) {
+        document.getElementById('close-body').click();
+      }
       return (<Redirect to={{pathname:"/sandbox"}} />);
     }
   }
