@@ -25,7 +25,6 @@ class Homepage extends Component {
   }
 
   redirect(){
-    console.log(this.props.auth);
     if(this.props.auth) {
       if( document.getElementById('close-body') ) {
         document.getElementById('close-body').click();
