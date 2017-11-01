@@ -15,7 +15,7 @@
 }
 
 .title {
-  color: #73879B;
+  color: white;
   font-size: 1.75vw;
   text-align: center;
   padding: 0.5vw;
@@ -62,12 +62,21 @@ input[type=range] {
   display: block;
   width: 15vw;
   clear: both;
-  background: radial-gradient(#E2E2D7, #73879B);
+  background-color: white;
   border-radius: 10vw;
   height: 1vw;
   margin-bottom: 1vw;
+  box-shadow: 1px 1px 1px #73879B, 0px 0px 1px #E2E2D7;
 }
-
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1vw;
+  height: 2vw;
+  border-radius: 0.3vw;
+  cursor: pointer;
+  background-color: #FFBA44;
+  box-shadow: 1px 1px 1px #73879B, 0px 0px 1px #E2E2D7;
+}
 .currentselection {
   clear: left;
   display: block;
@@ -95,7 +104,7 @@ input[type=range] {
 }
 
 .currentprediction {
-  color: #73879B;
+  color: white;
   font-size: 1.2vw;
   text-align: center;
   margin-bottom: 1vw;
