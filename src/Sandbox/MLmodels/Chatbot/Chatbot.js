@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Messages from './Messages.js';
+import NavDrawer from '../../Drawer/Drawer.js'
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.css';
+import './chatbotStyles.css'
 
 class Chatbot extends Component {
   constructor(props) {
@@ -9,26 +12,33 @@ class Chatbot extends Component {
     this.state = {
       messages:[
         {
-          from: "Chat R. Bot",
-          message: "Hi!  I'm Chat R. Bot.  What's your name?"
+          from: "bot",
+          message: "Hello, how are you today?"
         }
       ]
     }
   }
 
-  getResponse(message) {
+  getResponse = (message) => {
     axios.post('https://ml-sandbox.ml/api/tairygreene', {message}).then((result) => {
       let response = {
         message: result.data.response,
-        from: "Chat R. Bot",
+        from: "bot",
       }
-      this.setState({messages: [...this.state.messages, response]})      
+      this.setState({messages: [...this.state.messages, response]}, () => {
+        this.autoScroll();
+      })    
     }).catch((err) => {
       console.log(err);
     })
   }
 
-  handleSubmit (event) {
+  autoScroll = () => {
+    let div = document.getElementById('scrollDown');
+    div.scrollTop = div.scrollHeight;
+  }
+
+  handleSubmit = (event) => {
     const message = event.target.value;
     if (event.key == 'Enter' && message) {
       const query = {
@@ -36,6 +46,7 @@ class Chatbot extends Component {
         from: 'user',
       }
       this.setState({messages: [...this.state.messages, query]}, () => {
+        this.autoScroll();
         this.getResponse(query.message)
       })
       event.target.value = '';
@@ -44,16 +55,16 @@ class Chatbot extends Component {
   
   render() {
     return (
-      <div>
-        <ul className="chat-thread">
-        <Messages 
-          messages={this.state.messages}
-        />
+      <div className="chatterbot-component">
+        <NavDrawer modelName='ml-sandbox-chatbot'/>
+        <ul className="chat-thread" id="scrollDown">
+          <Messages 
+            messages={this.state.messages}
+          />
         </ul>
-        <div className="user_input-wrapper">
-          <input className='user_input' type="text" placeholder='Enter a message...' onKeyUp={this.handleSubmit.bind(this)}/>
+        <div className="user-input-wrapper">
+          <input className='user-input' type="text" placeholder='Enter a message...' onKeyUp={this.handleSubmit.bind(this)}/>
         </div>
-        <h1><Link to ="/sandbox">BACK</Link></h1>
       </div>
     )
   }
