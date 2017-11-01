@@ -6,6 +6,7 @@ import MapComponent from './MapComponent.js';
 import { Link } from 'react-router-dom';
 import Options from './Options.js';
 import './housing.css';
+import NavDrawer from '../../Drawer/Drawer.js';
 
 class Housing extends Component {
   constructor(props) {
@@ -70,6 +71,7 @@ class Housing extends Component {
   render() {
     return (
       <div className="housing">
+        <NavDrawer modelName="ml-sandbox-housing-prices-prediction" />
         <div className="sidebar">
           <div className="title">Choose Your Options: </div>
         {Options.map((option, index) => {

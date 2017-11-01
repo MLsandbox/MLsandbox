@@ -3,7 +3,7 @@ import { ReactMic } from 'react-mic';
 import Axios from 'axios';
 import Recorder from 'recorder-js';
 import { Link } from 'react-router-dom';
-
+import NavDrawer from '../../Drawer/Drawer.js';
 
 class VoiceRecognitionWrapper extends Component {
   constructor(props) {
@@ -59,6 +59,7 @@ class VoiceRecognitionWrapper extends Component {
   render = () => {
     return (
       <div>
+        <NavDrawer modelName="ml-sandbox-voice-recognition" />
         <ReactMic
           record={this.state.record}
           className="sound-wave"

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import DrawableCanvas from 'react-drawable-canvas';
 import axios from 'axios';
 import bg from './bg.png';
+import NavDrawer from '../../Drawer/Drawer.js';
 
 class Mnist extends Component {
 	constructor(props) {
@@ -46,6 +47,7 @@ class Mnist extends Component {
 	render () {
 		return (
 			<div>
+        <NavDrawer modelName="ml-sandbox-handwriting-recogntion" />
 				<div>Sketch a Number!</div>
 				<div className='drawing' style={this.state.styles}> 
 				<DrawableCanvas
