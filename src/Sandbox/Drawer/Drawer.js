@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logout from '../../Logout/index.js';
+import Description from './Description.js';
 import './drawerStyles.css'
  
-const Drawer = ({modelName}) => {
+const Drawer = ({modelName, description}) => {
   return (
     <nav className="navbar navbar-dark drawer">
-      <a className="navbar-brand name" href="#">{modelName}</a>
+      <Description description={description}/>
+      <a className="navbar-brand name" data-toggle="modal" data-target="#explanation-popup">{modelName}</a>
       <button
         className="navbar-toggler"
         type="button"
@@ -21,6 +24,12 @@ const Drawer = ({modelName}) => {
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
             <Link className="nav-link" to ="/sandbox">BACK</Link>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" data-toggle="modal" data-target="#explanation-popup" >EXPLANATION</a>
+          </li>
+          <li className="nav-item">
+            <Logout className="nav-link"/> 
           </li>
         </ul>
       </div>

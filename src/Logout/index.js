@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import '../Sandbox/Drawer/drawerStyles.css'
 
 class Logout extends Component {
   constructor (props) {
