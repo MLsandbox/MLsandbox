@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../Drawer/drawerStyles.css';
+import Logout from '../../../Logout/index.js';
  
 const Drawer = ({modelName}) => {
   return (
@@ -22,7 +23,7 @@ const Drawer = ({modelName}) => {
           <li className="nav-item">
             <Link className="nav-link" to ="/Wiki">Learn More</Link>
             <Link className="nav-link" to ="/settings">Profile Settings</Link>
-            <Link className="nav-link" to ="/">Logout</Link>
+            <Logout />
           </li>
         </ul>
       </div>

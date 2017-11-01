@@ -21,7 +21,7 @@ class Homepage extends Component {
       password: password,
     }
     this.props.dispatch(reqAuth.bind(user));
-    document.getElementById('close-body').click();
+    
   }
 
   render() {
