@@ -21,10 +21,10 @@ class Sandbox extends Component {
         <div className="sandbox-heading">
           <div className="user-management">
             <div className="greeting">Hello, {this.props.user}</div>
-            <div className="profile-link"><Link to ="/settings">Profile settings</Link></div>
+            <Link to ="/settings"><div className="profile-link">Profile settings</div></Link>
             <Logout />
           </div>
-          <div className="wiki-link"><Link to ="/Wiki">LEARN/INFORMATION</Link></div>
+          <Link to ="/Wiki"><div className="wiki-link">LEARN/INFORMATION</div></Link>
         </div>
         <Options />
       </div>

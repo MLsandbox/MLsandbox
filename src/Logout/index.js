@@ -18,7 +18,7 @@ class Logout extends Component {
     console.log(this.props.authentication)
     if(this.props.authentication) {
       return (
-        <div onClick={this.logoutHandler}>
+        <div className="logout-btn" onClick={this.logoutHandler}>
         LOGOUT
         </div>
       )

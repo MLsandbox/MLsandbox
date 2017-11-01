@@ -2,7 +2,8 @@
   display: flex;
   justify-content: space-around;
   flex-flow: wrap;  
-  margin-top: 9vw;
+  margin-top: 4vw;
+  background-color: #f0f0f0;
 }
 
 .model-container .wrapper label {
@@ -13,6 +14,7 @@
   border-radius: 6px;
   cursor: pointer;
   text-align: center;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
 .model-container .wrapper label a {
@@ -58,8 +60,18 @@
   opacity: 0.3;
   margin: 60px auto 30px auto;
   -webkit-animation: circle 1s infinite;
-  /* Chrome, Safari, Opera */
   animation: circle 1s infinite;
+}
+
+.wiki-link{
+  display: flex;
+  width: 45vw;
+  margin: 2% 2% 0 2%;
+  height: 22.6;
+  justify-content: center;
+  align-items: center; 
+  background: white;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
 /* Animations */
@@ -75,6 +87,11 @@
   }
 }
 
+.sandbox-page {
+  background: #f0f0f0;
+  height: 100%;
+}
+
 .sandbox-heading {
   display: flex;
   flex-flow: row;
@@ -83,4 +100,45 @@
 
 .sandbox-heading .wiki-link {
   justify-self: flex-end;
+}
+
+.user-management {
+  margin-left: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.user-management .greeting {
+  margin-top: 2%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 10vw;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.user-management .profile-link {
+  margin-top: 2%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 5vw;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.user-management .logout-btn {
+  cursor: pointer;
+  margin-top: 2%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 5vw;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
