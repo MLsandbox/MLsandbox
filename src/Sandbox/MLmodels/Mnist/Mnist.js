@@ -43,7 +43,7 @@ class Mnist extends Component {
 				  </div>
 				  <div onClick={this.getPrediction} className="mnist-btn" >Get Prediction</div>
 				  <div onClick={this.clearCanvas} className="mnist-btn">Clear the Canvas</div>
-				  <div>Current Prediction: {this.state.currentPrediction}</div>
+				  <div className="mnist-pred">Current Prediction: {this.state.currentPrediction}</div>
         </div>
 			</div>
 		);

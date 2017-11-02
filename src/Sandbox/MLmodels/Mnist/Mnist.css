@@ -3,7 +3,6 @@
   left: 30vw;
 }
 
-
 .mnist { 
   font-family: 'Lato', sans-serif;
   font-weight: 300; 
@@ -15,6 +14,7 @@
   color: grey;
   text-align: center;
   font-size: 2.75vw;
+  margin-left: 1vw;
 }
 
 .inner-div {
@@ -43,10 +43,17 @@
   text-decoration: none;
   box-shadow: 0.15vw 0.15vw 0.15vw #73879B, 0vw 0vw 0.15vw #E2E2D7;
   user-select: none;
-  margin-top: 0.3vw;
+  margin-top: 0.5vw;
+  margin-left: 6.2vw;
 }
 
 .mnist-btn:active {
   border: 0.1vw solid grey;
   box-shadow: none;
 }
+
+.mnist-pred {
+  text-align: center;
+  font-size: 2vw;
+  margin: 1vw 0 1vw 1vw;
+} 
