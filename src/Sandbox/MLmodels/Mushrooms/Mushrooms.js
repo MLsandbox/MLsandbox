@@ -35,12 +35,23 @@ class Mushrooms extends Component {
     })
     this.description = (
       <div className="description">
-        <h3 className="description-header">
-          mushrooms
-        </h3>
+        <h4 className="description-header">
+          Poisonous or Edible?
+        </h4>
         <p className="description-body">
-          This demo uses a support vector classifier trained with over 8000 items of sample data different mushrooms and creates a binary classifier (one producing a result of true or false) that can very accurately whether a wild mushroom is edible based on a number of different attributes. In the original dataset, the traits are represented as words, but to train the model, they had to be converted to numerical values. A key of these values exists so that numerical values can be translated so that words can be entered in the client, and then translated for prediction. The value of the prediction is 0 or 1 representing true or false respectively. In the app, once all fields are inputted and the submit button is pressed, a data object is sent to the server that contains numerical values representing each of the traits of the inputted mushroom. That prediction is then sent back and then displayed on the page.
+          This example uses a support vector classifier trained with over 8000 items of sample data different mushrooms and creates a binary classifier (one producing a result of true or false) that can accurately determine whether a wild mushroom is edible or poisonous.  In the original dataset, the traits are represented as words, but to train the model, they had to be converted to numerical values.  Enter selections for each criterion before selecting “Get Prediction” to see if a given mushroom is poisonous or edible.        </p>
+        <h4 className="description-header">
+          Support Vector Classifier
+        </h4>
+        <p className="description-body">
+          The way this classifier works has similarities to the linear regression used in the housing prices predictor, except that it has additional dimensions in the graphical representation. In addition to the x and y-axis, it has a third axis going into 3-dimensional space that represents each trait that needs to be classified (which in this case would be the different traits of mushrooms). There is a hyperplane (a plane separating one classification from the other) going through all dimensions. If the inputted data is above the hyperplane, it gets one classification and if it is below, it gets the other.
         </p>
+        <div className="description-body">
+          <span className='pros-and-cons'>Pros: </span>Very accurate classifiers can be produced with this model with smaller datasets than with some other models, it is very effective for binary classification, are appropriate for use with a large number of features.
+          <br/>
+          <br/>
+          <span className='pros-and-cons'>Cons: </span>Training is a greater than quadratic operation, so training large sets of data is not feasible.
+        </div>
       </div>
     )
   }
