@@ -39,7 +39,8 @@ class Mushrooms extends Component {
           Poisonous or Edible?
         </h4>
         <p className="description-body">
-          This example uses a support vector classifier trained with over 8000 items of sample data different mushrooms and creates a binary classifier (one producing a result of true or false) that can accurately determine whether a wild mushroom is edible or poisonous.  In the original dataset, the traits are represented as words, but to train the model, they had to be converted to numerical values.  Enter selections for each criterion before selecting “Get Prediction” to see if a given mushroom is poisonous or edible.        </p>
+          This example uses a support vector classifier trained with over 8000 items of sample data different mushrooms and creates a binary classifier (one producing a result of true or false) that can accurately determine whether a wild mushroom is edible or poisonous.  In the original dataset, the traits are represented as words, but to train the model, they had to be converted to numerical values.  Enter selections for each criterion before selecting “Get Prediction” to see if a given mushroom is poisonous or edible.
+        </p>
         <h4 className="description-header">
           Support Vector Classifier
         </h4>
