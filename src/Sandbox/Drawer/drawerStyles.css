@@ -5,6 +5,14 @@
   -ms-box-sizing: border-box;
 }
 
+.titler {
+  cursor: pointer;
+}
+
+.navbar {
+  user-select: none;
+}
+
 .drawer{
   background-color: #73879B!important;
   font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  
