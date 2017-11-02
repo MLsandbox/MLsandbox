@@ -45,3 +45,24 @@
   font-size: 2vw;
   text-align: center;
 }
+
+
+@media (max-width: 1024px) {
+  .sound-wave {
+    width: 90vw; 
+    display: table;
+    margin: 0 auto; 
+  }
+  .voice-title {
+    font-size: 5vw;
+    padding: 4vw;
+  }
+  .voice-btn {
+    width: 70vw;
+    height: 8vw;
+    font-size: 4vw;
+  }
+  .voice-pred {
+    font-size: 4vw;
+  }
+}
