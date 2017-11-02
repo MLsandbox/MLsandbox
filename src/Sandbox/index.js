@@ -31,12 +31,3 @@ export default connect((store) => {
     user: store.auth.authentication.user.username
   }
 })(Sandbox);
-
-/* <div className="sandbox-heading">
-<div className="user-management">
-  <div className="greeting">Hello, {this.props.user}</div>
-  <Link to ="/settings"><div className="profile-link">Profile settings</div></Link>
-  <Logout />
-</div>
-<Link to ="/Wiki"><div className="wiki-link">LEARN/INFORMATION</div></Link>
-</div> */

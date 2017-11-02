@@ -61,7 +61,7 @@ class Homepage extends Component {
             <div className="content">
                 <h1>Welcome</h1>
                 <a id="login-btn" href="#" data-toggle="modal" data-target="#auth-popup" >LOGIN</a>
-                {this.redirect()};
+                {this.redirect()}
             </div>
           </div>
         </section>
