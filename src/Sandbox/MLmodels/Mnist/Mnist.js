@@ -25,14 +25,26 @@ class Mnist extends Component {
       },
       currentPrediction: 'none'
 		}
-		this.description = (
+    this.description = (
       <div className="description">
-        <h3 className="description-header">
-          mushrooms
-        </h3>
+        <h4 className="description-header">
+					Character Recognition
+        </h4>
         <p className="description-body">
-          This demo uses a support vector classifier trained with over 8000 items of sample data different mushrooms and creates a binary classifier (one producing a result of true or false) that can very accurately whether a wild mushroom is edible based on a number of different attributes. In the original dataset, the traits are represented as words, but to train the model, they had to be converted to numerical values. A key of these values exists so that numerical values can be translated so that words can be entered in the client, and then translated for prediction. The value of the prediction is 0 or 1 representing true or false respectively. In the app, once all fields are inputted and the submit button is pressed, a data object is sent to the server that contains numerical values representing each of the traits of the inputted mushroom. That prediction is then sent back and then displayed on the page.
-        </p>
+					This demo uses a random forest classifier model that has been trained with 60,000 representations of handwritten digits.  By drawing a number and selecting “Get Prediction”, the algorithm will attempt to predict.
+				</p>
+        <h4 className="description-header">
+					The Random Forest Classifier
+        </h4>
+        <p className="description-body">
+					Unlike other models that use a single decision tree, a random forest classifier creates multiple decision trees for classification (hence, its name).  Loosely put, a decision tree is a common way of thinking about an algorithm’s conditional statements (for example, does a number look more like a 1 or a 0), and the end of each branch corresponds to a final output.  When a random forest model is used, it creates multiple trees and then compares the predictions from each tree before returning the most common prediction amongst the trees.
+				</p>
+        <div className="description-body">
+          <span className='pros-and-cons'>Pros: </span>Performance for this model can be very high, it can often produce a very accurate classifier and it is able to deal with unbalanced and missing data.
+          <br/>
+          <br/>
+          <span className='pros-and-cons'>Cons: </span>When it is used for regressions, it is unable to make predictions outside of the range of the training data.
+        </div>
       </div>
     )
 	}
