@@ -21,6 +21,10 @@
   padding-top: 1vw;
 }
 
+.nav-link {
+  font-size: 3vw!important;
+}
+
 .transparent {
   opacity: 0;
 }
