@@ -33,7 +33,7 @@
 }
 
 .nav-link {
-  font-size: 3vw!important;
+  font-size: 5vw!important;
   text-transform: uppercase;  
 }
 
@@ -79,7 +79,7 @@
   font-weight: 500;
 }
 
-@media (min-width: 768px) { 
+@media (min-width: 1025px) { 
   .name {
     font-size: 30px!important;
   }
@@ -87,7 +87,9 @@
   .description-header {
     font-size: 40px
   }
-
+  .nav-link {
+    font-size: 1.25vw!important;
+  }
   .description-body {
     font-size: 22px
   }
