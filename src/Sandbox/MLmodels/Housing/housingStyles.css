@@ -5,6 +5,11 @@
   height: 100vw;
 }
 
+.mapcontain {
+  display: inline-block;
+  width: 70vw;
+}
+
 .sidebar {
   color: #73879B;
   background: radial-gradient(#FFBA44 ,#F9AA20);
@@ -148,7 +153,37 @@ input[type=range]::-ms-thumb {
 }
 
 @media (max-width: 1024px) {
+  .mapcontain {
+    width: 80vw;
+    display: table;
+    margin: 0 auto;
+  }
   .sidebar {
+    margin-top: 2vw;
+    clear: both;
     float: none;
+    display: table;
+    margin: 0 auto;
+    width: 60vw;
+  }
+  .housing {
+    height: 100vh;
+  }
+  .option {
+    font-size: 3vw;
+  }
+  input[type=range] {
+    width: 50vw;
+    display: table;
+    margin: 0 auto;
+    margin-bottom: 1vw;
+  }
+  .mapheader {
+    font-size: 3vw;
+    display: block;
+    margin-bottom: 8vw;
+  }
+  .firstnum, .secondnum {
+    font-size: 3vw;
   }
 }
