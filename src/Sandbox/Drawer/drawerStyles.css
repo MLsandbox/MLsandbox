@@ -12,6 +12,9 @@
 .navbar {
   user-select: none;
 }
+.navbar-toggler {
+  outline: none!important;
+}
 
 .drawer{
   background-color: #73879B!important;
