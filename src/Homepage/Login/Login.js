@@ -41,7 +41,7 @@ class Login extends Component {
       return (<Loginform switchForm={this.switchForm} signIn={this.props.signIn}/>);
     }
     if ( this.state.formtype === 'signup') {
-      return (<Signupform switchForm={this.switchForm} signIn={this.props.signIn}/>);
+      return (<Signupform switchForm={this.switchForm} signUp={this.props.signUp}/>);
     }
   }
 
