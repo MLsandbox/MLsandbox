@@ -1,3 +1,9 @@
+#inner-mnist {
+  position: absolute;
+  left: 30vw;
+}
+
+
 .mnist { 
   font-family: 'Lato', sans-serif;
   font-weight: 300; 
@@ -11,6 +17,18 @@
   font-size: 2.75vw;
 }
 
+.inner-div {
+  display: table;
+  margin: 0, auto;
+}
+
+.drawable {
+ 	background-image: url("./mnist-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+ 	width: 37vw;
+ 	height: 37vw;
+}
 
 .mnist-btn { 
   font-size: 1.2vw;

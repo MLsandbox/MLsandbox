@@ -10,13 +10,6 @@ class Mnist extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-      styles: {
-      	backgroundImage: `url(${bg})`,
-        backgroundSize: 'cover',
-        backgoroundRepeat: 'no-repeat',
-      	width: '37vw',
-      	height: '37vw',
-      },
       currentPrediction: 'none'
 		}
 	}
@@ -40,16 +33,18 @@ class Mnist extends Component {
 		return (
 			<div className="mnist">
         <NavDrawer modelName="ml-sandbox-handwriting-recogntion" />
-				<div className="mnist-title">Sketch a Number!</div>
-				<div style={this.state.styles}> 
-				<DrawableCanvas
-					brushColor='white'
-					lineWidth={6}
-				/>
-				</div>
-				<div onClick={this.getPrediction} className="mnist-btn" >Get Prediction</div>
-				<div onClick={this.clearCanvas} className="mnist-btn">Clear the Canvas</div>
-				<div>Current Prediction: {this.state.currentPrediction}</div>
+        <div id="inner-mnist">
+				  <div className="mnist-title">Sketch a Number!</div>
+				  <div className="drawable"> 
+				    <DrawableCanvas
+				    	brushColor='white'
+				    	lineWidth={6}
+				    />
+				  </div>
+				  <div onClick={this.getPrediction} className="mnist-btn" >Get Prediction</div>
+				  <div onClick={this.clearCanvas} className="mnist-btn">Clear the Canvas</div>
+				  <div>Current Prediction: {this.state.currentPrediction}</div>
+        </div>
 			</div>
 		);
 	}
