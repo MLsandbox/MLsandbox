@@ -61,7 +61,7 @@
     height: 90vw;
   }
   .mnist-title {
-    font-size: 6vw;
+    font-size: 4vw;
     margin-top: 2vw;
     margin-left: 2vw;
   }
@@ -73,12 +73,12 @@
     padding-top: 1.3vw;
     margin-left: 15vw;
     margin-top: 1.5vw;
-    font-size: 4vw;
+    font-size: 3vw;
     width: 60vw;
-    height: 10vw;
+    height: 7vw;
   }
   .mnist-pred {
-    font-size: 4vw;
+    font-size: 3vw;
     margin-top: 2vw;
     margin-left: 2vw;
   }
