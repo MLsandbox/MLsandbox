@@ -43,6 +43,7 @@ class Login extends Component {
         switchForm={this.switchForm} 
         signIn={this.props.signIn}
         onClose = {this.onCloseResetError}
+        authProcess = {this.props.authProcess}
         />);
     }
     if ( this.state.formtype === 'signup') {
@@ -51,6 +52,7 @@ class Login extends Component {
         switchForm={this.switchForm} 
         signUp={this.props.signUp}
         onClose = {this.onCloseResetError}
+        authProcess = {this.props.authProcess}
         />);
     }
   }
@@ -109,5 +111,6 @@ export default connect((store) => {
   return {
     authError: store.auth.authentication.error,
     signupErrs: store.signup.signupErrs,
+    authProcess: store.auth.authentication.processing,
   }
 })(Login);

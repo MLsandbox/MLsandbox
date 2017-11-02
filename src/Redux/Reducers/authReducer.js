@@ -4,7 +4,14 @@ function auth (state = initState, action) {
   switch (action.type) {
     case 'REQ_AUTH':
       console.log('signing in please wait');
-      return Object.assign({}, state, {authenticating: true});
+      return Object.assign({}, state, {
+        authentication: { 
+          authorization: state.authentication.authorization,
+          processing: true,
+          error: state.authentication.error,
+          user: state.authentication.user,
+        }
+      });
     break;
     case 'VALIDATE_AUTH':
       console.log('access aquired', action.user);
@@ -12,7 +19,7 @@ function auth (state = initState, action) {
         { 
           authentication: { 
             authorization: true,
-            authenticating: false,
+            processing: false,
             error: false,
             user: action.user,
           }
@@ -24,7 +31,7 @@ function auth (state = initState, action) {
         { 
           authentication: { 
             authorization: false,
-            authenticating: false,
+            processing: false,
             error: 'Invalid Credentials',
             user: state.authentication.user,
           }
@@ -36,7 +43,7 @@ function auth (state = initState, action) {
         { 
           authentication: { 
             authorization: false,
-            authenticating: false,
+            processing: false,
             error: action.data,
             user: state.authentication.user,
           }
@@ -48,7 +55,7 @@ function auth (state = initState, action) {
         {
           authentication: { 
             authorization: false,
-            authenticating: false,
+            processing: false,
             user: {},
             error: false
           }
@@ -60,7 +67,7 @@ function auth (state = initState, action) {
       { 
         authentication: { 
           authorization: false,
-          authenticating: false,
+          processing: false,
           error: 'internal error',
           user: state.authentication.user,
         }
@@ -71,7 +78,7 @@ function auth (state = initState, action) {
       { 
         authentication: { 
           authorization: state.authentication.authorization,
-          authenticating:  state.authentication.authenticating,
+          processing:  state.authentication.processing,
           error: false,
           user: state.authentication.user,
         }
