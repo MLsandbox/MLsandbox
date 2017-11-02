@@ -4,5 +4,6 @@ import auth from "./authReducer";
 
 export default combineReducers({
   login,
-  auth
+  auth,
+  signup,
 });

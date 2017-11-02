@@ -87,5 +87,6 @@ class Login extends Component {
 export default connect((store) => {
   return {
     authError: store.auth.authentication.error,
+    signupErrs: store.signup.signupErrs,
   }
 })(Login);
