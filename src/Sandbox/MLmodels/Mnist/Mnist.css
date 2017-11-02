@@ -1,6 +1,6 @@
 #inner-mnist {
   position: absolute;
-  left: 30vw;
+  left: 29vw;
 }
 
 .mnist { 
@@ -10,7 +10,6 @@
 }
 
 .mnist-title {
-  padding-top: 1vw;
   color: grey;
   text-align: center;
   font-size: 2.75vw;
@@ -34,7 +33,7 @@
   font-size: 1.2vw;
   background: linear-gradient(to bottom right, #E2E2D7, #F6F7EB); 
   height: 3vw;
-  margin: 0.3vw 0.3vw 0.3vw 5vw;
+  margin: 0.5vw 0.3vw 0.3vw 6.2vw;
   padding: 0.5vw;
   text-align: center;
   width: 25vw;
@@ -43,8 +42,6 @@
   text-decoration: none;
   box-shadow: 0.15vw 0.15vw 0.15vw #73879B, 0vw 0vw 0.15vw #E2E2D7;
   user-select: none;
-  margin-top: 0.5vw;
-  margin-left: 6.2vw;
 }
 
 .mnist-btn:active {
@@ -54,6 +51,6 @@
 
 .mnist-pred {
   text-align: center;
-  font-size: 2vw;
+  font-size: 1.2vw;
   margin: 1vw 0 1vw 1vw;
 } 
