@@ -12,6 +12,28 @@ class Mnist extends Component {
 		this.state = {
       currentPrediction: 'none'
 		}
+    this.description = (
+      <div className="description">
+        <h4 className="description-header">
+					Character Recognition
+        </h4>
+        <p className="description-body">
+					This demo uses a random forest classifier model that has been trained with 60,000 representations of handwritten digits.  By drawing a number and selecting “Get Prediction”, the algorithm will attempt to predict.
+				</p>
+        <h4 className="description-header">
+					The Random Forest Classifier
+        </h4>
+        <p className="description-body">
+					Unlike other models that use a single decision tree, a random forest classifier creates multiple decision trees for classification (hence, its name).  Loosely put, a decision tree is a common way of thinking about an algorithm’s conditional statements (for example, does a number look more like a 1 or a 0), and the end of each branch corresponds to a final output.  When a random forest model is used, it creates multiple trees and then compares the predictions from each tree before returning the most common prediction amongst the trees.
+				</p>
+        <div className="description-body">
+          <span className='pros-and-cons'>Pros: </span>Performance for this model can be very high, it can often produce a very accurate classifier and it is able to deal with unbalanced and missing data.
+          <br/>
+          <br/>
+          <span className='pros-and-cons'>Cons: </span>When it is used for regressions, it is unable to make predictions outside of the range of the training data.
+        </div>
+      </div>
+    )
 	}
 
   getPrediction = (e) => {
@@ -32,7 +54,7 @@ class Mnist extends Component {
 	render () {
 		return (
 			<div className="mnist">
-        <NavDrawer modelName="ml-sandbox-handwriting-recogntion" />
+        <NavDrawer modelName="ml-sandbox-handwriting-recogntion" description={this.description}/>
         <div id="inner-mnist">
 				  <div className="mnist-title">Sketch a Number!</div>
 				  <div className="drawable"> 

@@ -17,6 +17,27 @@ class Chatbot extends Component {
         }
       ]
     }
+
+    this.description = (
+      <div className="description">
+        <h4 className="description-header">
+          Chatbot
+        </h4>
+        <p className="description-body">
+          This example uses ChatterBot, a Machine Learning conversation dialogue engine that can be found <a href="https://github.com/gunthercox/ChatterBot">here:</a>
+        </p>
+        <p className="description-body">
+          In its current state, our chatbot will provide appropriate responses for some questions and very strange ones for others. This is primarily to do with the dataset supplied for training purposes.
+        </p>
+        <p className="description-body">
+          Under the hood, the bot checks for an appropriate response with two different “logic adapters” which give back a response and a confidence value. In the process of going through the logic adapters, the data is run through a number of classifiers. The response with the higher confidence value is the one that is ultimately returned to the user. This kind of chatbot is said to be using a retrieval based model, meaning the chatbot will not generate new text, but rather select a response from the supplied dataset.
+        </p>
+        <p className="description-body">
+          The other variety of chatbot is made using what is called a Generative model. These chatbots don’t rely solely on predefined responses and are able to create new ones on their own; rather, these use machine translation techniques and other processes to try and create new responses. Generative chatbots may, therefore, seem more human-like because they are sometimes able to generate good responses to questions they have never been asked before.  While no chatbot has been able to truly emulate human conversation, continued training should produce more and more convincing results.
+        </p>
+      </div>
+    )
+
   }
 
   getResponse = (message) => {
@@ -56,7 +77,7 @@ class Chatbot extends Component {
   render() {
     return (
       <div className="chatterbot-component">
-        <NavDrawer modelName='ml-sandbox-chatbot'/>
+        <NavDrawer modelName='ml-sandbox-chatbot' description={this.description}/>
         <ul className="chat-thread" id="scrollDown">
           <Messages 
             messages={this.state.messages}

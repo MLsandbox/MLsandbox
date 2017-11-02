@@ -12,6 +12,30 @@ class VoiceRecognitionWrapper extends Component {
       record: false,
       prediction: "none"
     }
+
+    this.description = (
+      <div className="description">
+        <h4 className="description-header">
+          voice recognition
+        </h4>
+        <p className="description-body">
+          This demo uses two classifiers trained with a Gaussian Mixture Model to determine whether the voice of a speaker is male or female. The classifiers are trained with a number of audio samples of male and female speakers.  Then, the module splits the supplied audio file into a large number of very short frames and performs an analysis on the processed data.  We then train our classifiers twice:  once for a set of training data of male voices and once for a set with female voices. 
+        </p>
+        <h4 className="description-header">
+          gaussian mixture Model
+        </h4>
+        <p className="description-body">
+          A Gaussian Mixture Model assumes that all points of data are clustered together based on a certain number of different sub-groupings.  These groupings are all fit along a line like the one in the graph below. The way a classification works is similar to the way a classification works in the linear regression in the Seattle housing prices demo, but the line is not linear so the classification is more accurate. On the graph, the y-axis represents the similarity to a trained class given a number of characteristics represented on the x-axis. The clusters can be visualized by seeing the other images as a top view of the other image.
+        </p>
+        <div className="description-body">
+          <span className='pros-and-cons'>Pros: </span>Good for situations where there is missing data, it gives very good results even without a thorough understanding of how it works, is very good for data that is clustered.
+          <br/>
+          <br/>
+          <span className='pros-and-cons'>Cons: </span>The speed of training and prediction is quite a bit slower than with other models so it is impractical for very large datasets.
+        </div>
+      </div>
+    )
+
   }
   
   startRecording = () => {
@@ -59,7 +83,7 @@ class VoiceRecognitionWrapper extends Component {
   render = () => {
     return (
       <div>
-        <NavDrawer modelName="ml-sandbox-voice-recognition" />
+        <NavDrawer modelName="ml-sandbox-voice-recognition" description = {this.description}/>
         <ReactMic
           record={this.state.record}
           className="sound-wave"
