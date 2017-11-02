@@ -19,11 +19,11 @@ var Loginform = (props) => {
             type="password" 
             placeholder="Password" 
             required/></p> 
-            <p className="login_p"><input onClick={props.signIn} type="button" defaultValue="Sign In"/></p>
+            <p className="login_p"><input onClick={props.signIn} type="button" defaultValue="Log In"/></p>
         </fieldset>
         </form>
         <p className="login_p">Not a member? 
-          <a href="#">Sign up now</a>
+          <a href="#" onClick={props.switchForm}>Sign up now</a>
           <span className="fontawesome-arrow-right"></span></p>
       </div>
     </div>
