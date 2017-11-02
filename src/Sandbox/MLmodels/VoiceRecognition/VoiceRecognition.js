@@ -88,10 +88,10 @@ class VoiceRecognitionWrapper extends Component {
           record={this.state.record}
           className="sound-wave"
           strokeColor="#000000"
-          backgroundColor="#FF4081"
+          backgroundColor="#FFBA44"
         />
         <div>Prediction: {this.state.prediction}</div>
-        <div>Second Version:
+        <div>
           <button onClick={this.recordAndSubmit}>Get new recording</button>
         </div>
       </div>
