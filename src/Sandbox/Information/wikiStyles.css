@@ -1,24 +1,30 @@
 .learn-more {
   background-color: #73879B!important;
-  font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  
-  font-weight: 300;  
+  font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;    
   font-size: 4vw;
   text-align: left;
+  padding: 3vw;
+  height: 100%;
 }
 
 .learn-header {
+  text-align: center;
+}
+
+.learn-title {
   text-transform: uppercase;
   font-weight: 300;
 }
 
 .learn-subtitle {
-
+  font-weight: 300;
+  font-size: 6vw;
 }
 
 .learn-body {
-
+  font-size: 2vw;
 }
 
 .learn-link {
-  
+
 }
