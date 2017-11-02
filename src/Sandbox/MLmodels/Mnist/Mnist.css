@@ -1,0 +1,56 @@
+#inner-mnist {
+  position: absolute;
+  left: 29vw;
+}
+
+.mnist { 
+  font-family: 'Lato', sans-serif;
+  font-weight: 300; 
+  height: 100%;
+}
+
+.mnist-title {
+  color: grey;
+  text-align: center;
+  font-size: 2.75vw;
+  margin-left: 1vw;
+}
+
+.inner-div {
+  display: table;
+  margin: 0, auto;
+}
+
+.drawable {
+ 	background-image: url("./mnist-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+ 	width: 37vw;
+ 	height: 37vw;
+}
+
+.mnist-btn { 
+  font-size: 1.2vw;
+  background: linear-gradient(to bottom right, #E2E2D7, #F6F7EB); 
+  height: 3vw;
+  margin: 0.5vw 0.3vw 0.3vw 6.2vw;
+  padding: 0.5vw;
+  text-align: center;
+  width: 25vw;
+  font-size: 1.2vw;
+  border-radius: 0.5vw;
+  text-decoration: none;
+  box-shadow: 0.15vw 0.15vw 0.15vw #73879B, 0vw 0vw 0.15vw #E2E2D7;
+  user-select: none;
+}
+
+.mnist-btn:active {
+  border: 0.1vw solid grey;
+  box-shadow: none;
+}
+
+.mnist-pred {
+  text-align: center;
+  font-size: 1.2vw;
+  margin: 1vw 0 1vw 1vw;
+} 

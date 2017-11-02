@@ -127,7 +127,6 @@ input[type=range]::-ms-thumb {
   box-shadow: 0.15vw 0.15vw 0.15vw #73879B, 0vw 0vw 0.15vw #E2E2D7;
   user-select: none;
 }
-
 .housing-btn:active { 
   box-shadow: none;
   background: white;
