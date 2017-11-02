@@ -107,6 +107,20 @@ class Housing extends Component {
     return (
       <div className="housing">
         <NavDrawer modelName="ml-sandbox-housing-prices-prediction" description={this.description}/>
+      <div className="mapcontain">
+        <div className="mapheader">To get a prediction on what property with certain specifications might cost in Kings County, Washington, place a pin on the map enter options and click the prediction button!</div>
+        <div className="mapholder">
+          <MapComponent
+            lat={this.state.lat}
+            lng={this.state.lng}
+            handleMapClick={this.handleMapClick}
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${mapKey}&v=3.exp&libraries=geometry,drawing,places`}
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `60vw` }} />}
+            mapElement={<div style={{ height: `50vw`, width: `78vw` }} />}
+          />
+        </div>
+      </div>
         <div className="sidebar">
           <div className="title">Choose Your Options: </div>
         {Options.map((option, index) => {
@@ -135,19 +149,6 @@ class Housing extends Component {
         })}
         <div className="currentprediction">Current Prediction: {this.state.currentPrediction || "None"}</div>
         <div onClick={this.handleSubmit} className="housing-btn">Get Prediction</div>
-      </div>
-      <div className="mapcontain">
-        <div className="mapheader">To get a prediction on what property with certain specifications might cost in Kings County, Washington, place a pin on the map enter options and click the prediction button!</div>
-        <MapComponent
-          className="mapholder"
-          lat={this.state.lat}
-          lng={this.state.lng}
-          handleMapClick={this.handleMapClick}
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${mapKey}&v=3.exp&libraries=geometry,drawing,places`}
-          loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `60vw` }} />}
-          mapElement={<div style={{ height: `50vw`, width: `80vw` }} />}
-        />
       </div>
     </div>
     )
