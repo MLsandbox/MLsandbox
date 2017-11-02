@@ -51,6 +51,14 @@
   padding-left: 1.5vw;
 }
 
+.description-link {
+  color: #FFBA44;
+}
+
+.description-link:hover {
+  color: #F6F7EB;
+}
+
 .modal-content {
   max-width: 95vw;
 }
