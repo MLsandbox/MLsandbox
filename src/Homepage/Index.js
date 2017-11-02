@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import Login from './Login/Login';
 import Footer from './Footer/Footer';
-import { setPopupState, reqAuth } from '../Redux/Actions/actionTypes';
+import { setPopupState, reqAuth, reqSignup } from '../Redux/Actions/actionTypes';
 import { connect } from 'react-redux';
 import Logout from '../Logout/index';
 import Styles from'./index.css';
@@ -26,16 +26,21 @@ class Homepage extends Component {
   }
 
   signUpHelper (user) {
+    var valid = true;
     this.props.dispatch({type:'RESET_SIGNUP_ERRS'});
     if (user.password !== user.confirmPw) {
+      valid = false;
       this.props.dispatch({type:'PW_MATCH_ERR'});
     }
     if(user.password.length < 6) {
+      valid = false;
       this.props.dispatch({type:'PW_LEN_ERR'});
     }
     if(user.username.length < 3 || user.username.length > 12) {
+      valid = false;
       this.props.dispatch({type: 'USER_LEN_ERR'});
     }
+    return valid;
   }
 
   signUp () {
@@ -47,8 +52,9 @@ class Homepage extends Component {
       password: password,
       confirmPw: confirmPw,
     }
-    this.signUpHelper(user);
-    // this.props.dispatch(reqSignup.bind(user));
+    if( this.signUpHelper(user) ) {
+      this.props.dispatch(reqSignup.bind(user));
+    }
   }
 
   redirect(){
