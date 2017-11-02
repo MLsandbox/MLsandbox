@@ -17,11 +17,10 @@ class Wiki extends Component {
           With training, these classifiers improve and become more accurate over time.  There are a number of different algorithms, or “models”,  that can be used to achieve this, and in this sandbox, we’ll explore the following models: linear regression classifier, random forest classifier, Gaussian mixture classifier, and support vector classifier. Other common models include (but are not limited to) neural networks, k-means clustering, and logistic regression.
         </p>
         <p className="learn-body">
-          If you’d like to learn more about Machine Learning, check out the following links:
-          <a href="https://www.youtube.com/watch?v=h0e2HAPTGF4">https://www.youtube.com/watch?v=h0e2HAPTGF4</a>
-          <a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/">http://www.r2d3.us/visual-intro-to-machine-learning-part-1/</a>
-          <a href="https://www.youtube.com/watch?v=nKW8Ndu7Mjw">https://www.youtube.com/watch?v=nKW8Ndu7Mjw</a>
-          <a hreft="http://scikit-learn.org/stable/documentation.html">http://scikit-learn.org/stable/documentation.html</a>
+          If you’d like to learn more about Machine Learning, check out the following links:<br/>
+          <a className="learn-link" href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/">R2D3 - an amazing ML visualization</a><br/>
+          <a className="learn-link" href="https://www.youtube.com/watch?v=nKW8Ndu7Mjw">Google Cloud's latest introduction video on ML</a><br/>
+          <a className="learn-link" href="http://scikit-learn.org/stable/documentation.html">scikit-learn documentation</a>.
         </p>
         <h1><Link to ="/sandbox">BACK</Link></h1>
       </div>
