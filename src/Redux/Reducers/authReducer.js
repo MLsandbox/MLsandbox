@@ -3,7 +3,6 @@ import initState from '../initState';
 function auth (state = initState, action) {
   switch (action.type) {
     case 'REQ_AUTH':
-      console.log('signing in please wait');
       return Object.assign({}, state, {
         authentication: { 
           authorization: state.authentication.authorization,
@@ -14,7 +13,6 @@ function auth (state = initState, action) {
       });
     break;
     case 'VALIDATE_AUTH':
-      console.log('access aquired', action.user);
       return Object.assign({}, state, 
         { 
           authentication: { 
@@ -26,7 +24,6 @@ function auth (state = initState, action) {
         })
     break;
     case 'INVALID_AUTH':
-      console.log('invalid credentials');
       return Object.assign({}, state, 
         { 
           authentication: { 
@@ -38,7 +35,6 @@ function auth (state = initState, action) {
         })
     break;
     case 'INVALID_SIGNUP':
-      console.log('user error with signup');
       return Object.assign({}, state, 
         { 
           authentication: { 
@@ -50,7 +46,6 @@ function auth (state = initState, action) {
         })
     break;
     case 'LOGOUT':
-      console.log('you have successfully logged out');
       return Object.assign({}, state,
         {
           authentication: { 
@@ -62,7 +57,6 @@ function auth (state = initState, action) {
         }
       )
     case 'REQ_AUTH_FAIL':
-      console.log('opps something went wrong');
     return Object.assign({}, state, 
       { 
         authentication: { 

@@ -10,13 +10,11 @@ class Logout extends Component {
   }
 
   logoutHandler () {
-    console.log('you are logging out');
     localStorage.removeItem('jwtToken');
     this.props.dispatch({type:'LOGOUT'});
   }
 
   render () {
-    console.log(this.props.authentication)
     if(this.props.authentication) {
       return (
         <a className="nav-link" onClick={this.logoutHandler}>
