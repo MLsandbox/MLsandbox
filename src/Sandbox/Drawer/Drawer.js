@@ -8,7 +8,7 @@ const Drawer = ({modelName, description}) => {
   return (
     <nav className="navbar navbar-dark drawer">
       <Description description={description}/>
-      <a className="navbar-brand name" data-toggle="modal" data-target="#explanation-popup">{modelName}</a>
+      <a className="navbar-brand name titler" data-toggle="modal" data-target="#explanation-popup">{modelName}</a>
       <button
         className="navbar-toggler"
         type="button"
