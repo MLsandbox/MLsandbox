@@ -55,7 +55,7 @@ class Mnist extends Component {
 	render () {
 		return (
 			<div>
-        <NavDrawer modelName="ml-sandbox-handwriting-recogntion" description={this.description}/>
+        <NavDrawer modelName="ml-sandbox-handwriting-recognition" description={this.description}/>
 				<div>Sketch a Number!</div>
 				<div className='drawing' style={this.state.styles}> 
 				<DrawableCanvas

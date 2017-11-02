@@ -43,13 +43,12 @@
 .description-body {
   font-size: 2vw;
   padding: 1vw;
+  padding-left: 1.5vw;
 }
 
 .pros-and-cons {
   font-weight: 500;
 }
-
-
 
 @media (min-width: 768px) { 
   .name {
