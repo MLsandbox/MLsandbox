@@ -60,7 +60,8 @@
 }
 
 .modal-content {
-  max-width: 95vw;
+  margin: 0 auto;
+  max-width: 80vw;
 }
 
 .pros-and-cons {
