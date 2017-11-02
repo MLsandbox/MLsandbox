@@ -10,7 +10,7 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>
       panControl: false,
       streetViewControl: false,
       gestureHandling: 'cooperative',
-      zoomControl: false,
+      zoomControl: true,
       scrollwheel: false,
       draggable: true
     }}

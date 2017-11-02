@@ -1,7 +1,10 @@
+body {
+  background-color: #f0f0f0!important;
+}
+
 .housing {
   font-family: 'Lato', sans-serif;
   font-weight: 300; 
-  background: linear-gradient(to bottom right, #E2E2D7, #F6F7EB); 
   height: 100vw;
 }
 
@@ -171,12 +174,26 @@ input[type=range]::-ms-thumb {
   }
   .option {
     font-size: 3vw;
+    margin: 1.5vw 1vw 0 1vw;
   }
   input[type=range] {
-    width: 50vw;
+    width: 48vw;
     display: table;
     margin: 0 auto;
     margin-bottom: 1vw;
+    height: 3vw;
+  }
+  input[type='range']::-webkit-slider-thumb {
+    height: 5vw;
+    width: 2.5vw;
+  }
+  input[type=range]::-moz-range-thumb {
+    height: 5vw;
+    width: 2.5vw;
+  }
+  input[type=range]::-ms-thumb {
+    height: 5vw;
+    width: 2vw;
   }
   .mapheader {
     font-size: 3vw;
@@ -185,5 +202,20 @@ input[type=range]::-ms-thumb {
   }
   .firstnum, .secondnum {
     font-size: 3vw;
+  }
+  .title {
+    font-size: 3vw;
+  }
+  .currentprediction {
+    font-size: 3vw;
+    margin-top: 1.5vw;
+  }
+  .housing-btn { 
+    width: 40vw;
+    font-size: 4vw;
+    display: table;
+    margin: 0 auto;
+    height: 7vw;
+    margin-bottom: 2vw;
   }
 }
