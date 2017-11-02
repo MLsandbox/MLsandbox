@@ -12,6 +12,7 @@ class Homepage extends Component {
     super(props);
     this.signIn = this.signIn.bind(this);
     this.redirect = this.redirect.bind(this);
+    this.signUp = this.signUp.bind(this);
   }
 
   signIn() {
@@ -24,8 +25,20 @@ class Homepage extends Component {
     this.props.dispatch(reqAuth.bind(user));
   }
 
+  signUp () {
+    var username = document.getElementById("signupEmail").value;
+    var password = document.getElementById("signupPassword").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+    var user = {
+      username: username,
+      password: password,
+      confirmPassword: confirmPassword,
+    }
+    console.log(user);
+    // this.props.dispatch(reqSignup.bind(user));
+  }
+
   redirect(){
-    console.log(this.props.auth);
     if(this.props.auth) {
       if( document.getElementById('close-body') ) {
         document.getElementById('close-body').click();
@@ -40,7 +53,9 @@ class Homepage extends Component {
       <div id="homepage-root">
         <Login 
         processing = {this.props.processing}
-        signIn = {this.signIn} />
+        signIn = {this.signIn} 
+        signUp = {this.signUp}
+        />
         <section className="intro">
           <div className="inner">
             <div className="content">

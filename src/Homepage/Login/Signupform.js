@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Styles from './Login.css';
 import { FormGroup, ControlLabel, FormControl, Modal, Button } from 'react-bootstrap';
 
-var Loginform = (props) => {
+var Signupform = (props) => {
   return (
     <div className="login_container">
       <div id="login">
@@ -12,23 +12,27 @@ var Loginform = (props) => {
         <fieldset className="clearfix">
           <p className="login_p"><span className="fa fa-user"></span>
             <input type="text" placeholder="Username" 
-            id="formControlsEmail"
+            id="signupEmail"
             required/></p>
           <p className="login_p"><span className="fa fa-lock"></span><input 
-            id="formControlsPassword"
+            id="signupPassword"
             type="password" 
             placeholder="Password" 
             required/></p> 
-            <p className="login_p"><input onClick={props.signIn} type="button" defaultValue="Log In"/></p>
+          <p className="login_p"><span className="fa fa-lock"></span><input 
+            id="confirmPassword"
+            type="password" 
+            placeholder="Confirm Password" 
+            required/></p> 
+          <p className="login_p"><input onClick={props.signUp} type="button" defaultValue="Sign Up"/></p>  
         </fieldset>
         </form>
-        <p className="login_p">Not a member? 
-          <a href="#" onClick={props.switchForm}>Sign up now</a>
+        <p className="login_p">Already Registered? 
+          <a href="#" onClick={props.switchForm}>Login here</a>
           <span className="fontawesome-arrow-right"></span></p>
       </div>
     </div>
   );
 }
 
-export default Loginform;
-
+export default Signupform;
