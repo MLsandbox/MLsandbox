@@ -23,6 +23,7 @@
 
 .nav-link {
   font-size: 3vw!important;
+  text-transform: uppercase;  
 }
 
 .transparent {
