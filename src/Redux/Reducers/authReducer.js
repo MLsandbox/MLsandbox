@@ -25,7 +25,8 @@ function auth (state = initState, action) {
           authentication: { 
             authorization: false,
             authenticating: false,
-            error: false
+            error: 'Invalid Credentials',
+            user: state.authentication.user,
           }
         })
     break;
@@ -37,6 +38,7 @@ function auth (state = initState, action) {
             authorization: false,
             authenticating: false,
             error: action.data,
+            user: state.authentication.user,
           }
         })
     break;
@@ -59,7 +61,19 @@ function auth (state = initState, action) {
         authentication: { 
           authorization: false,
           authenticating: false,
-          error: true,
+          error: 'internal error',
+          user: state.authentication.user,
+        }
+      })
+    break;
+    case 'RESET_ERROR':
+    return Object.assign({}, state, 
+      { 
+        authentication: { 
+          authorization: state.authentication.authorization,
+          authenticating:  state.authentication.authenticating,
+          error: false,
+          user: state.authentication.user,
         }
       })
     break;

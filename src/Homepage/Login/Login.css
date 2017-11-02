@@ -20,7 +20,6 @@
   font-family: 'FontAwesome', sans-serif;
 }
 
-
 .modal-body {
   padding: 0px !important;
 }
@@ -69,6 +68,9 @@ input {
   clear: both;
 }
 
+#error-warn {
+  margin-bottom: 0rem;
+}
 
 /* ---------- LOGIN ---------- */
 #login {
@@ -173,3 +175,7 @@ input {
 		transform: rotate(0deg);
 }
 
+.alert.alert-danger.signup-err {
+  margin-bottom: 0rem;
+  border-radius: 0; 
+}

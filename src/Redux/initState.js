@@ -5,6 +5,11 @@ const initialState = {
     processing: false,
     error: false,
     user: {},
+  },
+  signupErrs: {
+    pwLen: false,
+    usrLen: false,
+    pwMatch: false
   }
 }
 

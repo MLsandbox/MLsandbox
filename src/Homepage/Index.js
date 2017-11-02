@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import Login from './Login/Login';
 import Footer from './Footer/Footer';
-import { setPopupState, reqAuth } from '../Redux/Actions/actionTypes';
+import { setPopupState, reqAuth, reqSignup } from '../Redux/Actions/actionTypes';
 import { connect } from 'react-redux';
 import Logout from '../Logout/index';
 import Styles from'./index.css';
@@ -25,17 +25,36 @@ class Homepage extends Component {
     this.props.dispatch(reqAuth.bind(user));
   }
 
+  signUpHelper (user) {
+    var valid = true;
+    this.props.dispatch({type:'RESET_SIGNUP_ERRS'});
+    if (user.password !== user.confirmPw) {
+      valid = false;
+      this.props.dispatch({type:'PW_MATCH_ERR'});
+    }
+    if(user.password.length < 6) {
+      valid = false;
+      this.props.dispatch({type:'PW_LEN_ERR'});
+    }
+    if(user.username.length < 3 || user.username.length > 12) {
+      valid = false;
+      this.props.dispatch({type: 'USER_LEN_ERR'});
+    }
+    return valid;
+  }
+
   signUp () {
     var username = document.getElementById("signupEmail").value;
     var password = document.getElementById("signupPassword").value;
-    var confirmPassword = document.getElementById("confirmPassword").value;
+    var confirmPw = document.getElementById("confirmPassword").value;
     var user = {
       username: username,
       password: password,
-      confirmPassword: confirmPassword,
+      confirmPw: confirmPw,
     }
-    console.log(user);
-    // this.props.dispatch(reqSignup.bind(user));
+    if( this.signUpHelper(user) ) {
+      this.props.dispatch(reqSignup.bind(user));
+    }
   }
 
   redirect(){
@@ -61,7 +80,7 @@ class Homepage extends Component {
             <div className="content">
                 <h1>Welcome</h1>
                 <a id="login-btn" href="#" data-toggle="modal" data-target="#auth-popup" >LOGIN</a>
-                {this.redirect()};
+                {this.redirect()}
             </div>
           </div>
         </section>

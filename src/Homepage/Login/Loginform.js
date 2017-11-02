@@ -7,7 +7,8 @@ var Loginform = (props) => {
   return (
     <div className="login_container">
       <div id="login">
-        <a href="#" id="close-body" data-dismiss="modal" aria-label="Close" className="close-button"></a>
+        <a href="#" id="close-body" data-dismiss="modal" onClick={props.onClose}
+          aria-label="Close" className="close-button"></a>
         <form id="login-fields">
         <fieldset className="clearfix">
           <p className="login_p"><span className="fa fa-user"></span>
