@@ -4,7 +4,7 @@ import Signupform from './Signupform';
 import Loader from './Loader';
 import { connect } from 'react-redux';
 
-var conditionalRender = (authState, props) => {
+var renderLoad = (authState, props) => {
   if (authState) {
     return <Loader/>
   } else {
@@ -13,13 +13,6 @@ var conditionalRender = (authState, props) => {
   }
 }
 
-// <div className="modal-container">
-// <modal show={props.popupState} onHide={props.closePopup}>
-//   <div>
-//     {conditionalRender(props.authenticating, props)}
-//   </div>
-// </modal>
-
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -27,6 +20,7 @@ class Login extends Component {
     this.switchForm = this.switchForm.bind(this);
     this.renderForm = this.renderForm.bind(this);
     this.renderError = this.renderError.bind(this);
+    this.onCloseResetError = this.onCloseResetError.bind(this);
   }
 
   switchForm() {
@@ -43,7 +37,7 @@ class Login extends Component {
     var err = this.props.authError;
     if (err) {
       return (  
-        <div className="alert alert-danger">
+        <div id="error-warn" className="alert alert-danger">
           <strong>Danger!</strong> { err }
         </div>
       );
@@ -51,11 +45,25 @@ class Login extends Component {
   }
   renderForm() {
     if ( this.state.formtype === 'login') {
-      return (<Loginform switchForm={this.switchForm} signIn={this.props.signIn}/>);
+      return (
+        <Loginform 
+        switchForm={this.switchForm} 
+        signIn={this.props.signIn}
+        onClose = {this.onCloseResetError}
+        />);
     }
     if ( this.state.formtype === 'signup') {
-      return (<Signupform switchForm={this.switchForm} signUp={this.props.signUp}/>);
+      return (
+        <Signupform 
+        switchForm={this.switchForm} 
+        signUp={this.props.signUp}
+        onClose = {this.onCloseResetError}
+        />);
     }
+  }
+
+  onCloseResetError () {
+    this.props.dispatch({type:'RESET_ERROR'});
   }
 
   render(){
@@ -64,7 +72,7 @@ class Login extends Component {
       aria-labelledby="exampleModalLiveLabel" style={{display: "none"}} aria-hidden="true">
         <div className="modal-dialog" role="document">
           <div className="modal-content">
-            <div className="modal-body">
+            <div  className="modal-body">
             { this.renderError() }
             { this.renderForm() }
             </div>

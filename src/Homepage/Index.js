@@ -25,14 +25,20 @@ class Homepage extends Component {
     this.props.dispatch(reqAuth.bind(user));
   }
 
+  signUpHelper (user) {
+    if (user.password !== user.confirmPw) {
+      //passwords don't match
+    }
+  }
+
   signUp () {
     var username = document.getElementById("signupEmail").value;
     var password = document.getElementById("signupPassword").value;
-    var confirmPassword = document.getElementById("confirmPassword").value;
+    var confirmPw = document.getElementById("confirmPassword").value;
     var user = {
       username: username,
       password: password,
-      confirmPassword: confirmPassword,
+      confirmPw: confirmPw,
     }
     console.log(user);
     // this.props.dispatch(reqSignup.bind(user));
