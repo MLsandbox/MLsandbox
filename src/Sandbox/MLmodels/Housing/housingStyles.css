@@ -10,7 +10,7 @@
   background: radial-gradient(#FFBA44 ,#F9AA20);
   font-size: 1vw;
   display: inline-block;
-  float: left;
+  float: right;
   width: 20vw;
 }
 
@@ -147,3 +147,8 @@ input[type=range]::-ms-thumb {
   font-size: 2vw;
 }
 
+@media (max-width: 1024px) {
+  .sidebar {
+    float: none;
+  }
+}
