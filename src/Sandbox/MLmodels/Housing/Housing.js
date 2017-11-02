@@ -16,6 +16,36 @@ class Housing extends Component {
       lng: -122.333564,
       bedrooms: 0, bathrooms: 1, livingSpace: 0, lotSize: 0, floors: 1, condition: 1, grade: 1, basement: 0, yearBuilt: 1900, yearRenovated: 1900
     }
+
+    this.description = (
+      <div className="description">
+        <h4 className="description-header">
+          Seattle Housing Prices
+        </h4>
+        <p className="description-body">
+          This demo uses a linear regression classifier that has been trained with over 21,000 pieces of data from 2014 residential real-estate sales in King’s County, WA.  Given a set of user-supplied criteria and a selected point on the map, our ML algorithm will predict an appropriate price.
+        </p>
+        <h4 className="description-header">
+          Linear Regression Classifier
+        </h4>
+        <p className="description-body">
+          A linear regression classifier makes its classifications by the value of a linear combination of characteristics.  An equation would look something like:
+        </p>
+        <p className="description-body">
+          Y  = B0 + B1 * x1 + B2 * x2 + …
+        </p>
+        <p className="description-body">
+          Here, each B value corresponds to some scaling factor, each X value is some specified input, and Y is our prediction.
+        </p>
+        <div className="description-body">
+          <span className='pros-and-cons'>Pros: </span>The concepts used are easy to understand and process, it trains quickly and classifies quickly.
+          <br/>
+          <br/>
+          <span className='pros-and-cons'>Cons: </span>Less accurate in classification than other models, it is very sensitive to outliers in training data, it is not good for classifying data with non-linear trends.
+        </div>
+      </div>
+    )
+
   }
   
   handleInputChange = (event) => {
@@ -68,7 +98,7 @@ class Housing extends Component {
   render() {
     return (
       <div className="housing">
-        <NavDrawer modelName="ml-sandbox-housing-prices-prediction" />
+        <NavDrawer modelName="ml-sandbox-housing-prices-prediction" description={this.description}/>
         <div className="sidebar">
           <div className="title">Choose Your Options: </div>
         {Options.map((option, index) => {
