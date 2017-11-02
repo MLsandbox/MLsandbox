@@ -6,13 +6,17 @@ var signupReducer = (state=initState, action) => {
       return Object.assign({}, state, {
           signupErrs: {
               pwLen: true,
+              pwMatch: state.signupErrs.pwMatch,
+              usrLen: state.signupErrs.usrLen,
           }
       })
     break;
     case 'USER_LEN_ERR':
       return Object.assign({}, state, {
         signupErrs: {
-            userLen: true,
+            usrLen: true,
+            pwLen: state.signupErrs.pwLen,
+            pwMatch: state.signupErrs.pwMatch,
         }
       })
     break;
@@ -20,6 +24,8 @@ var signupReducer = (state=initState, action) => {
     return Object.assign({}, state, {
       signupErrs: {
           pwMatch: true,
+          usrLen: state.signupErrs.usrLen,
+          pwLen: state.signupErrs.pwLen,
       }
     })
     break;
@@ -27,8 +33,8 @@ var signupReducer = (state=initState, action) => {
     return Object.assign({}, state, {
       signupErrs: {
           pwMatch: false,
-          pwMatch: false,
-          pwMatch: false,
+          usrLen: false,
+          pwLen: false,
       }
     })
     default:
