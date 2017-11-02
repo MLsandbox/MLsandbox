@@ -1,12 +1,8 @@
-#inner-mnist {
-  position: absolute;
-  left: 29vw;
-}
-
 .mnist { 
   font-family: 'Lato', sans-serif;
   font-weight: 300; 
   height: 100%;
+  color: #73879B;
 }
 
 .mnist-title {
@@ -16,9 +12,9 @@
   margin-left: 1vw;
 }
 
-.inner-div {
-  display: table;
-  margin: 0, auto;
+.inner-mnist {
+  position: absolute;
+  left: 29vw;
 }
 
 .drawable {
@@ -54,3 +50,33 @@
   font-size: 1.2vw;
   margin: 1vw 0 1vw 1vw;
 } 
+
+
+@media (max-width: 768px) {
+  .drawable {
+    width: 90vw;
+    height: 90vw;
+  }
+  .mnist-title {
+    font-size: 6vw;
+    margin-top: 2vw;
+    margin-left: 2vw;
+  }
+  .inner-mnist {
+    left: 0;
+    margin-left: 5vw;
+  }
+  .mnist-btn {
+    padding-top: 1.3vw;
+    margin-left: 15vw;
+    margin-top: 1.5vw;
+    font-size: 4vw;
+    width: 60vw;
+    height: 10vw;
+  }
+  .mnist-pred {
+    font-size: 4vw;
+    margin-top: 2vw;
+    margin-left: 2vw;
+  }
+}
