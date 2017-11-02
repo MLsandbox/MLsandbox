@@ -77,7 +77,7 @@ class VoiceRecognitionWrapper extends Component {
               this.setState({ record: false });
             }).catch(err => console.log(err));
           }).catch(err => console.log(err));
-      }, 2500);
+      }, 1500);
     }, 300);
   }
 
