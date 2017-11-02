@@ -66,11 +66,11 @@ input[type=range] {
   display: block;
   width: 15vw;
   clear: both;
-  background-color: white;
+  background: linear-gradient(to left, #F8F8F8, #F5F5F5);
   border-radius: 10vw;
   height: 1vw;
   margin-bottom: 1vw;
-  box-shadow: 0.1vw 0.1vw 0.1vw #73879B, 0vw 0vw 0.1vw #E2E2D7;
+  box-shadow: 0.05vw 0.05vw 0.05vw #73879B, 0vw 0vw 0.1vw #E2E2D7;
 }
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -79,7 +79,7 @@ input[type='range']::-webkit-slider-thumb {
   border-radius: 0.3vw;
   cursor: pointer;
   background-color: #FFBA44;
-  box-shadow: 0.1vw 0.1vw 0.1vw #73879B, 0vw 0vw 0.1vw #E2E2D7;
+  box-shadow: 0.05vw 0.05vw 0.05vw #73879B, 0vw 0vw 0.1vw #E2E2D7;
 }
 
 input[type=range]::-moz-range-thumb {
@@ -88,7 +88,7 @@ input[type=range]::-moz-range-thumb {
   border-radius: 0.3vw;
   cursor: pointer;
   background-color: #FFBA44;
-  box-shadow: 0.1vw 0.1vw 0.1vw #73879B, 0vw 0vw 0.1vw #E2E2D7;
+  box-shadow: 0.05vw 0.05vw 0.05vw #73879B, 0vw 0vw 0.1vw #E2E2D7;
 }
 
 input[type=range]::-ms-thumb {
@@ -97,7 +97,7 @@ input[type=range]::-ms-thumb {
   border-radius: 0.3vw;
   cursor: pointer;
   background-color: #FFBA44;
-  box-shadow: 0.1vw 0.1vw 0.1vw #73879B, 0vw 0vw 0.1vw #E2E2D7;
+  box-shadow: 0.05vw 0.05vw 0.05vw #73879B, 0vw 0vw 0.1vw #E2E2D7;
 }
 
 .currentselection {
