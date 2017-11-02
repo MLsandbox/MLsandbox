@@ -15,7 +15,8 @@ class VoiceRecognitionWrapper extends Component {
       record: false,
       prediction: "none"
     }
-
+    
+    this.audioContext = new (window.AudioContext || window.webkitAudioContext)();  
     this.description = (
       <div className="description">
         <h4 className="description-header">
@@ -46,46 +47,38 @@ class VoiceRecognitionWrapper extends Component {
     this.props.dispatch({type:"VALIDATE_AUTH", user:jwt.decode(token)});
   }
   
-  startRecording = () => {
-    this.setState({ record: true });
-  }
-
-  stopRecording = () => {
-    this.setState({ record: false });
-  }
-
   recordAndSubmit = () => {
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();  
-    const recorder = new Recorder(audioContext, {
-      onAnalysed: data => {},
-    });
-    let isRecordeing = false;
-    let blob = null;
-    
-    navigator.mediaDevices.getUserMedia({ audio: true })
-      .then(stream => {
-        recorder.init(stream)
-        recorder.start();
-      })
-      .catch(err => console.log(err));
-   
-    this.setState({ record: true });
-
     setTimeout(() => {
-      recorder.stop()
-        .then(({blob, buffer}) => {
-          blob = blob;
-          let formData = new FormData();
-          formData.append('file', blob);
-          Axios.post('https://ml-sandbox.ml/api/speech', formData, {
-            headers: { 'content-type': 'multipart/form-data' }
-          }).then(response => {
-            this.setState({prediction: response.data.prediction})
-            audioContext.close();
-            this.setState({ record: false });
+      const recorder = new Recorder(this.audioContext, {
+        onAnalysed: data => {},
+      });
+      let blob = null;
+
+      navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(stream => {
+          recorder.init(stream)
+          recorder.start();
+        })
+        .catch(err => console.log(err));
+   
+      this.setState({ record: true });
+
+      setTimeout(() => {
+        recorder.stop()
+          .then(({blob, buffer}) => {
+            blob = blob;
+            let formData = new FormData();
+            formData.append('file', blob);
+            Axios.post('https://ml-sandbox.ml/api/speech', formData, {
+              headers: { 'content-type': 'multipart/form-data' }
+            }).then(response => {
+              this.setState({prediction: response.data.prediction})
+              recorder.stream.getAudioTracks()[0].stop();
+              this.setState({ record: false });
+            }).catch(err => console.log(err));
           }).catch(err => console.log(err));
-        }).catch(err => console.log(err));
-    }, 2500);
+      }, 2500);
+    }, 300);
   }
 
   render = () => {
