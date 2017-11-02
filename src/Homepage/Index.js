@@ -29,15 +29,12 @@ class Homepage extends Component {
     this.props.dispatch({type:'RESET_SIGNUP_ERRS'});
     if (user.password !== user.confirmPw) {
       this.props.dispatch({type:'PW_MATCH_ERR'});
-      console.log('pws dont match');
     }
     if(user.password.length < 6) {
       this.props.dispatch({type:'PW_LEN_ERR'});
-      console.log('pw not long enough has to be >=6');
     }
     if(user.username.length < 3 || user.username.length > 12) {
       this.props.dispatch({type: 'USER_LEN_ERR'});
-      console.log('username not long enough 3 - 12 chars');
     }
   }
 
@@ -51,7 +48,6 @@ class Homepage extends Component {
       confirmPw: confirmPw,
     }
     this.signUpHelper(user);
-    console.log(user);
     // this.props.dispatch(reqSignup.bind(user));
   }
 

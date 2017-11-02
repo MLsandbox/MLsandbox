@@ -74,23 +74,22 @@ class Login extends Component {
     var pwLen = this.props.signupErrs.pwLen;
     var pwMatch = this.props.signupErrs.pwMatch;
     var usrLen = this.props.signupErrs.usrLen;
-    console.log(pwLen, pwMatch, usrLen);
     if (pwLen) {
       errs.push(
-        <div key="signerr1" id="error-warn" className="alert alert-danger">
-          <strong>Danger!</strong> PASSWORD NEEDS TO BE AT LEAST 6 CHARACTERS
+        <div key="signerr1" className="alert alert-danger signup-err">
+          <strong>*REQUIRE </strong>PASSWORD NEEDS TO BE AT LEAST 6 CHARACTERS
         </div>);
     }
     if (usrLen) {
       errs.push(
-        <div key="signerr2" id="error-warn" className="alert alert-danger">
-          <strong>Danger!</strong>  USERNAME CAN ONLY BE BETWEEN 3 - 12 CHARACTERS
+        <div key="signerr2" className="alert alert-danger signup-err">
+          <strong>*REQUIRE </strong>USERNAME CAN ONLY BE BETWEEN 3 - 12 CHARACTERS
         </div>);
     }
     if (pwMatch) {
       errs.push(
-        <div key="signerr3" id="error-warn" className="alert alert-danger">
-          <strong>Danger!</strong> PASSWORDS DON'T MATCH
+        <div key="signerr3" className="alert alert-danger signup-err">
+          <strong>*REQUIRE </strong>PASSWORDS DON'T MATCH
         </div>);
     }
     return errs;

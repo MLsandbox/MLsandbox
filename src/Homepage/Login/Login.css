@@ -175,3 +175,7 @@ input {
 		transform: rotate(0deg);
 }
 
+.alert.alert-danger.signup-err {
+  margin-bottom: 0rem;
+  border-radius: 0; 
+}
