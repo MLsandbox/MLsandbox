@@ -95,9 +95,9 @@ class VoiceRecognitionWrapper extends Component {
               backgroundColor="#FFBA44"
             />
           </div>
-          <div>Prediction: {this.state.prediction}</div>
           <div>
             <div className="voice-btn" onClick={this.recordAndSubmit}>Record</div>
+            <div className="voice-pred">Prediction: {this.state.prediction}</div>
           </div>
         </div>
       </div>
