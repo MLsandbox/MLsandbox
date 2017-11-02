@@ -25,6 +25,32 @@
   opacity: 0;
 }
 
+/* descriptions */
+
+.description {
+  font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  
+  font-weight: 300;
+  text-align: left;
+}
+
+.description-header {
+  font-size: 4vw;
+  background: radial-gradient(#FFBA44 ,#F9AA20);
+  text-transform: uppercase;  
+  padding: 1vw;
+}
+
+.description-body {
+  font-size: 2vw;
+  padding: 1vw;
+}
+
+.pros-and-cons {
+  font-weight: 500;
+}
+
+
+
 @media (min-width: 768px) { 
   .name {
     font-size: 30px!important;
