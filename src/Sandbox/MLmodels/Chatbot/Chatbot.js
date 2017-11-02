@@ -26,7 +26,7 @@ class Chatbot extends Component {
           Chatbot
         </h4>
         <p className="description-body">
-          This example uses ChatterBot, a Machine Learning conversation dialogue engine that can be found <a href="https://github.com/gunthercox/ChatterBot">here:</a>
+          This example uses ChatterBot, a Machine Learning conversation dialogue engine that can be found <a className="description-link" href="https://github.com/gunthercox/ChatterBot">here:</a>
         </p>
         <p className="description-body">
           In its current state, our chatbot will provide appropriate responses for some questions and very strange ones for others. This is primarily to do with the dataset supplied for training purposes.
