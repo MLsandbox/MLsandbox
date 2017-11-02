@@ -34,6 +34,7 @@ class Mnist extends Component {
         </div>
       </div>
     )
+	
 	}
 
   getPrediction = (e) => {
@@ -55,7 +56,7 @@ class Mnist extends Component {
 		return (
 			<div className="mnist">
         <NavDrawer modelName="ml-sandbox-handwriting-recogntion" description={this.description}/>
-        <div id="inner-mnist">
+        <div className="inner-mnist">
 				  <div className="mnist-title">Sketch a Number!</div>
 				  <div className="drawable"> 
 				    <DrawableCanvas
