@@ -19,15 +19,33 @@ class Housing extends Component {
 
     this.description = (
       <div className="description">
-        <h3 className="description-header">
-          mushrooms
-        </h3>
+        <h4 className="description-header">
+          Seattle Housing Prices
+        </h4>
         <p className="description-body">
-          This demo uses a support vector classifier trained with over 8000 items of sample data different mushrooms and creates a binary classifier (one producing a result of true or false) that can very accurately whether a wild mushroom is edible based on a number of different attributes. In the original dataset, the traits are represented as words, but to train the model, they had to be converted to numerical values. A key of these values exists so that numerical values can be translated so that words can be entered in the client, and then translated for prediction. The value of the prediction is 0 or 1 representing true or false respectively. In the app, once all fields are inputted and the submit button is pressed, a data object is sent to the server that contains numerical values representing each of the traits of the inputted mushroom. That prediction is then sent back and then displayed on the page.
+          This demo uses a linear regression classifier that has been trained with over 21,000 pieces of data from 2014 residential real-estate sales in King’s County, WA.  Given a set of user-supplied criteria and a selected point on the map, our ML algorithm will predict an appropriate price.
         </p>
+        <h4 className="description-header">
+          Linear Regression Classifier
+        </h4>
+        <p className="description-body">
+          A linear regression classifier makes its classifications by the value of a linear combination of characteristics.  An equation would look something like:
+        </p>
+        <p className="description-body">
+          Y  = B0 + B1 * x1 + B2 * x2 + …
+        </p>
+        <p className="description-body">
+          Here, each B value corresponds to some scaling factor, each X value is some specified input, and Y is our prediction.
+        </p>
+        <div className="description-body">
+          <span className='pros-and-cons'>Pros: </span>The concepts used are easy to understand and process, it trains quickly and classifies quickly.
+          <br/>
+          <br/>
+          <span className='pros-and-cons'>Cons: </span>Less accurate in classification than other models, it is very sensitive to outliers in training data, it is not good for classifying data with non-linear trends.
+        </div>
       </div>
     )
-    
+
   }
   
   handleInputChange = (event) => {
