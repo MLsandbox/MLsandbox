@@ -23,7 +23,7 @@ var Signupform = (props) => {
       <div id="login">
         { renderLoad(props.authProcess, props) }
         <p className="login_p">Already Registered? 
-          <a href="#" onClick={props.switchForm}>Login here</a>
+          <a id='form-body-link' href="#" onClick={props.switchForm}> Login here</a>
           <span className="fa fa-arrow-right"></span></p>
       </div>
     </div>
