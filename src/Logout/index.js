@@ -18,7 +18,7 @@ class Logout extends Component {
     if(this.props.authentication) {
       return (
         <a className="nav-link" onClick={this.logoutHandler}>
-          LOGOUT
+          Logout
         </a>
       )
     } else {

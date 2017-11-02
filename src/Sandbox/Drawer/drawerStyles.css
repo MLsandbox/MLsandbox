@@ -23,6 +23,7 @@
 
 .nav-link {
   font-size: 3vw!important;
+  text-transform: uppercase;  
 }
 
 .transparent {
@@ -38,16 +39,29 @@
 }
 
 .description-header {
-  font-size: 4vw;
+  font-size: 5vw;
   background: radial-gradient(#FFBA44 ,#F9AA20);
   text-transform: uppercase;  
   padding: 1vw;
 }
 
 .description-body {
-  font-size: 2vw;
+  font-size: 4vw;
   padding: 1vw;
   padding-left: 1.5vw;
+}
+
+.description-link {
+  color: #FFBA44;
+}
+
+.description-link:hover {
+  color: #73879B;
+}
+
+.modal-content {
+  margin: 0 auto;
+  max-width: 80vw;
 }
 
 .pros-and-cons {
@@ -57,5 +71,13 @@
 @media (min-width: 768px) { 
   .name {
     font-size: 30px!important;
+  }
+
+  .description-header {
+    font-size: 40px
+  }
+
+  .description-body {
+    font-size: 22px
   }
 }

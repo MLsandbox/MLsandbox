@@ -31,7 +31,6 @@
 }
 .legend:after {
   content: "";
-  /* background-image: url(https://simpleicon.com/wp-content/uploads/multy-user.png); */
   background-size: 100px 100px;
   background-repeat: no-repeat;
   background-position: 152px -16px;
