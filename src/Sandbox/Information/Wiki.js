@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './wikiStyles.css';
 
 class Wiki extends Component {
   constructor (props) {
@@ -9,7 +10,8 @@ class Wiki extends Component {
   render() {
     return (
       <div className="learn-more">
-        <h1 className="learn-title">Machine Learning:  What Even Is?</h1>
+        <h1 className="learn-header">Machine Learning</h1>
+        <h2 className="learn-subtitle">What Even Is?</h2>
         <p className="learn-body">
           In a nutshell, Machine Learning (ML) refers to computer applications that self-improve over time.  In order to pull this off, ML applications typically take a large amount of data as input in order to be accurate (the process of feeding data into a Machine Learning algorithm is referred to as “training”).  During training, the ML algorithm determines to which set of categories a new observation belongs (“classification”).  If our ML algorithm is to be accurate, we’ll need to specify a set of categories, or “classifiers”, that make sense for our given application.
         </p>
