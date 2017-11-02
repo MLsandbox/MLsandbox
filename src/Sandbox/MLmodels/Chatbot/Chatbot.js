@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import jwt from 'jsonwebtoken';
+import { connect } from 'react-redux';
 import Messages from './Messages.js';
 import NavDrawer from '../../Drawer/Drawer.js'
 import axios from 'axios';
@@ -38,6 +40,11 @@ class Chatbot extends Component {
       </div>
     )
 
+  }
+
+  componentDidMount() {
+    var token = localStorage.jwtToken;
+    this.props.dispatch({type:"VALIDATE_AUTH", user:jwt.decode(token)});
   }
 
   getResponse = (message) => {
@@ -91,4 +98,8 @@ class Chatbot extends Component {
   }
 }
 
-export default Chatbot;
+export default connect((store) => {
+  return {
+    user: store.auth.authentication.authorization
+  }
+})(Chatbot);

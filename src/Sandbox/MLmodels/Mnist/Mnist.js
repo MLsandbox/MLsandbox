@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import jwt from 'jsonwebtoken';
+import { connect } from 'react-redux';
 import DrawableCanvas from 'react-drawable-canvas';
 import axios from 'axios';
 import bg from './bg.png';
@@ -36,6 +38,11 @@ class Mnist extends Component {
     )
 	
 	}
+
+	componentDidMount() {
+    var token = localStorage.jwtToken;
+    this.props.dispatch({type:"VALIDATE_AUTH", user:jwt.decode(token)});
+  }
 
   getPrediction = (e) => {
 		let canvas = document.getElementsByTagName('canvas');
@@ -74,4 +81,9 @@ class Mnist extends Component {
 }
 
 
-export default Mnist;
+export default connect((store) => {
+  return {
+    user: store.auth.authentication.authorization
+  }
+})(Mnist);
+

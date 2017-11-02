@@ -7,7 +7,7 @@ var Footer = (props) => {
     
       <div className="footer-left">
 
-        <h3>Company<span>logo</span></h3>
+        <h3>ML<span>Sandbox</span></h3>
 
         <p className="footer-links">
           <a href="#">Home</a>
@@ -23,24 +23,24 @@ var Footer = (props) => {
           <a href="#">Contact</a>
         </p>
 
-        <p className="footer-company-name">Company Name &copy; 2015</p>
+        <p className="footer-company-name">package.json &copy; 2015</p>
       </div>
 
       <div className="footer-center">
 
         <div>
           <i className="fa fa-map-marker"></i>
-          <p><span>21 Revolution Street</span> Paris, France</p>
+          <p><span>1134 S. Upsidedown St</span> Los Angeles, California</p>
         </div>
 
         <div>
           <i className="fa fa-phone"></i>
-          <p>+1 555 123456</p>
+          <p>+1 604 388 9932</p>
         </div>
 
         <div>
           <i className="fa fa-envelope"></i>
-          <p><a href="mailto:support@company.com">support@company.com</a></p>
+          <p><a href="mailto:support@company.com">thismax@mlsandbox.com</a></p>
         </div>
 
       </div>

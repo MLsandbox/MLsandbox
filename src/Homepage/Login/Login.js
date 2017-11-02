@@ -1,17 +1,8 @@
 import React, { Component } from 'react';
-import Loginform from './Loginform';
-import Signupform from './Signupform';
-import Loader from './Loader';
+import Loginform from './Loginform/Loginform';
+import Signupform from './Signupform/Signupform';
 import { connect } from 'react-redux';
 
-var renderLoad = (authState, props) => {
-  if (authState) {
-    return <Loader/>
-  } else {
-    return <Loginform 
-      signIn={props.signIn} />
-  }
-}
 
 class Login extends Component {
   constructor(props) {
@@ -52,6 +43,7 @@ class Login extends Component {
         switchForm={this.switchForm} 
         signIn={this.props.signIn}
         onClose = {this.onCloseResetError}
+        authProcess = {this.props.authProcess}
         />);
     }
     if ( this.state.formtype === 'signup') {
@@ -60,6 +52,7 @@ class Login extends Component {
         switchForm={this.switchForm} 
         signUp={this.props.signUp}
         onClose = {this.onCloseResetError}
+        authProcess = {this.props.authProcess}
         />);
     }
   }
@@ -118,5 +111,6 @@ export default connect((store) => {
   return {
     authError: store.auth.authentication.error,
     signupErrs: store.signup.signupErrs,
+    authProcess: store.auth.authentication.processing,
   }
 })(Login);

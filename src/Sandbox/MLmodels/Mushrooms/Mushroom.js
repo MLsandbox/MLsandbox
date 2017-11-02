@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import jwt from 'jsonwebtoken';
+import { connect } from 'react-redux';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 import './mushroomStyles.css'
@@ -9,6 +11,11 @@ class Mushroom extends Component {
     this.state = {
       displayed: "hidden",
     }
+  }
+
+  componentDidMount() {
+    var token = localStorage.jwtToken;
+    this.props.dispatch({type:"VALIDATE_AUTH", user:jwt.decode(token)});
   }
 
   toggleDisplay = () => {
@@ -51,6 +58,10 @@ class Mushroom extends Component {
   }
 }
 
-export default Mushroom;
+export default connect((store) => {
+  return {
+    user: store.auth.authentication.authorization
+  }
+})(Mushroom);
 
 

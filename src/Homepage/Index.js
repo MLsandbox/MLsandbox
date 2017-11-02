@@ -85,7 +85,6 @@ class Homepage extends Component {
           </div>
         </section>
         <Footer />
-        <h1><Link to ="/sandbox">Sandbox</Link></h1>
       </div>
     );
   }
