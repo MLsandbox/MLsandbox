@@ -21,12 +21,16 @@ class Wiki extends Component {
           With training, these classifiers improve and become more accurate over time.  There are a number of different algorithms, or “models”,  that can be used to achieve this, and in this sandbox, we’ll explore the following models: linear regression classifier, random forest classifier, Gaussian mixture classifier, and support vector classifier. Other common models include (but are not limited to) neural networks, k-means clustering, and logistic regression.
         </p>
         <p className="learn-body">
-          If you’d like to learn more about Machine Learning, check out the following links:<br/>
+          If you’d like to learn more about Machine Learning, check out the following links:
+        </p>
+        <div className="learn-links">
           <a className="learn-link" href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/">R2D3 - an amazing ML visualization</a><br/>
           <a className="learn-link" href="https://www.youtube.com/watch?v=nKW8Ndu7Mjw">Google Cloud's latest introduction video on ML</a><br/>
-          <a className="learn-link" href="http://scikit-learn.org/stable/documentation.html">scikit-learn documentation</a>.
-        </p>
-        <h1><Link to ="/sandbox">BACK</Link></h1>
+          <a className="learn-link" href="http://scikit-learn.org/stable/documentation.html">scikit-learn documentation</a>
+        </div>
+        <div className="learn-back-link">
+          <Link className="back-link" to ="/sandbox">BACK</Link>
+        </div>
       </div>
     )
   }

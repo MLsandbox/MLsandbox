@@ -4,7 +4,6 @@
   font-size: 4vw;
   text-align: left;
   padding: 3vw;
-  height: 100%;
 }
 
 .learn-header {
@@ -14,17 +13,49 @@
 .learn-title {
   text-transform: uppercase;
   font-weight: 300;
+  font-size: 11vw;
 }
 
 .learn-subtitle {
   font-weight: 300;
   font-size: 6vw;
+  padding: 3vw 0;
 }
 
 .learn-body {
-  font-size: 2vw;
+  font-size: 3.7vw;
+  padding: 1vw 2vw;
+  text-align: justify;
+}
+
+.learn-links {
+  padding: 3vw;
 }
 
 .learn-link {
+  color: #FFBA44;
+}
 
+.learn-link:hover {
+  color: #F6F7EB
+}
+
+.learn-back-link {
+  text-align: center;
+  padding: 10vw 0;
+}
+
+.back-link {
+  text-transform: uppercase;
+  color: #FFBA44;
+  font-size: 8vw;
+  font-weight: 300;
+  text-align: center;
+  border: 1px solid #FFBA44;
+  border-radius: 1vw;
+  padding: 1vw 2vw;
+}
+
+.back-link:hover {
+  color: #F6F7EB  
 }
