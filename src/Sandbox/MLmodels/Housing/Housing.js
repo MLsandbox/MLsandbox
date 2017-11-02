@@ -4,6 +4,8 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
 import mapKey from '../../../ClientHelpers/keys/mapsapi.js';
 import MapComponent from './MapComponent.js';
 import { Link } from 'react-router-dom';
+import jwt from 'jsonwebtoken';
+import { connect } from 'react-redux';
 import Options from './Options.js';
 import './housingStyles.css';
 import NavDrawer from '../../Drawer/Drawer.js';
@@ -47,6 +49,12 @@ class Housing extends Component {
     )
 
   }
+
+  componentDidMount() {
+    var token = localStorage.jwtToken;
+    this.props.dispatch({type:"VALIDATE_AUTH", user:jwt.decode(token)});
+  }
+
   
   handleInputChange = (event) => {
     const { value } = event.target;
@@ -146,4 +154,9 @@ class Housing extends Component {
   }
 }
 
-export default Housing;
+export default connect((store) => {
+  return {
+    user: store.auth.authentication.authorization
+  }
+})(Housing);
+

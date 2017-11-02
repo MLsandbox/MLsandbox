@@ -3,6 +3,8 @@ import { ReactMic } from 'react-mic';
 import Axios from 'axios';
 import Recorder from 'recorder-js';
 import { Link } from 'react-router-dom';
+import jwt from 'jsonwebtoken';
+import { connect } from 'react-redux';
 import NavDrawer from '../../Drawer/Drawer.js';
 import './voiceStyles.css';
 
@@ -37,6 +39,11 @@ class VoiceRecognitionWrapper extends Component {
       </div>
     )
 
+  }
+
+  componentDidMount() {
+    var token = localStorage.jwtToken;
+    this.props.dispatch({type:"VALIDATE_AUTH", user:jwt.decode(token)});
   }
   
   startRecording = () => {
@@ -105,4 +112,8 @@ class VoiceRecognitionWrapper extends Component {
   }
 }
 
-export default VoiceRecognitionWrapper;
+export default connect((store) => {
+  return {
+    user: store.auth.authentication.authorization
+  }
+})(VoiceRecognitionWrapper);

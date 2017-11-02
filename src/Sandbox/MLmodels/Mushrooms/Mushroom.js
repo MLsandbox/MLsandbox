@@ -62,6 +62,6 @@ export default connect((store) => {
   return {
     user: store.auth.authentication.authorization
   }
-})(Mushroom);;
+})(Mushroom);
 
 
