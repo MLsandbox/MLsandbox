@@ -1,7 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Styles from './Login.css';
+import Styles from '../Login.css';
+import Loader from '../Loader';
 import { FormGroup, ControlLabel, FormControl, Modal, Button } from 'react-bootstrap';
+
+var renderLoad = (authState, props) => {
+  if (authState) {
+    return <Loader/>
+  } else {
+    return <Loginform 
+      signIn={props.signIn} />
+  }
+}
 
 var Signupform = (props) => {
   return (
@@ -30,7 +40,7 @@ var Signupform = (props) => {
         </form>
         <p className="login_p">Already Registered? 
           <a href="#" onClick={props.switchForm}>Login here</a>
-          <span className="fontawesome-arrow-right"></span></p>
+          <span className="fa fa-arrow-right"></span></p>
       </div>
     </div>
   );

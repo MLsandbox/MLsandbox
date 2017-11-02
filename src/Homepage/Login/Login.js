@@ -1,17 +1,8 @@
 import React, { Component } from 'react';
-import Loginform from './Loginform';
-import Signupform from './Signupform';
-import Loader from './Loader';
+import Loginform from './Loginform/Loginform';
+import Signupform from './Signupform/Signupform';
 import { connect } from 'react-redux';
 
-var renderLoad = (authState, props) => {
-  if (authState) {
-    return <Loader/>
-  } else {
-    return <Loginform 
-      signIn={props.signIn} />
-  }
-}
 
 class Login extends Component {
   constructor(props) {

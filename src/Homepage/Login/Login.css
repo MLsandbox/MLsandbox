@@ -74,7 +74,14 @@ input {
 
 /* ---------- LOGIN ---------- */
 #login {
-  width: 280px;
+  display:flex;
+  flex-direction: column;
+  height: 80%;
+}
+
+#login .loader {
+  align-self: center;
+  margin-top: 15%;
 }
 
 #login form span {
