@@ -4,6 +4,7 @@ import DrawableCanvas from 'react-drawable-canvas';
 import axios from 'axios';
 import bg from './bg.png';
 import NavDrawer from '../../Drawer/Drawer.js';
+import './Mnist.css';
 
 class Mnist extends Component {
 	constructor(props) {
@@ -11,23 +12,16 @@ class Mnist extends Component {
 		this.state = {
       styles: {
       	backgroundImage: `url(${bg})`,
-      	width: '400px',
-      	height: '400px',
-      	border: '1px solid black'
-      },
-      btn: {
-      	border: '1px solid black',
-      	width: '120px',
-      	padding: '3px',
-      	textAlign: 'center',
-      	borderRadius: '5px',
-      	marginBottom: '3px'
+        backgroundSize: 'cover',
+        backgoroundRepeat: 'no-repeat',
+      	width: '37vw',
+      	height: '37vw',
       },
       currentPrediction: 'none'
-		}	
+		}
 	}
 
-	getPrediction = (e) => {
+  getPrediction = (e) => {
 		let canvas = document.getElementsByTagName('canvas');
 		let image = canvas[0].toDataURL('image/png');
 		let toSend = image.slice(22);
@@ -37,25 +31,24 @@ class Mnist extends Component {
 		.catch(err => console.log(err));
 	}
 
-	clearCanvas = (e) => {
+  clearCanvas = (e) => {
 		let canvas = document.getElementsByTagName('canvas');
 		canvas[0].width = canvas[0].width;
 	}
 
 	render () {
 		return (
-			<div>
+			<div className="mnist">
         <NavDrawer modelName="ml-sandbox-handwriting-recogntion" />
-				<div>Sketch a Number!</div>
-				<div className='drawing' style={this.state.styles}> 
+				<div className="mnist-title">Sketch a Number!</div>
+				<div style={this.state.styles}> 
 				<DrawableCanvas
-					className='sketch'
 					brushColor='white'
 					lineWidth={6}
 				/>
 				</div>
-				<div onClick={this.getPrediction} style={this.state.btn}>Get Prediction</div>
-				<div onClick={this.clearCanvas} style={this.state.btn}>Clear the Canvas</div>
+				<div onClick={this.getPrediction} className="mnist-btn" >Get Prediction</div>
+				<div onClick={this.clearCanvas} className="mnist-btn">Clear the Canvas</div>
 				<div>Current Prediction: {this.state.currentPrediction}</div>
 			</div>
 		);

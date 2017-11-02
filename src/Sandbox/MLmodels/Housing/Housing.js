@@ -5,7 +5,7 @@ import mapKey from '../../../ClientHelpers/keys/mapsapi.js';
 import MapComponent from './MapComponent.js';
 import { Link } from 'react-router-dom';
 import Options from './Options.js';
-import './housing.css';
+import './housingStyles.css';
 import NavDrawer from '../../Drawer/Drawer.js';
 
 class Housing extends Component {

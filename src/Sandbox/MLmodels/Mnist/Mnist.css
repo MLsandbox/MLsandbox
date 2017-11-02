@@ -1,0 +1,34 @@
+.mnist { 
+  font-family: 'Lato', sans-serif;
+  font-weight: 300; 
+  height: 100%;
+}
+
+.mnist-title {
+  padding-top: 1vw;
+  color: grey;
+  text-align: center;
+  font-size: 2.75vw;
+}
+
+
+.mnist-btn { 
+  font-size: 1.2vw;
+  background: linear-gradient(to bottom right, #E2E2D7, #F6F7EB); 
+  height: 3vw;
+  margin: 0.3vw 0.3vw 0.3vw 5vw;
+  padding: 0.5vw;
+  text-align: center;
+  width: 25vw;
+  font-size: 1.2vw;
+  border-radius: 0.5vw;
+  text-decoration: none;
+  box-shadow: 0.15vw 0.15vw 0.15vw #73879B, 0vw 0vw 0.15vw #E2E2D7;
+  user-select: none;
+  margin-top: 0.3vw;
+}
+
+.mnist-btn:active {
+  border: 0.1vw solid grey;
+  box-shadow: none;
+}
