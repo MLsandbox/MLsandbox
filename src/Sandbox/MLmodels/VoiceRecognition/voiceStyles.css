@@ -1,0 +1,68 @@
+.voice-recog {
+  display: table;
+  margin: 0 auto;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300; 
+  height: 100%;
+  color: #73879B;
+}
+
+.voice-title {
+  text-align: center;
+  font-size: 2.75vw;
+  margin-top: 3vw;
+  margin-bottom: 3vw;
+}
+
+.sound-wave {
+  width: 80vw;
+}
+
+
+.voice-btn { 
+  font-size: 2.5vw;
+  background: linear-gradient(to bottom right, #E2E2D7, #F6F7EB); 
+  height: 3vw;
+  padding: 0.5vw;
+  text-align: center;
+  width: 30vw;
+  border-radius: 0.5vw;
+  text-decoration: none;
+  box-shadow: 0.15vw 0.15vw 0.15vw #73879B, 0vw 0vw 0.15vw #E2E2D7;
+  user-select: none;
+  display: table;
+  margin: 0 auto;
+  margin-top: 3vw;
+}
+
+.voice-btn:active {
+  border: 0.1vw solid grey;
+  box-shadow: none;
+}
+
+.voice-pred {
+  margin-top: 3vw;
+  font-size: 2vw;
+  text-align: center;
+}
+
+
+@media (max-width: 1024px) {
+  .sound-wave {
+    width: 90vw; 
+    display: table;
+    margin: 0 auto; 
+  }
+  .voice-title {
+    font-size: 5vw;
+    padding: 4vw;
+  }
+  .voice-btn {
+    width: 70vw;
+    height: 8vw;
+    font-size: 4vw;
+  }
+  .voice-pred {
+    font-size: 4vw;
+  }
+}

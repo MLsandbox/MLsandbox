@@ -4,6 +4,7 @@ import Axios from 'axios';
 import Recorder from 'recorder-js';
 import { Link } from 'react-router-dom';
 import NavDrawer from '../../Drawer/Drawer.js';
+import './voiceStyles.css';
 
 class VoiceRecognitionWrapper extends Component {
   constructor(props) {
@@ -84,15 +85,20 @@ class VoiceRecognitionWrapper extends Component {
     return (
       <div>
         <NavDrawer modelName="ml-sandbox-voice-recognition" description = {this.description}/>
-        <ReactMic
-          record={this.state.record}
-          className="sound-wave"
-          strokeColor="#000000"
-          backgroundColor="#FFBA44"
-        />
-        <div>Prediction: {this.state.prediction}</div>
-        <div>
-          <button onClick={this.recordAndSubmit}>Get new recording</button>
+        <div className="voice-recog">
+          <div className="voice-title">Press record for recognition of male or female voices!</div>
+          <div className="mic-holder">
+            <ReactMic
+              record={this.state.record}
+              className="sound-wave"
+              strokeColor="#000000"
+              backgroundColor="#FFBA44"
+            />
+          </div>
+          <div>
+            <div className="voice-btn" onClick={this.recordAndSubmit}>Record</div>
+            <div className="voice-pred">Prediction: {this.state.prediction}</div>
+          </div>
         </div>
       </div>
     )
