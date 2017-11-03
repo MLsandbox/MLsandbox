@@ -61,5 +61,24 @@
 }
 
 @media (min-width: 900px) {
-  
+  .learn-title {
+    font-size: 7vw;
+  }
+  .learn-subtitle {
+    font-size: 5vw;
+  }
+  .learn-body {
+    font-size: 1.5vw;  
+  }
+  .learn-link {
+    font-size: 1.5vw;
+    margin: 1vw;
+  }
+  .learn-links {
+    line-height: 1.5vw;
+    padding: 1vw;
+  }
+  .learn-body {
+    padding: 0;
+  }
 }
