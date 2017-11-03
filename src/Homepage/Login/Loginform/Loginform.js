@@ -7,12 +7,12 @@ import { FormGroup, ControlLabel, FormControl, Modal, Button } from 'react-boots
 
 var renderLoad = (authState, props) => {
   if (authState) {
-    return (<Loader/>)
+    return (<Loader/>);
   } else {
     return (<Body
-      signIn={props.signIn} />)
+      signIn={props.signIn} />);
   }
-}
+};
 
 var Loginform = (props) => {
   return (
@@ -27,7 +27,7 @@ var Loginform = (props) => {
       </div>
     </div>
   );
-}
+};
 
 export default Loginform;
 
