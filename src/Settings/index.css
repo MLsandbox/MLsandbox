@@ -1,5 +1,4 @@
 .user-settings-form {
-  display: block;
   margin-left: 2px;
   margin-right: 2px;
   padding-top: 0.35em;
@@ -14,14 +13,21 @@
   width: unset;
 }
 
+.user-settings-form {
+  display: table;
+  margin: 0 auto;
+  width: 20vw;
+  margin-top: 3vw;
+}
+
 .user-settings-form:hover {
-  background: radial-gradient(rgb(249, 250, 222), rgb(241, 243, 217));
   box-shadow: unset;
 }
 
 fieldset.user-settings-form {
   box-shadow: 0 3px 6px 1px #888888;
-  background: radial-gradient(rgb(254, 255, 236), #F6F7EB);
+  background-color: #73879B;
+  color: #FFBA44;
 }
 
 .form-input {
