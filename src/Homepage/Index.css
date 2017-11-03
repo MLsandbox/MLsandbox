@@ -32,21 +32,21 @@ html, body {
 .intro .inner {
   display: table-cell;
   vertical-align: middle;
-  width: 100vw;
+  width: 80vw;
   max-width: none;
 }
 
 .content {
-  max-width: 500px;
+  max-width: 100vw;
   margin: 0 auto;
   text-align: center;
 }
 
 .content h1 {
   color: #E2E2D7;
-  padding: 50px;
   font-family: "Lato", sans-serif;
   font-weight: 300;
+  padding-bottom: 6vw;
   text-shadow: 0px 0px 300px #000;
   font-size: 15vw!important;
 }
