@@ -63,7 +63,7 @@
 
 .model-container .wrapper .example-name {
   visibility: visible;
-  padding: 20px;
+  padding: 20px 10px;
 }
 
 .wiki-link{
