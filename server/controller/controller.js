@@ -8,16 +8,18 @@ const jwt = require('jsonwebtoken');
 const DB = require('../../db/config.js');
 // password comparer
 const comparePasswords = (inputPassword, storedPassword) => {
-  return new Promise ((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     bcrypt.compare(inputPassword, storedPassword, (err, result) => {
-      if (err) reject(err);
+      if (err) {
+        reject(err);
+      }
       resolve(result);
     });
   });
 };
 
 const validSignupInfo = (username, password) => {
-  if(username.length < 3 || password.length < 6) {
+  if (username.length < 3 || password.length < 6) {
     return false;
   } else {
     return true;
@@ -25,12 +27,14 @@ const validSignupInfo = (username, password) => {
 };
 // checks for an existing user and either creates a new user or redirects to root
 module.exports.signUp = (req, res) => {
-  if(!validSignupInfo(req.body.username, req.body.password)) {
+  if (!validSignupInfo(req.body.username, req.body.password)) {
     res.status(201).send('invalid signup info');
   }
-  DB.User.findOne({where: {
-    username: req.body.username,
-  }}).then((result) => {
+  DB.User.findOne({
+    where: {
+      username: req.body.username,
+    }
+  }).then((result) => {
     if (!result) {
       DB.User.create({
         username: req.body.username,
@@ -40,13 +44,14 @@ module.exports.signUp = (req, res) => {
         const token = jwt.sign({
           id: newUser.dataValues.id,
           username: newUser.dataValues.username,
-        }, process.env.JWTSECRET)
-        res.status(201).send({ token })
+        }, process.env.JWTSECRET);
+        res.status(201).send({
+          token
+        });
       }).catch((err) => {
         res.status(404).send(err);
       });
-    }
-    else {
+    } else {
       console.log('user exists');
       res.status(201).send('exists');
     }
@@ -69,14 +74,16 @@ module.exports.logIn = (req, res) => {
           const token = jwt.sign({
             id: user.id,
             username: user.username,
-          }, process.env.JWTSECRET)
-          res.status(201).send({ token });
+          }, process.env.JWTSECRET);
+          res.status(201).send({
+            token
+          });
         } else {
           res.status(201).send('invalid');
         }
       }).catch((err) => {
         res.status(404).send(err);
-      })
+      });
     } else {
       res.status(201).send('invalid');
     }
@@ -105,13 +112,13 @@ module.exports.deleteAccount = (req, res) => {
             res.status(200).send('account deleted');
           }).catch((err) => {
             res.status(404).send(err);
-          })
+          });
         } else {
           res.status(200).send('invalid');
         }
       }).catch((err) => {
         res.status(404).send(err);
-      })
+      });
     } else {
       res.status(200).send('invalid');
     }
@@ -132,11 +139,14 @@ module.exports.changePassword = (req, res) => {
         .then((correctPassword) => {
           if (correctPassword) {
             bcrypt.hash(req.body.newPassword, 10).then((password) => {
-              DB.User.update({password},
-                {where: {
+              DB.User.update({
+                password
+              }, {
+                where: {
                   username: req.body.username,
                 },
-                raw: true,}).then((results) => {
+                raw: true,
+              }).then((results) => {
                 res.status(200).send('password changed!');
               }).catch((err) => {
                 res.status(404).send(err);
@@ -146,10 +156,11 @@ module.exports.changePassword = (req, res) => {
             });
           } else {
             res.status(200).send('incorrect password!');
-          }})
+          }
+        })
         .catch((err) => {
-        res.status(404).send(err);
-      });
+          res.status(404).send(err);
+        });
     } else {
       res.status(200).send('invalid user');
     }
@@ -163,4 +174,3 @@ module.exports.logOut = (req, res) => {
   req.session.destroy();
   res.redirect('/');
 };
- 
