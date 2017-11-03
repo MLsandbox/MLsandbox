@@ -17,3 +17,11 @@
 .user-settings-form:hover {
   background: blanchedalmond;
 }
+
+.form-input {
+  margin-bottom: 1%;
+}
+
+.form-input input {
+  border: solid 1px;
+}

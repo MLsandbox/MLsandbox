@@ -10,6 +10,11 @@ import Deleteform from './Deleteform';
 class Settings extends Component {
   constructor(props) {
     super(props);
+    this.reqPassChange = this.reqPassChange.bind(this);
+  }
+
+  reqPassChange () {
+    console.log(this.props.user);
   }
 
   componentDidMount() {
@@ -22,7 +27,7 @@ class Settings extends Component {
       <div id="settings-page">
         <Dropdown modelName="Profile Settings"/>
         <form id="user-settings-form">
-          <Changepwform />
+          <Changepwform handleClick={this.reqPassChange}/>
           <Deleteform />
         </form>
       </div>
@@ -33,5 +38,6 @@ class Settings extends Component {
 export default connect((store) => {
   return {
     auth: store.auth.authentication.authorization,
+    user: store.auth.authentication.user,
   }
 })(Settings);
