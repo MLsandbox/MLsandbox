@@ -19,7 +19,7 @@ class Sandbox extends Component {
   render () {
     return(
       <div className="sandbox-page">
-        <Dropdown modelName="Sandbox"/>
+        <Dropdown modelName="ml-sandbox"/>
         <Options />
       </div>
     )
