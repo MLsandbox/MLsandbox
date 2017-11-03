@@ -25,3 +25,15 @@
 .form-input input {
   border: solid 1px;
 }
+
+input#old-pw-input {
+  background: white;
+}
+
+input#new-pw-input {
+  background: white;
+}
+
+input#confirm-pw-input {
+  background: white;
+}

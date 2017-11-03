@@ -13,13 +13,13 @@ class Pwchangeform extends Component {
     if (pwLen) {
       errs.push(
         <div key="chngerr1" className="alert alert-danger signup-err">
-          <strong>*REQUIRE </strong>PASSWORD NEEDS TO BE AT LEAST 6 CHARACTERS
+          <strong>*REQUIRE </strong>new password needs to be at least 6 characters
         </div>);
     }
     if (pwMatch) {
       errs.push(
         <div key="chngerr3" className="alert alert-danger signup-err">
-          <strong>*REQUIRE </strong>PASSWORDS DON'T MATCH
+          <strong>*REQUIRE </strong>make sure new passwords match
         </div>);
     }
     return errs;
@@ -29,16 +29,16 @@ class Pwchangeform extends Component {
       <fieldset className="user-settings-form">
         <legend className="user-settings-legend">Change Password:</legend>
         {this.renderErrs()}
-        <div className="form-input old-pw-input">
-          Old Password: <input type="text"/>
+        <div className="form-input">
+          Old Password: <input id="old-pw-input" type="password"/>
         </div>
-        <div className="form-input new-pw-input">
-          New Password: <input type="text"/>
+        <div className="form-input">
+          New Password: <input id="new-pw-input" type="password"/>
         </div>
-        <div className="form-input confirm-pw-input">
-          Confirm Password: <input type="text"/>
+        <div className="form-input">
+          Confirm Password: <input id="confirm-pw-input" type="password"/>
         </div>
-        <button type="button" className="btn btn-primary" onClick={props.handleClick}>Submit</button>
+        <button type="button" className="btn btn-primary" onClick={this.props.handleClick}>Submit</button>
       </fieldset>
     )
   }

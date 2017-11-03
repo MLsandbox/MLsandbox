@@ -11,10 +11,28 @@ class Settings extends Component {
   constructor(props) {
     super(props);
     this.reqPassChange = this.reqPassChange.bind(this);
+    this.reqPassChangeHelper = this.reqPassChangeHelper.bind(this);
+  }
+
+  reqPassChangeHelper(req) {
+    var valid = true;
+    this.props.dispatch({type:'RESET_SIGNUP_ERRS'});
+    if (req.password !== req.confirmPw) {
+      valid = false;
+      this.props.dispatch({type:'PW_MATCH_ERR'});
+    }
+    if(req.password.length < 6) {
+      valid = false;
+      this.props.dispatch({type:'PW_LEN_ERR'});
+    }
+    return valid;
   }
 
   reqPassChange () {
-    console.log(this.props.user);
+    var password = document.getElementById("new-pw-input").value;
+    var confirmPw = document.getElementById("confirm-pw-input").value;
+    var request = { password: password, confirmPw: confirmPw}
+    this.reqPassChangeHelper(request);
   }
 
   componentDidMount() {
