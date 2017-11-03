@@ -10,7 +10,9 @@ var Dashboard = (props) => {
           <div className='circle'>
             <i className={props.icon} aria-hidden="true"></i>
           </div>
-          {props.text}
+          <div className='example-name'>
+            {props.text}
+          </div>
         </label>
       </div>
     </Link>

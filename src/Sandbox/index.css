@@ -61,6 +61,11 @@
   margin: 60px auto 30px auto;
 }
 
+.model-container .wrapper .example-name {
+  visibility: visible;
+  padding: 20px;
+}
+
 .wiki-link{
   display: flex;
   width: 45vw;
