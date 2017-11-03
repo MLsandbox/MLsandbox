@@ -67,14 +67,17 @@ export function reqPwChange (dispatch) {
 }
 
 export function reqAccDel (dispatch) {
-  axios.post("/api/changePassword", {
+  axios.post("/api/deleteAccount", {
     username: this.username,
     password: this.password,
   })
   .then((response) => {
     if(response.data === 'invalid') {
+      console.log('delete fail');
       dispatch({type: 'ACC_DEL_FAIL', data: response.data});
-    } else {
+    } 
+    if(response.data === "account deleted"){
+      console.log('delete success');
       dispatch({type: 'LOGOUT'});
     }
   })

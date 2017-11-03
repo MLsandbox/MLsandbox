@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import './index.css';
 import Changepwform from './Changepw';
 import Deleteform from './Deleteform';
-import { reqPwChange } from '../Redux/Actions/actionTypes';
+import { reqPwChange, reqAccDel } from '../Redux/Actions/actionTypes';
 
 
 class Settings extends Component {
@@ -13,6 +13,7 @@ class Settings extends Component {
     super(props);
     this.reqPassChange = this.reqPassChange.bind(this);
     this.reqPassChangeHelper = this.reqPassChangeHelper.bind(this);
+    this.reqAccDelete = this.reqAccDelete.bind(this);
   }
   componentDidMount() {
     var token = localStorage.jwtToken;
@@ -53,8 +54,9 @@ class Settings extends Component {
     var username = document.getElementById("del-username-input").value;
     var request = { 
       username: this.props.user.username,
-      password: oldPassword,
+      password: password,
     }
+    this.props.dispatch(reqAccDel.bind(request));
   }
 
   render() {
@@ -63,7 +65,7 @@ class Settings extends Component {
         <Dropdown modelName="Profile Settings"/>
         <form id="user-settings-form">
           <Changepwform handleClick={this.reqPassChange}/>
-          <Deleteform />
+          <Deleteform handleClick={this.reqAccDelete}/>
         </form>
       </div>
     );

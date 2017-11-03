@@ -61,3 +61,13 @@ input#confirm-pw-input {
 .del-acc-input {
   margin-left: .8%;
 }
+
+input.del-acc-input {
+  background: white;
+  border-radius: 0px 3px 3px 0px;
+  color: #606468;
+  margin-bottom: 1em;
+  padding: 0 16px;
+  width: 230px;
+  border: solid 1px;
+}
