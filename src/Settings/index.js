@@ -48,6 +48,15 @@ class Settings extends Component {
     }
   }
 
+  reqAccDelete () {
+    var password = document.getElementById("del-password-input").value;
+    var username = document.getElementById("del-username-input").value;
+    var request = { 
+      username: this.props.user.username,
+      password: oldPassword,
+    }
+  }
+
   render() {
     return (
       <div id="settings-page">

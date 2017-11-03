@@ -13,6 +13,7 @@ const initialState = {
   },
   profileSettings: {
     pwChangeReq: 'none',
+    delAccReq: 'none',
   }
 }
 

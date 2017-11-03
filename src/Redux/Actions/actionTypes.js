@@ -65,3 +65,20 @@ export function reqPwChange (dispatch) {
     dispatch({type: "RESET_PROFILE_STATE"});
   })
 }
+
+export function reqAccDel (dispatch) {
+  axios.post("/api/changePassword", {
+    username: this.username,
+    password: this.password,
+  })
+  .then((response) => {
+    if(response.data === 'invalid') {
+      dispatch({type: 'ACC_DEL_FAIL', data: response.data});
+    } else {
+      dispatch({type: 'LOGOUT'});
+    }
+  })
+  .catch((err) => {
+    dispatch({type: "RESET_PROFILE_STATE"});
+  })
+}
