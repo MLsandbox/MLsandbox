@@ -23,7 +23,7 @@ var Loginform = (props) => {
       <div id="login">
         {renderLoad(props.authProcess, props)}
         <p className="login_p">Not a member? 
-          <a href="#" onClick={props.switchForm}>Sign up now</a>
+          <a id='form-body-link'href="#" onClick={props.switchForm}> Sign up now</a>
           <span className="fa fa-arrow-right"></span></p>
       </div>
     </div>
