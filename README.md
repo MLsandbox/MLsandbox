@@ -34,4 +34,21 @@ Get Started
   HOST=(your registered rds instance url)
   RDS_PORT=(your rds port)
   JWTSECRET=anythingyouwant
+  (press esc and type :wq to save file)
+  ```
+
+- Install Node Modules
+
+  ```shell
+  npm install
+  ```
+- Generate Bundle
+
+  ```shell
+  npm run compile
+  ```
+- Start Server
+
+  ```shell
+  npm start
   ```
