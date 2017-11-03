@@ -73,3 +73,42 @@ html, body {
   border: 0;
   z-index: 3;
 }
+
+.modal-open .modal {
+  max-width: 90vw;
+  max-height: 55vh;
+}
+
+#login form input[type="button"] {
+  background-color: #F9AA20;
+}
+
+@media (max-width: 500px ) {
+  .login_p {
+    width: 95vw;
+    margin: 0 -22vw;
+  }
+}
+
+@media (max-width: 400px ) {
+  .login_p {
+    width: 90vw;
+    padding-left: 20vw;
+    padding-bottom: 1vw;
+    margin: 0 -13vw;
+  }
+  #login form span {
+    height: .1vw;
+    width: 5vw;
+    margin-left: 0px;
+    display: none!important;
+  }
+  #login form input {
+    max-width: 50vw;
+    max-height: 7vh 
+  }
+  #login form input[type="button"] {
+    background-color: #F9AA20;
+    margin: 0;
+  }
+}
