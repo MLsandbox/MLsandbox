@@ -24,7 +24,7 @@ html, body {
   position: relative;
   height: 100%;
   width: 100%;
-  background: radial-gradient(rgb(250, 182, 72) ,#F9AA20);
+  background-color: #73879B;
   background-size: cover;
   display: table;
 }
@@ -32,7 +32,7 @@ html, body {
 .intro .inner {
   display: table-cell;
   vertical-align: middle;
-  width: 100%;
+  width: 100vw;
   max-width: none;
 }
 
@@ -43,20 +43,21 @@ html, body {
 }
 
 .content h1 {
-  color: #F9F3F4;
+  color: #E2E2D7;
   padding: 50px;
-  font-family: "Raleway", sans-serif;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
   text-shadow: 0px 0px 300px #000;
-  font-size: 500%;
+  font-size: 15vw!important;
 }
 
 #login-btn {
   border-radius: 9px;
   font-family: 'Oswald', sans-serif;
-  color: #036A81;
+  color: #E2E2D7;
   font-size: 135%;
   padding: 10px 20px;
-  border: solid #036A81 3px;
+  border: solid #E2E2D7 3px;
 }
 
 #login-btn:hover {
