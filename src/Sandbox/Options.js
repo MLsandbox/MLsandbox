@@ -4,9 +4,9 @@ import './index.css';
 import Dashboard from './Dashboard/index';
 
 var modelProps = {
-  "Chat Model":"/chat", "Mushroom Model": "/mushrooms", 
-  "MNIST Model":"/MNIST","Voice Recording Model":"/voicerec", 
-  "Housing Model":"/housing"
+  "Chatbot":"/chat", "Poisonous or Edible": "/mushrooms", 
+  "Character Recognition":"/MNIST","Voice Recognition":"/voicerec", 
+  "Seattle Housing Prices":"/housing"
 };
 
 var buildDashboard = () => {
