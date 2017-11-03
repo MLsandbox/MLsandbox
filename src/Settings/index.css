@@ -1,4 +1,4 @@
-#change-pw-form {
+.user-settings-form {
   display: block;
   margin-left: 2px;
   margin-right: 2px;
@@ -7,8 +7,13 @@
   padding-left: 0.75em;
   padding-right: 0.75em;
   border: 2px groove;
+  font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 }
 
-#change-pw-legend {
+.user-settings-legend {
   width: unset;
+}
+
+.user-settings-form:hover {
+  background: blanchedalmond;
 }

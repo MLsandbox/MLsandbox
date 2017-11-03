@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken';
 import { connect } from 'react-redux';
 import './index.css';
 import Changepwform from './Changepw';
+import Deleteform from './Deleteform';
 
 
 class Settings extends Component {
@@ -22,6 +23,7 @@ class Settings extends Component {
         <Dropdown modelName="Profile Settings"/>
         <form id="user-settings-form">
           <Changepwform />
+          <Deleteform />
         </form>
       </div>
     );
