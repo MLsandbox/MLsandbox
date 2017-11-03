@@ -50,13 +50,13 @@ class Pwchangeform extends Component {
         {this.renderErrs()}
         {this.renderResponse()}
         <div className="form-input">
-          Old Password: <input id="old-pw-input" className="change-pw-input" type="password"/>
+          Old Password: <div><input id="old-pw-input" className="change-pw-input" type="password"/></div>
         </div>
         <div className="form-input">
-          New Password: <input id="new-pw-input" className="change-pw-input" type="password"/>
+          New Password: <div><input id="new-pw-input" className="change-pw-input" type="password"/></div>
         </div>
         <div className="form-input">
-          Confirm Password: <input id="confirm-pw-input" className="change-pw-input" type="password"/>
+          Confirm Password: <div><input id="confirm-pw-input" className="change-pw-input" type="password"/></div>
         </div>
         <button type="button" className="btn btn-primary" onClick={this.props.handleClick}>Submit</button>
       </fieldset>
