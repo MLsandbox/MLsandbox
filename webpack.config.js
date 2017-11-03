@@ -7,37 +7,37 @@ const CompressionPlugin = require('compression-webpack-plugin');
 module.exports = {
   entry: `${srcDir}/index.js`,
   output: {
-    path: resolve(__dirname, "static"),
-    filename: "bundle.js"
+    path: resolve(__dirname, 'static'),
+    filename: 'bundle.js'
   },
   module: {
     loaders: [{
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'eslint-loader'
-      }, {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        options: { presets: ['es2015', 'react'], plugins: ['transform-class-properties'] },
-      }, {
-        test: /\.css$/,
-        loaders: ['style-loader', 'css-loader?url=false']
-      }, {
-        test: /\.(jpg|png|svg)$/,
-        loader: 'url-loader',
-        options: {
-          limit: 25000,
-        }
-      }]
+    }, {
+      test: /\.js$/,
+      loader: 'babel-loader',
+      exclude: /node_modules/,
+      options: { presets: ['es2015', 'react'], plugins: ['transform-class-properties'] },
+    }, {
+      test: /\.css$/,
+      loaders: ['style-loader', 'css-loader?url=false']
+    }, {
+      test: /\.(jpg|png|svg)$/,
+      loader: 'url-loader',
+      options: {
+        limit: 25000,
+      }
+    }]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: `${srcDir}/index.html`
     }),
     new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery"
+      $: 'jquery',
+      jQuery: 'jquery'
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
@@ -61,11 +61,11 @@ module.exports = {
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new CompressionPlugin({
-      asset: "[path].gz[query]",
-      algorithm: "gzip",
+      asset: '[path].gz[query]',
+      algorithm: 'gzip',
       test: /\.js$|\.css$|\.html$/,
       threshold: 10240,
       minRatio: 0.8
     })
   ]
-}
+};

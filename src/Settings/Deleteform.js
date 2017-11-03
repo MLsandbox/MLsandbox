@@ -4,7 +4,7 @@ class Pwchangeform extends Component {
   constructor(props) {
     super(props);
   }
-  render()  {
+  render() {
     return (
       <fieldset className="user-settings-form">
         <legend className="user-settings-legend">Delete Account:</legend>

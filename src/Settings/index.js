@@ -17,45 +17,45 @@ class Settings extends Component {
   }
   componentDidMount() {
     var token = localStorage.jwtToken;
-    this.props.dispatch({type:"VALIDATE_AUTH", user:jwt.decode(token)});
+    this.props.dispatch({type: 'VALIDATE_AUTH', user: jwt.decode(token)});
     this.props.dispatch({type: 'RESET_PROFILE_STATE'});
   }
 
   reqPassChangeHelper(req) {
     var valid = true;
-    this.props.dispatch({type:'RESET_SIGNUP_ERRS'});
+    this.props.dispatch({type: 'RESET_SIGNUP_ERRS'});
     if (req.newPassword !== req.confirmPw) {
       valid = false;
-      this.props.dispatch({type:'PW_MATCH_ERR'});
+      this.props.dispatch({type: 'PW_MATCH_ERR'});
     }
-    if(req.newPassword.length < 6) {
+    if (req.newPassword.length < 6) {
       valid = false;
-      this.props.dispatch({type:'PW_LEN_ERR'});
+      this.props.dispatch({type: 'PW_LEN_ERR'});
     }
     return valid;
   }
 
   reqPassChange () {
-    var newPassword = document.getElementById("new-pw-input").value;
-    var confirmPw = document.getElementById("confirm-pw-input").value;
-    var oldPassword = document.getElementById("old-pw-input").value;
+    var newPassword = document.getElementById('new-pw-input').value;
+    var confirmPw = document.getElementById('confirm-pw-input').value;
+    var oldPassword = document.getElementById('old-pw-input').value;
     var request = { 
-      username:this.props.user.username,
+      username: this.props.user.username,
       oldPassword: oldPassword,
       newPassword: newPassword, 
-      confirmPw: confirmPw}
-    if(this.reqPassChangeHelper(request)) {
+      confirmPw: confirmPw};
+    if (this.reqPassChangeHelper(request)) {
       this.props.dispatch(reqPwChange.bind(request));
     }
   }
 
   reqAccDelete () {
-    var password = document.getElementById("del-password-input").value;
-    var username = document.getElementById("del-username-input").value;
+    var password = document.getElementById('del-password-input').value;
+    var username = document.getElementById('del-username-input').value;
     var request = { 
       username: this.props.user.username,
       password: password,
-    }
+    };
     this.props.dispatch(reqAccDel.bind(request));
   }
 
@@ -76,5 +76,5 @@ export default connect((store) => {
   return {
     auth: store.auth.authentication.authorization,
     user: store.auth.authentication.user,
-  }
+  };
 })(Settings);

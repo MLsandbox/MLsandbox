@@ -15,18 +15,18 @@ import Wiki from './Sandbox/Information/Wiki';
 import Settings from './Settings/index';
 
 render(
-<Provider store={store}>
-  <BrowserRouter history={browserHistory}>
-    <div className="routes">
-      <Route exact path="/" component={Homepage} />
-      <Route exact path="/housing" component={Housing} />
-      <Route exact path="/chat" component={Chat} />
-      <Route exact path="/mushrooms" component={Mushrooms} />
-      <Route exact path="/MNIST" component={Mnist} />
-      <Route exact path="/voicerec" component={Voicerec} />
-      <Route exact path="/Wiki" component={Wiki} />
-      <Route exact path="/settings" component={Settings} />
-      <Authroute exact path ="/sandbox" component={Sandbox} />
-    </div>
-  </BrowserRouter>
-</Provider>, document.getElementById('app'));
+  <Provider store={store}>
+    <BrowserRouter history={browserHistory}>
+      <div className="routes">
+        <Route exact path="/" component={Homepage} />
+        <Route exact path="/housing" component={Housing} />
+        <Route exact path="/chat" component={Chat} />
+        <Route exact path="/mushrooms" component={Mushrooms} />
+        <Route exact path="/MNIST" component={Mnist} />
+        <Route exact path="/voicerec" component={Voicerec} />
+        <Route exact path="/Wiki" component={Wiki} />
+        <Route exact path="/settings" component={Settings} />
+        <Authroute exact path ="/sandbox" component={Sandbox} />
+      </div>
+    </BrowserRouter>
+  </Provider>, document.getElementById('app'));

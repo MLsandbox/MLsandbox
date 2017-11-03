@@ -15,6 +15,6 @@ const initialState = {
     pwChangeReq: 'none',
     delAccReq: 'none',
   }
-}
+};
 
 export default initialState;
