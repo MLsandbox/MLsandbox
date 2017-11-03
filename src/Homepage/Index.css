@@ -27,7 +27,6 @@ html, body {
   background-color: greenyellow;
   background-size: cover;
   display: table;
-  /*background: url('./Homepage/landingimg.jpg') no-repeat 50% 50%;*/
 }
 
 .intro .inner {
@@ -64,4 +63,12 @@ html, body {
   color: #fff;
   border: solid #fff;
   text-decoration: none;
+}
+
+.git-hub-banner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  z-index: 3;
 }
