@@ -144,7 +144,7 @@ module.exports.changePassword = (req, res) => {
               res.status(404).send(err);
             });
           } else {
-            res.status(200).send('incorrect password');
+            res.status(200).send('incorrect password!');
           }})
         .catch((err) => {
         res.status(404).send(err);

@@ -14,6 +14,11 @@ class Settings extends Component {
     this.reqPassChange = this.reqPassChange.bind(this);
     this.reqPassChangeHelper = this.reqPassChangeHelper.bind(this);
   }
+  componentDidMount() {
+    var token = localStorage.jwtToken;
+    this.props.dispatch({type:"VALIDATE_AUTH", user:jwt.decode(token)});
+    this.props.dispatch({type: 'RESET_PROFILE_STATE'});
+  }
 
   reqPassChangeHelper(req) {
     var valid = true;
@@ -39,13 +44,8 @@ class Settings extends Component {
       newPassword: newPassword, 
       confirmPw: confirmPw}
     if(this.reqPassChangeHelper(request)) {
-      this.props.dispatch(reqPwChange.bind(this));
+      this.props.dispatch(reqPwChange.bind(request));
     }
-  }
-
-  componentDidMount() {
-    var token = localStorage.jwtToken;
-    this.props.dispatch({type:"VALIDATE_AUTH", user:jwt.decode(token)});
   }
 
   render() {

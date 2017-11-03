@@ -10,6 +10,9 @@ const initialState = {
     pwLen: false,
     usrLen: false,
     pwMatch: false
+  },
+  profileSettings: {
+    pwChangeReq: 'none',
   }
 }
 

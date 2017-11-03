@@ -6,7 +6,6 @@ import Body from './Loginbody';
 import { FormGroup, ControlLabel, FormControl, Modal, Button } from 'react-bootstrap';
 
 var renderLoad = (authState, props) => {
-  console.log(authState);
   if (authState) {
     return (<Loader/>)
   } else {

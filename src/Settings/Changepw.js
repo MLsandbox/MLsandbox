@@ -5,6 +5,7 @@ class Pwchangeform extends Component {
   constructor(props) {
     super(props);
     this.renderErrs = this.renderErrs.bind(this);
+    this.renderResponse = this.renderResponse.bind(this);
   }
   renderErrs () {
     var errs = [];
@@ -24,11 +25,31 @@ class Pwchangeform extends Component {
     }
     return errs;
   }
+
+  renderResponse () {
+    var state = this.props.changePwResponse;
+    console.log(state);
+    if ('valid' === state) {
+      return (
+        <div className="alert alert-success">
+          <strong>*SUCCESS! </strong>your password has been changed
+        </div>
+      );
+    }
+    if ('invalid' === state) {
+      return (
+        <div className="alert alert-danger">
+          <strong>*ERROR! </strong>incorrect password
+        </div>
+      );
+    }
+  }
   render() {
     return (
       <fieldset className="user-settings-form">
         <legend className="user-settings-legend">Change Password:</legend>
         {this.renderErrs()}
+        {this.renderResponse()}
         <div className="form-input">
           Old Password: <input id="old-pw-input" type="password"/>
         </div>
@@ -47,5 +68,6 @@ class Pwchangeform extends Component {
 export default connect((store) => {
   return {
     errs: store.signup.signupErrs,
+    changePwResponse: store.profState.profileSettings.pwChangeReq,
   }
 })(Pwchangeform);
