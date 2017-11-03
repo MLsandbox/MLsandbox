@@ -7,12 +7,13 @@ import { FormGroup, ControlLabel, FormControl, Modal, Button } from 'react-boots
 
 var renderLoad = (authState, props) => {
   if (authState) {
-    return <Loader/>
+    return <Loader/>;
   } else {
     return <Body 
-      signUp={props.signUp} />
+      signUp={props.signUp}
+    />;
   }
-}
+};
 
 var Signupform = (props) => {
   return (
@@ -27,6 +28,6 @@ var Signupform = (props) => {
       </div>
     </div>
   );
-}
+};
 
 export default Signupform;

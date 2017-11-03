@@ -13,21 +13,21 @@ class Sandbox extends Component {
 
   componentDidMount() {
     var token = localStorage.jwtToken;
-    this.props.dispatch({type:"VALIDATE_AUTH", user:jwt.decode(token)});
+    this.props.dispatch({type: 'VALIDATE_AUTH', user: jwt.decode(token)});
   }
 
   render () {
-    return(
+    return (
       <div className="sandbox-page">
         <Dropdown modelName="ml-sandbox"/>
         <Options />
       </div>
-    )
+    );
   }
 }
 
 export default connect((store) => {
   return {
     user: store.auth.authentication.user.username
-  }
+  };
 })(Sandbox);

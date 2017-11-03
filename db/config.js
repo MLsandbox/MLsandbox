@@ -10,11 +10,9 @@ const DB = new Sequelize(process.env.NAME, process.env.OWNER, process.env.PASSWO
   dialect: 'postgres',
 });
 //initialize and authenticate db
-DB.authenticate()
-.then(() => {
+DB.authenticate().then(() => {
   console.log('Connection to database has been established');
-})
-.catch((err) => {
+}).catch((err) => {
   console.error('Unable to connect to the database', err);
 });
 // define User model
@@ -35,12 +33,11 @@ const User = DB.define('user', {
 // hash password with bcrypt
 User.beforeCreate((user, options) => {
   return bcrypt.hash(user.password, 10)
-  .then(hash => {
-    user.password = hash;
-  })
-  .catch(err => { 
-    throw new Error(); 
-  });
+    .then(hash => {
+      user.password = hash;
+    }).catch(err => {
+      throw new Error();
+    });
 });
 // export db
 module.exports = {

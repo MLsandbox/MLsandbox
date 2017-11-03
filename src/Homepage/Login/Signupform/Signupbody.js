@@ -6,8 +6,8 @@ var Signupbody = (props) => {
       <fieldset className="clearfix">
         <p className="login_p"><span className="fa fa-user"></span>
           <input type="text" placeholder="Username" 
-          id="signupEmail"
-          required/></p>
+            id="signupEmail"
+            required/></p>
         <p className="login_p"><span className="fa fa-lock"></span><input 
           id="signupPassword"
           type="password" 
@@ -22,6 +22,6 @@ var Signupbody = (props) => {
       </fieldset>
     </form>
   );
-}
+};
 
 export default Signupbody;

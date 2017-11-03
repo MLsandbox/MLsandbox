@@ -13,7 +13,9 @@ const app = express();
 const port = process.env.PORT || 8080;
 // middleware
 app.use(parser.json());
-app.use(parser.urlencoded({ extended: false }));
+app.use(parser.urlencoded({
+  extended: false
+}));
 app.use(cors());
 app.use(cookieParser());
 app.use(session({
@@ -23,10 +25,10 @@ app.use(session({
   cookie: {
     secure: true,
     maxAge: 60000,
-   },
+  },
 }));
 
-const restrict = function(req, res, next) {
+const restrict = function (req, res, next) {
   if (req.session.uuid || req.url === '/login') {
     next();
   } else {
@@ -46,6 +48,6 @@ app.use(express.static(path.resolve(__dirname, '../static')));
 app.use('/api', router);
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../static/index.html'));
-})
+});
 // sync db, start a UNIX socket and listen for connections
-db.User.sync().then(() => app.listen(port, () => console.log("Listening on port " + port)));
+db.User.sync().then(() => app.listen(port, () => console.log('Listening on port ' + port)));

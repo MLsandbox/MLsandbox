@@ -60,7 +60,7 @@ class Pwchangeform extends Component {
         </div>
         <button type="button" className="btn btn-primary" onClick={this.props.handleClick}>Submit</button>
       </fieldset>
-    )
+    );
   }
 }
 
@@ -68,5 +68,5 @@ export default connect((store) => {
   return {
     errs: store.signup.signupErrs,
     changePwResponse: store.profState.profileSettings.pwChangeReq,
-  }
+  };
 })(Pwchangeform);

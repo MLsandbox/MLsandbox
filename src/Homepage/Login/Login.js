@@ -16,8 +16,8 @@ class Login extends Component {
   }
 
   switchForm() {
-    this.props.dispatch({type:'RESET_ERROR'});
-    this.props.dispatch({type:'RESET_SIGNUP_ERRS'});
+    this.props.dispatch({type: 'RESET_ERROR'});
+    this.props.dispatch({type: 'RESET_SIGNUP_ERRS'});
     if ( this.state.formtype === 'login') {
       this.setState({formtype: 'signup'});
     }
@@ -40,26 +40,26 @@ class Login extends Component {
     if ( this.state.formtype === 'login') {
       return (
         <Loginform 
-        switchForm={this.switchForm} 
-        signIn={this.props.signIn}
-        onClose = {this.onCloseResetError}
-        authProcess = {this.props.authProcess}
+          switchForm={this.switchForm} 
+          signIn={this.props.signIn}
+          onClose = {this.onCloseResetError}
+          authProcess = {this.props.authProcess}
         />);
     }
     if ( this.state.formtype === 'signup') {
       return (
         <Signupform 
-        switchForm={this.switchForm} 
-        signUp={this.props.signUp}
-        onClose = {this.onCloseResetError}
-        authProcess = {this.props.authProcess}
+          switchForm={this.switchForm} 
+          signUp={this.props.signUp}
+          onClose = {this.onCloseResetError}
+          authProcess = {this.props.authProcess}
         />);
     }
   }
 
   onCloseResetError () {
-    this.props.dispatch({type:'RESET_SIGNUP_ERRS'});
-    this.props.dispatch({type:'RESET_ERROR'});
+    this.props.dispatch({type: 'RESET_SIGNUP_ERRS'});
+    this.props.dispatch({type: 'RESET_ERROR'});
   }
 
   renderSignupErrs() {
@@ -88,16 +88,16 @@ class Login extends Component {
     return errs;
   }
 
-  render(){
+  render() {
     return (
       <div id="auth-popup" className="modal fade" tabIndex="-1" role="dialog" 
-      aria-labelledby="exampleModalLiveLabel" style={{display: "none"}} aria-hidden="true">
+        aria-labelledby="exampleModalLiveLabel" style={{display: 'none'}} aria-hidden="true">
         <div className="modal-dialog" role="document">
           <div className="modal-content">
-            <div  className="modal-body">
-            { this.renderSignupErrs() }
-            { this.renderError() }
-            { this.renderForm() }
+            <div className="modal-body">
+              { this.renderSignupErrs() }
+              { this.renderError() }
+              { this.renderForm() }
             </div>
           </div>
         </div>
@@ -112,5 +112,5 @@ export default connect((store) => {
     authError: store.auth.authentication.error,
     signupErrs: store.signup.signupErrs,
     authProcess: store.auth.authentication.processing,
-  }
+  };
 })(Login);
