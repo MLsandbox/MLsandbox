@@ -7,7 +7,9 @@ var Dashboard = (props) => {
       <div className='wrapper'>
         <input type='checkbox'></input>
         <label>
-          <div className='circle'></div>
+          <div className='circle'>
+            <i className="fa fa-home fa-5x" aria-hidden="true"></i>
+          </div>
           {props.text}
         </label>
       </div>
