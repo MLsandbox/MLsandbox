@@ -24,7 +24,7 @@ html, body {
   position: relative;
   height: 100%;
   width: 100%;
-  background-color: greenyellow;
+  background: radial-gradient(rgb(250, 182, 72) ,#F9AA20);
   background-size: cover;
   display: table;
 }

@@ -81,7 +81,7 @@ class Homepage extends Component {
         <section className="intro">
           <div className="inner">
             <div className="content">
-                <h1>Welcome</h1>
+                <h1>ML SANDBOX</h1>
                 <a id="login-btn" href="#" data-toggle="modal" data-target="#auth-popup" >LOGIN</a>
                 {this.redirect()}
             </div>

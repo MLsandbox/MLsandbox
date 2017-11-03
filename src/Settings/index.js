@@ -3,6 +3,7 @@ import Dropdown from './Dropdown';
 import jwt from 'jsonwebtoken';
 import { connect } from 'react-redux';
 import './index.css';
+import Changepwform from './Changepw';
 
 
 class Settings extends Component {
@@ -19,6 +20,9 @@ class Settings extends Component {
     return (
       <div id="settings-page">
         <Dropdown modelName="Profile Settings"/>
+        <form id="user-settings-form">
+          <Changepwform />
+        </form>
       </div>
     );
   }
