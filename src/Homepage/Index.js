@@ -5,7 +5,7 @@ import Footer from './Footer/Footer';
 import { setPopupState, reqAuth, reqSignup } from '../Redux/Actions/actionTypes';
 import { connect } from 'react-redux';
 import Logout from '../Logout/index';
-import Styles from'./index.css';
+import Styles from './index.css';
 
 class Homepage extends Component {
   constructor (props) {
@@ -75,6 +75,9 @@ class Homepage extends Component {
         signIn = {this.signIn} 
         signUp = {this.signUp}
         />
+        <a href="https://github.com/MLsandbox">
+          <img className="git-hub-banner" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"/>
+        </a>
         <section className="intro">
           <div className="inner">
             <div className="content">

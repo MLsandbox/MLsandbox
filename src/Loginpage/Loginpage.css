@@ -87,3 +87,7 @@
   color: #fff;
   outline: 0;
 }
+
+#login form input[type="button"] {
+  background-color: #FFBA44;
+}
