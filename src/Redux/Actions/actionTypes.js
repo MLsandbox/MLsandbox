@@ -47,3 +47,41 @@ export function reqSignup (dispatch) {
     dispatch({type: "REQ_AUTH_FAIL"});
   })
 }
+
+export function reqPwChange (dispatch) {
+  axios.post("/api/changePassword", {
+    username: this.username,
+    password: this.oldPassword,
+    newPassword: this.newPassword,
+  })
+  .then((response) => {
+    if(response.data === 'incorrect password!') {
+      dispatch({type: 'PW_CHANGE_FAIL', data: response.data});
+    } else {
+      dispatch({type: 'PW_CHANGE_SUCCESS', data: response.data});
+    }
+  })
+  .catch((err) => {
+    dispatch({type: "RESET_PROFILE_STATE"});
+  })
+}
+
+export function reqAccDel (dispatch) {
+  axios.post("/api/deleteAccount", {
+    username: this.username,
+    password: this.password,
+  })
+  .then((response) => {
+    if(response.data === 'invalid') {
+      console.log('delete fail');
+      dispatch({type: 'ACC_DEL_FAIL', data: response.data});
+    } 
+    if(response.data === "account deleted"){
+      console.log('delete success');
+      dispatch({type: 'LOGOUT'});
+    }
+  })
+  .catch((err) => {
+    dispatch({type: "RESET_PROFILE_STATE"});
+  })
+}

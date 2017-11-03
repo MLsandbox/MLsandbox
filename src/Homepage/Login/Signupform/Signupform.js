@@ -6,7 +6,6 @@ import Body from './Signupbody';
 import { FormGroup, ControlLabel, FormControl, Modal, Button } from 'react-bootstrap';
 
 var renderLoad = (authState, props) => {
-  console.log('sadasd', props)
   if (authState) {
     return <Loader/>
   } else {

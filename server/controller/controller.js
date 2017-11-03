@@ -86,6 +86,7 @@ module.exports.logIn = (req, res) => {
 };
 
 module.exports.deleteAccount = (req, res) => {
+  console.log(req);
   DB.User.findOne({
     where: {
       username: req.body.username,
@@ -101,18 +102,18 @@ module.exports.deleteAccount = (req, res) => {
             },
             raw: true,
           }).then((results) => {
-            res.redirect('/');
+            res.status(200).send('account deleted');
           }).catch((err) => {
             res.status(404).send(err);
           })
         } else {
-          res.status(404).send(err);
+          res.status(200).send('invalid');
         }
       }).catch((err) => {
         res.status(404).send(err);
       })
     } else {
-      res.status(404).send(err);
+      res.status(200).send('invalid');
     }
   }).catch((err) => {
     res.status(404).send(err);
@@ -136,7 +137,7 @@ module.exports.changePassword = (req, res) => {
                   username: req.body.username,
                 },
                 raw: true,}).then((results) => {
-                res.redirect('/');
+                res.status(200).send('password changed!');
               }).catch((err) => {
                 res.status(404).send(err);
               });
@@ -144,13 +145,13 @@ module.exports.changePassword = (req, res) => {
               res.status(404).send(err);
             });
           } else {
-            res.status(404).send(err);
+            res.status(200).send('incorrect password!');
           }})
         .catch((err) => {
         res.status(404).send(err);
       });
     } else {
-      res.status(404).send(err);
+      res.status(200).send('invalid user');
     }
   }).catch((err) => {
     res.status(404).send(err);

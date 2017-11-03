@@ -5,7 +5,6 @@ import { BrowserRouter, Route, browserHistory } from 'react-router-dom';
 import Sandbox from './Sandbox/index';
 import store from './Redux/store';
 import Homepage from './Homepage/Index';
-import Login from './Loginpage/index';
 import Authroute from './ClientHelpers/AuthRouting/checkAuth';
 import Housing from './Sandbox/MLmodels/Housing/Housing';
 import Mushrooms from './Sandbox/MLmodels/Mushrooms/Mushrooms';
@@ -20,7 +19,6 @@ render(
   <BrowserRouter history={browserHistory}>
     <div className="routes">
       <Route exact path="/" component={Homepage} />
-      <Route exact path="/login" component={Login} />
       <Route exact path="/housing" component={Housing} />
       <Route exact path="/chat" component={Chat} />
       <Route exact path="/mushrooms" component={Mushrooms} />
