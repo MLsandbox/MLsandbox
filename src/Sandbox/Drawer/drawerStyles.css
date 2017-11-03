@@ -5,6 +5,17 @@
   -ms-box-sizing: border-box;
 }
 
+.titler {
+  cursor: pointer;
+}
+
+.navbar {
+  user-select: none;
+}
+.navbar-toggler {
+  outline: none!important;
+}
+
 .drawer{
   background-color: #73879B!important;
   font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  
@@ -22,7 +33,7 @@
 }
 
 .nav-link {
-  font-size: 3vw!important;
+  font-size: 5vw!important;
   text-transform: uppercase;  
 }
 
@@ -68,7 +79,7 @@
   font-weight: 500;
 }
 
-@media (min-width: 768px) { 
+@media (min-width: 1025px) { 
   .name {
     font-size: 30px!important;
   }
@@ -76,7 +87,9 @@
   .description-header {
     font-size: 40px
   }
-
+  .nav-link {
+    font-size: 1.25vw!important;
+  }
   .description-body {
     font-size: 22px
   }
