@@ -149,3 +149,17 @@
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   font-size: 3vw;
 }
+
+@media (max-width: 1024px) {
+  .model-container {
+    display: block;
+    margin-top: 3vw;
+  }
+  .wrapper {
+    display: table;
+    margin: 0 auto;
+  }
+}
+
+
+
