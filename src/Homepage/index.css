@@ -74,11 +74,6 @@ html, body {
   z-index: 3;
 }
 
-.modal-open .modal {
-  max-width: 90vw;
-  max-height: 55vh;
-}
-
 #login form input[type="button"] {
   background-color: #F9AA20;
 }
@@ -96,6 +91,10 @@ html, body {
     padding-left: 20vw;
     padding-bottom: 1vw;
     margin: 0 -13vw;
+    margin-left: -15vw;
+  }
+  #login-fields {
+    margin-left: 8vw;
   }
   #login form span {
     height: .1vw;
