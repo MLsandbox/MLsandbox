@@ -29,4 +29,5 @@ render(
         <Authroute exact path ="/sandbox" component={Sandbox} />
       </div>
     </BrowserRouter>
-  </Provider>, document.getElementById('app'));
+  </Provider>, document.getElementById('app')
+);
