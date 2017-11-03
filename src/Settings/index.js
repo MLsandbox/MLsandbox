@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import './index.css';
 import Changepwform from './Changepw';
 import Deleteform from './Deleteform';
+import { reqPwChange } from '../Redux/Actions/actionTypes';
 
 
 class Settings extends Component {
@@ -17,11 +18,11 @@ class Settings extends Component {
   reqPassChangeHelper(req) {
     var valid = true;
     this.props.dispatch({type:'RESET_SIGNUP_ERRS'});
-    if (req.password !== req.confirmPw) {
+    if (req.newPassword !== req.confirmPw) {
       valid = false;
       this.props.dispatch({type:'PW_MATCH_ERR'});
     }
-    if(req.password.length < 6) {
+    if(req.newPassword.length < 6) {
       valid = false;
       this.props.dispatch({type:'PW_LEN_ERR'});
     }
@@ -29,10 +30,17 @@ class Settings extends Component {
   }
 
   reqPassChange () {
-    var password = document.getElementById("new-pw-input").value;
+    var newPassword = document.getElementById("new-pw-input").value;
     var confirmPw = document.getElementById("confirm-pw-input").value;
-    var request = { password: password, confirmPw: confirmPw}
-    this.reqPassChangeHelper(request);
+    var oldPassword = document.getElementById("old-pw-input").value;
+    var request = { 
+      username:this.props.user.username,
+      oldPassword: oldPassword,
+      newPassword: newPassword, 
+      confirmPw: confirmPw}
+    if(this.reqPassChangeHelper(request)) {
+      this.props.dispatch(reqPwChange.bind(this));
+    }
   }
 
   componentDidMount() {

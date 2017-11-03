@@ -47,3 +47,26 @@ export function reqSignup (dispatch) {
     dispatch({type: "REQ_AUTH_FAIL"});
   })
 }
+
+export function reqPwChange (dispatch) {
+  dispatch({type: "REQ_AUTH"});
+  axios.post("/api/changePassword", {
+    username: this.username,
+    password: this.oldPassword,
+    newPassword: this.newPassword,
+  })
+  .then((response) => {
+    // if(response.data === 'exists' || response.data === 'invalid signup info') {
+    //   dispatch({type: 'INVALID_SIGNUP', data: response.data});
+    // } else {
+    //   const token = response.data.token;
+    //   localStorage.setItem('jwtToken', response.data.token);
+    //   dispatch({type:"VALIDATE_AUTH", user:jwt.decode(token)});
+    // }
+    console.log(response);
+    dispatch({type:"VALIDATE_AUTH", user:jwt.decode(token)});
+  })
+  .catch((err) => {
+    dispatch({type: "REQ_AUTH_FAIL"});
+  })
+}
