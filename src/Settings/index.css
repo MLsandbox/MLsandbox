@@ -15,14 +15,30 @@
 }
 
 .user-settings-form:hover {
-  background: blanchedalmond;
+  background: radial-gradient(rgb(249, 250, 222), rgb(241, 243, 217));
+  box-shadow: unset;
+}
+
+fieldset.user-settings-form {
+  box-shadow: 0 3px 6px 1px #888888;
+  background: radial-gradient(rgb(254, 255, 236), #F6F7EB);
 }
 
 .form-input {
   margin-bottom: .3%;
+  margin-left: 1%;
+}
+
+.del-form-input {
+  margin-bottom: 1.3%;
+  margin-left: 1%;
 }
 
 .form-input input {
+  border: solid 1px;
+}
+
+.del-form-input input{
   border: solid 1px;
 }
 
@@ -36,4 +52,12 @@ input#new-pw-input {
 
 input#confirm-pw-input {
   background: white;
+}
+
+.change-pw-input {
+  margin-left: .8%;
+}
+
+.del-acc-input {
+  margin-left: .8%;
 }
