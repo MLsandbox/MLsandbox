@@ -48,7 +48,7 @@ class Mushrooms extends Component {
           The way this classifier works has similarities to the linear regression used in the housing prices predictor, except that it has additional dimensions in the graphical representation. In addition to the x and y-axis, it has a third axis going into 3-dimensional space that represents each trait that needs to be classified (which in this case would be the different traits of mushrooms). There is a hyperplane (a plane separating one classification from the other) going through all dimensions. If the inputted data is above the hyperplane, it gets one classification and if it is below, it gets the other.
         </p>
         <div className="description-body">
-          <span className='pros-and-cons'>Pros: </span>Very accurate classifiers can be produced with this model with smaller datasets than with some other models, it is very effective for binary classification, are appropriate for use with a large number of features.
+          <span className='pros-and-cons'>Pros: </span>Very accurate classifiers can be produced with this model given smaller datasets than with some other models.  As such, the model is very effective for binary classification, and appropriate for use with a large number of features.
           <br/>
           <br/>
           <span className='pros-and-cons'>Cons: </span>Training is a greater than quadratic operation, so training large sets of data is not feasible.

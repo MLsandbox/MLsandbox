@@ -86,7 +86,7 @@ class VoiceRecognitionWrapper extends Component {
       <div>
         <NavDrawer modelName="ml-sandbox-voice-recognition" description = {this.description}/>
         <div className="voice-recog">
-          <div className="voice-title">Press record for recognition of male or female voices!</div>
+          <div className="voice-title">To get a prediction, press record and speak until a prediction is rendered!</div>
           <div className="mic-holder">
             <ReactMic
               record={this.state.record}

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Logout from '../../Logout/index.js';
 import Description from './Description.js';
-import './drawerStyles.css'
+import './drawerStyles.css';
  
 const Drawer = ({modelName, description}) => {
   return (
@@ -34,7 +34,7 @@ const Drawer = ({modelName, description}) => {
         </ul>
       </div>
     </nav>
-  )
-}
+  );
+};
 
 export default Drawer;

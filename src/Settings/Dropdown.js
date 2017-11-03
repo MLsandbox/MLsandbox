@@ -27,7 +27,7 @@ const Drawer = ({modelName}) => {
         </ul>
       </div>
     </nav>
-  )
-}
+  );
+};
 
 export default Drawer;

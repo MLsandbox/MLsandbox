@@ -7,7 +7,7 @@ const checkAuth = () => {
     return false;
   }
   return true;
-}
+};
 
 const Authroute = (props) => {
   var Component = props.component;
@@ -17,9 +17,9 @@ const Authroute = (props) => {
         <Component storage={props} />
       ) : (
         <Redirect to={{ pathname: '/'}}/>
-      )
+      );
     }}/>
-  )
-}
+  );
+};
 
 export default Authroute;

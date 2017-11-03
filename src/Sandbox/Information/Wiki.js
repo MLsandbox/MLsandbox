@@ -4,7 +4,7 @@ import './wikiStyles.css';
 
 class Wiki extends Component {
   constructor (props) {
-    super(props)
+    super(props);
   }
 
   render() {
@@ -32,7 +32,7 @@ class Wiki extends Component {
           <Link className="back-link" to ="/sandbox">BACK</Link>
         </div>
       </div>
-    )
+    );
   }
 }
 
